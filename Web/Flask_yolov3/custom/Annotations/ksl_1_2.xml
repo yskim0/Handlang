@@ -1,0 +1,26 @@
+<annotation>
+	<folder>ksl_1-samples</folder>
+	<filename>2.jpg</filename>
+	<path>/Users/shinjiyoung/Desktop/프로그래밍/flask/ksl_data/ksl_1-samples/2.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>224</width>
+		<height>224</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ksl_01</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>7</xmin>
+			<ymin>22</ymin>
+			<xmax>215</xmax>
+			<ymax>212</ymax>
+		</bndbox>
+	</object>
+</annotation>
