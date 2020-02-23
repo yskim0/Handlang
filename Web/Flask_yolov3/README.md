@@ -1,5 +1,11 @@
-# keras-yolo3
+## weights 파일용량이 커서 따로 다운 후 h5 파일로 변환 후 실행
 
+* $ wget https://pjreddie.com/media/files/yolov3-tiny.weights
+* $ python convert.py yolov3-tiny.cfg yolov3-tiny.weights model_data/yolo.h5
+
+2020.02.23
+
+----------------------------
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
 ## Updated
