@@ -3,7 +3,6 @@ import threading
 import numpy
 import cv2, time
 from darkflow.net.build import TFNet
-from yolo_video import yoloCamera as camera
 import tensorflow as tf
 
 app = Flask(__name__)
