@@ -4,7 +4,8 @@
 
 - training시 사용한 데이터
   
-- 0~9, a~z: https://www.kaggle.com/ayuraj/american-sign-language-dataset
+- 0-9/a-z: https://www.kaggle.com/ayuraj/american-sign-language-dataset
+  
   - 위의 data 中 각 label당 200개씩을 training시 사용
   
 - test시 사용한 데이터
