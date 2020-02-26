@@ -8,7 +8,7 @@
   
   - 위의 data 中 각 label당 200개씩을 training시 사용
   
-- test시 사용한 데이터
+- test시 사용한 데이터 -->**test_data/Test_Data**
 
    - 0~9 : https://github.com/ardamavi/Sign-Language-Digits-Dataset
 
