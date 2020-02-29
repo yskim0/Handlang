@@ -54,6 +54,8 @@ tfnet = TFNet(options)
 def gen(camera):
     if not camera.isOpened():
         raise RuntimeError("Could not start camera")
+    output="sentence: "
+    # label_before=''
 
     sess = tf.Session()
 
@@ -71,10 +73,11 @@ def gen(camera):
                         tl= (result['topleft']['x'],result['topleft']['y'])
                         br =(result['bottomright']['x'],result['bottomright']['y'])
                         label = result['label']
+                        print(label)
+                        output+=label
                         cv2.rectangle(img,tl,br,(0,255,0),3)
                         cv2.putText(img,label,br,cv2.FONT_HERSHEY_COMPLEX, 2,(0,0,0),1)
-                        print(label)
-
+                    cv2.putText(img,output,(20,35), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(255,255,255),1)
                     ret, jpeg = cv2.imencode('.jpg', img)
                     frame = jpeg.tobytes()
 
@@ -85,6 +88,9 @@ def gen(camera):
 
             else:
                 print("Status of camera.read()\n",success, img,"\n=======================")
+
+#label을 저장해서 불러오기
+# def detection(vid):
 
 
 
