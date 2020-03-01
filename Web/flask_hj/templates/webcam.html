@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
-  <div class="mt-5">
+  <!-- <div class="mt-5">
 
     <div class="container"><h1>Handlang -ASL</h1></div>
     <br>
@@ -25,11 +25,13 @@
         <div class="title">Patient</div>
         <img id="bg" src="{{ url_for('video_feed') }}" alt="webcam">
         <div id="label-result">
+          {{labels}}
 
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <img id="bg" src="{{ url_for('video_feed') }}" alt="webcam">
 
 
 
