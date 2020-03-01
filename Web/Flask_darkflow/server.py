@@ -78,7 +78,7 @@ def video_feed():
     # cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)
     return Response(gen(cam), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-
+# ajax 통신 함수 반영 sendResult()
 @app.route('/')
 def webcam():
     return render_template('webcam.html', resultReceived=sendResult())
