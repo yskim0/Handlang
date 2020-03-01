@@ -1,25 +1,63 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Flask-darkflow-web-streaming</title>
+    <title>Project Handlang</title>
+
+    <style>
+      body {
+        padding-top: 60px; 
+        padding-right: 60px;
+      }
+    </style>
+
     <script src="../static/js/jquery-3.4.1.js"></script>
     <script>
 
       $(document).ready(function()  {
-        setInterval("ajaxd()", 1000); // call every 1 seconds
+        var intervalID = setInterval("ajaxd()", 1000); // call every 1 seconds
+        $("#final_result").focus(); // 바로 엔터 해서 저장 할 수 있도록 focus 시킴
+
+        $("#btn_start").click(function() {
+          intervalID = setInterval("ajaxd()", 1000); // interval restart
+          $("span#status").text("✅ 예측 중...");
+          $("input#final_result").val('NONE');
+          $("#final_result").focus();
+        });
+
+        $("#final_result").keydown(function(key) {
+          if (key.keyCode == 13) {
+          //엔터키 입력 시 작업할 내용
+            clearInterval(intervalID); // interval clear
+            $("span#status").text("❗️예측 중지");
+            var result = $('#resultReceived').val();
+            $("input#final_result").val(result);
+          }
+        });
+
       });
 
       function ajaxd()  {
         // reload result into element with id "resultReceived"
         $("#resultReceived").load("/sendResult")
       }
+
     </script>
   </head>
 
   <body>
-    <h1>Video Streaming Demonstration</h1>
+    <h1>Flask-darkflow-web-streaming</h1>
     <img id="bg" src="{{ url_for('video_feed') }}">
     <h2> Predict Result </h2>
+
+    <h3>
+      <button type="button" id="btn_start" style="padding:3px"> 예측 다시 시작 </button>
+      <p>Status :&nbsp;<strong><span id="status"> ✅ 예측 중...</span></strong>
+      <br><span style="color: #2F4F4F">enter 키를 누르면 예측된 값이 저장됩니다.</span></p>
+    </h3>
+
     <textarea id="resultReceived" rows="10" cols="50">{{ resultReceived }}</textarea>
+    <strong>&nbsp;&nbsp;&nbsp;<span style="font-size: 20px;">Enter! (focus 된 상태에서) &nbsp;</span><strong>
+    <input type="text" id="final_result" readonly value="NONE" style="font-size: 20px; color: blue;"/>
+
   </body>
 </html>
