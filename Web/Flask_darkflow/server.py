@@ -19,9 +19,6 @@ options = {"model": "./cfg/yolo.cfg", "load": "./bin/yolo.weights", "threshold":
 
 tfnet = TFNet(options)
 
-def checkResult(label):
-    tem_message = label
-
 def gen(camera):
     sess = tf.Session()
     with sess.as_default():
