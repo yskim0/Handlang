@@ -42,9 +42,11 @@ def gen(camera):
                         cv2.putText(img, result["label"], (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX,
                                     0.8, (0, 255, 0), 2, cv2.LINE_AA)
                         
-                        # 예측값이랑 신뢰도 같이 프린트해서 보여주기 (기존 것 위에 계속 출력)
+                        # ajax 통신 함수 변수 reset (나중에 dictionary 형태로도)
                         global tem_message
                         tem_message = label
+                        
+                        # log 체크
                         print("result: ", label, "| confidence: ", confidence)
 
                     #cv2.imshow('frame',img)
