@@ -3,9 +3,10 @@ from darkflow.net.build import TFNet
 import cv2
 import tensorflow as tf
 import threading
-import numpy
+import numpy as np
 import sys
 from PIL import Image
+import imutils
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ final_message = "prediction result"
 
 
 # 손 detect 모델
-options_hand = {"model": "./cfg/yolo-hands.cfg", "load": "./bin/yolo-hand-detect.weights", "threshold": 0.4}
+options_hand = {"model": "./cfg/yolo-hands.cfg", "load": "./bin/yolo-hand-detect.weights", "threshold": 0.6}
 
 tfnet_hand = TFNet(options_hand)
 
@@ -23,7 +24,8 @@ tfnet_hand = TFNet(options_hand)
 # 수화번역 model
 options_signLanguage = {"model": "./cfg/handlang-small.cfg",
                        "pbLoad": "./darkflow/built_graph/handlang-small.pb",
-                       "metaLoad": './darkflow/built_graph/handlang-small.meta' , "threshold": 0.07}
+                       "metaLoad": "./darkflow/built_graph/handlang-small.meta" , "threshold": 0.15}
+                       
 tfnet_detect = TFNet(options_signLanguage)
 
 def gen(camera):
@@ -31,7 +33,9 @@ def gen(camera):
     with sess.as_default():
         while True:
             success, img = camera.read()
+
             if success:
+
                     results = tfnet_hand.return_predict(img)
 
                     for result in results:
@@ -45,15 +49,40 @@ def gen(camera):
                                         (result["topleft"]["x"]-20, result["topleft"]["y"]-80),
                                         (result["bottomright"]["x"]+20, result["bottomright"]["y"]+60),
                                         (255, 0, 0), 4)
+                                        
+                                        # 손바닥 크기 정도만 디텍트 되어서 일단은 임시방편으로 rectangle 시킬 범위 조정
 
-                            text_x, text_y = result["topleft"]["x"], result["topleft"]["y"] # 결과 쓸 위치
+                            text_x, text_y = result["topleft"]["x"], result["topleft"]["y"] # detect 결과 쓸 위치
+
+                            # opencv로 손 누끼 따기
+                            lower = np.array([0, 48, 80], dtype = "uint8")
+                            upper = np.array([20, 255, 255], dtype = "uint8")
+                            
+                            hand_img = cropped_img.copy() # cropped_img 를 그대로 사용하면 위험하니까 copy 해서 사용
+                            hand_img = imutils.resize(hand_img, width = 400)
+                            converted = cv2.cvtColor(hand_img, cv2.COLOR_BGR2HSV)
+                            skinMask = cv2.inRange(converted, lower, upper)
+
+                            # apply a series of erosions and dilations to the mask
+                            # using an elliptical kernel
+                            kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11, 11))
+                            skinMask = cv2.erode(skinMask, kernel, iterations = 2)
+                            skinMask = cv2.dilate(skinMask, kernel, iterations = 2)
+
+
+                            # blur the mask to help remove noise, then apply the
+                            # mask to the frame
+                            skinMask = cv2.GaussianBlur(skinMask, (3, 3), 0)
+                            skin = cv2.bitwise_and(hand_img, hand_img, mask = skinMask)
+
+                            skin_img = np.hstack([hand_img, skin]) # 손만 detect 한 cropped img 에서 살색만 누끼
 
                             hand_label = ""
-                            if cropped_img.shape[0]*cropped_img.shape[1]: # hand detect 만 cropped 된 img 가 크기가 0이 아니면
+                            if skin_img.shape[0]*skin_img.shape[1]: # 살색만 누끼 뜬 skin_img 의 크기가 0이 아니면 (가로 * 세로 값이 0이 아니면!)
                                 
-                                print("(cropped img 성공)")
+                                print("(skin_img 누끼따기 성공)")
 
-                                hand_results = tfnet_detect.return_predict(cropped_img)
+                                hand_results = tfnet_detect.return_predict(skin_img)
                                 if hand_results: # 수화 예측값이 나온다면
 
                                     hand_label = hand_results[0]["label"]
