@@ -18,3 +18,10 @@
    
      ​        (american sign language data에서 200개는 training data로, 100개는 test data로 사용)
 
+
+
+* a-z test 결과
+
+  : 총 2600개 data 중 1312개만 잘 detect함..!![img_readme/"test result"](C:\Users\user\Desktop\Handlang\ML\img_readme\test result.png)
+
+​       : 아무런 전처리를 하지 않은 상태에서 50%정도의 정확도가 나옴

@@ -1,0 +1,6 @@
+tensorflow==1.15.2
+cython
+opencv-python
+numpy
+scipy
+Flask
