@@ -18,7 +18,11 @@ crossorigin="anonymous"></script>
         method: 'GET'
       }).done(function(r){
         // console.log(r);
-        $('#label').val(r)
+        $('#label').text(r)
+        console.log("ajax-success")
+        console.log(r)
+      }).fail(function(){
+        console.log("ajax fail")
       });
 
 }
@@ -51,6 +55,7 @@ crossorigin="anonymous"></script>
   <img id="bg" src="{{ url_for('video_feed') }}" alt="webcam">
 
   <button type="button" onclick="regist();"> button </button>
+  <div>result:</div>
   <div id="label"></div>
 
 

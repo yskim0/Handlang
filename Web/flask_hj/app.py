@@ -12,6 +12,7 @@ options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": 0.1
 tfnet = TFNet(options)
 
 label1=""
+final_result=""
 
 def gen(camera):
     if not camera.isOpened():
@@ -40,8 +41,8 @@ def gen(camera):
                         print(label)
                         output+=label
                         cv2.rectangle(img,tl,br,(0,255,0),3)
-                        cv2.putText(img,label,br,cv2.FONT_HERSHEY_COMPLEX, 2,(0,0,0),1)
-                    cv2.putText(img,output,(20,35), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(255,255,255),1)
+                        cv2.putText(img,label,br,cv2.FONT_HERSHEY_COMPLEX, 0.5,(0,0,0),1)
+                    # cv2.putText(img,output,(20,35), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(255,255,255),1)
                     ret, jpeg = cv2.imencode('.jpg', img)
                     frame = jpeg.tobytes()
 
@@ -61,7 +62,9 @@ def gen(camera):
 @app.route('/getlabel')
 def getLabel():
     global label1
-    return label1
+    global final_result
+    final_result+=label1
+    return final_result
 
 
 
