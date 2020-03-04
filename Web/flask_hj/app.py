@@ -1,43 +1,3 @@
-# from flask import Flask,url_for, render_template, Response
-# from test import gen
-#
-# app=Flask(__name__)
-#
-# options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": 0.1}
-#
-# tfnet = TFNet(options)
-#
-#
-# @app.route('/video_feed')
-# def video_feed():
-#
-#     camera = cv2.VideoCapture(0)
-#     return Response(gen(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
-#
-# @app.route('/')
-# def webcam():
-#     return render_template('webcam.html')
-
-##test code
-# from flask import Flask,url_for, render_template, Response
-# from darkflow.net.build import TFNet
-# import cv2
-# import tensorflow as tf
-#
-# app=Flask(__name__)
-#
-# options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": 0.1}
-#
-# tfnet = TFNet(options)
-#
-# @app.route('/')
-# def test():
-#     tfnet = TFNet(options)
-#     imgcv = cv2.imread("./sample_img/sample_dog.jpg")
-#     result = tfnet.return_predict(imgcv)
-#     return print(result)
-
-
 #real code
 from flask import Flask,url_for, render_template, Response
 from darkflow.net.build import TFNet
@@ -50,6 +10,8 @@ app=Flask(__name__)
 options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": 0.1}
 
 tfnet = TFNet(options)
+
+label1=""
 
 def gen(camera):
     if not camera.isOpened():
@@ -73,6 +35,8 @@ def gen(camera):
                         tl= (result['topleft']['x'],result['topleft']['y'])
                         br =(result['bottomright']['x'],result['bottomright']['y'])
                         label = result['label']
+                        global label1
+                        label1=label
                         print(label)
                         output+=label
                         cv2.rectangle(img,tl,br,(0,255,0),3)
@@ -93,6 +57,14 @@ def gen(camera):
 # def detection(vid):
 
 
+#for ajax
+@app.route('/getlabel')
+def getLabel():
+    global label1
+    return label1
+
+
+
 
 @app.route('/video_feed')
 def video_feed():
@@ -102,3 +74,6 @@ def video_feed():
 @app.route('/')
 def webcam():
     return render_template('webcam.html')
+
+if __name__=="__main__":
+    app.run(host='127.0.0.1', port=5000,debug=True)
