@@ -20,18 +20,23 @@ crossorigin="anonymous"></script>
         // console.log(r);
         $('#label').text(r)
         console.log("ajax-success")
-        console.log(r)
       }).fail(function(){
         console.log("ajax fail")
       });
 
 }
-
+// 엔터키 눌렀을 때 ajax 호출
+function runScript(e) {
+  if (e.keyCode == 13) {
+    regist();
+    return false;
+  }
+}
 </script>
 
 
 </head>
-<body>
+<body onkeypress="return runScript(event)">
   <!-- <div class="mt-5">
 
     <div class="container"><h1>Handlang -ASL</h1></div>
@@ -54,7 +59,7 @@ crossorigin="anonymous"></script>
   </div> -->
   <img id="bg" src="{{ url_for('video_feed') }}" alt="webcam">
 
-  <button type="button" onclick="regist();"> button </button>
+  <button type="button" id="button" onclick="regist();"> button </button>
   <div>result:</div>
   <div id="label"></div>
 
