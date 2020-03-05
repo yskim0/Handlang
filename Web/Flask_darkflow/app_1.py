@@ -24,8 +24,7 @@ tfnet_hand = TFNet(options_hand)
 # 수화번역 model
 options_signLanguage = {"model": "./cfg/handlang-small.cfg",
                        "pbLoad": "./darkflow/built_graph/handlang-small.pb",
-                       "metaLoad": "./darkflow/built_graph/handlang-small.meta" , "threshold": 0.15}
-                       
+                       "metaLoad": './darkflow/built_graph/handlang-small.meta' , "threshold": 0.15}
 tfnet_detect = TFNet(options_signLanguage)
 
 def gen(camera):
@@ -49,10 +48,8 @@ def gen(camera):
                                         (result["topleft"]["x"]-20, result["topleft"]["y"]-80),
                                         (result["bottomright"]["x"]+20, result["bottomright"]["y"]+60),
                                         (255, 0, 0), 4)
-                                        
-                                        # 손바닥 크기 정도만 디텍트 되어서 일단은 임시방편으로 rectangle 시킬 범위 조정
 
-                            text_x, text_y = result["topleft"]["x"], result["topleft"]["y"] # detect 결과 쓸 위치
+                            text_x, text_y = result["topleft"]["x"], result["topleft"]["y"] # 결과 쓸 위치
 
                             # opencv로 손 누끼 따기
                             lower = np.array([0, 48, 80], dtype = "uint8")
