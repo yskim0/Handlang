@@ -23,9 +23,9 @@
 
 9. cd Flask_darkflow (기본폴더)
 
-10. server.py 실행
-    `python3 server.py`
+10. app.py 실행
+    `python3 app_1.py`
 
 11.  0.0.0.0:5000 
 
-2020.02.28 (수정)
+2020.03.05 (수정)
