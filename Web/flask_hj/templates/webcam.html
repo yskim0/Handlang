@@ -11,34 +11,10 @@ crossorigin="anonymous"></script>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
-  <script>
-
-  //ajax로 결과 가져오기
-  function regist(){
-      $.ajax({
-        url: '/getlabel',
-        method: 'GET'
-      }).done(function(r){
-        // console.log(r);
-        $('#label').text(r)
-        console.log("ajax-success")
-      }).fail(function(){
-        console.log("ajax fail")
-      });
-
-}
-// 키보드 엔터키 눌렀을 때 ajax 호출
-function runScript(e) {
-  if (e.keyCode == 13) {
-    regist();
-    return false;
-  }
-}
-</script>
-
-
+  <script type="text/javascript" src="{{url_for('static', filename='js/main.js')}}">  </script>
 </head>
-<body onkeypress="return runScript(event)">
+
+<body onkeypress="return keyPress(event)" onkeydown="return keyDown(event)">
   <!-- <div class="mt-5">
 
     <div class="container"><h1>Handlang -ASL</h1></div>
@@ -62,7 +38,9 @@ function runScript(e) {
   <img id="bg" src="{{ url_for('video_feed') }}" alt="webcam">
 
 <!-- 버튼 눌렀을 때 ajax 호출 -->
-  <button type="button" id="button" onclick="regist();"> button </button>
+  <button type="button" id="add" onclick="regist();"> add </button>
+  <button type="button" id="erase" onclick="erase();">erase</button>
+
   <div>result:</div>
   <div id="label"></div>
 

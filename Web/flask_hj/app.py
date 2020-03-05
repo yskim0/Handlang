@@ -54,7 +54,7 @@ def gen(camera):
                 print("Status of camera.read()\n",success, img,"\n=======================")
 
 
-#for ajax 
+#for ajax
 @app.route('/getlabel')
 def getLabel():
     global label1
@@ -63,6 +63,11 @@ def getLabel():
     return final_result
 
 
+@app.route('/eraselabel')
+def eraseLabel():
+    global final_result
+    final_result=final_result[:-1]
+    return final_result
 
 #video streaming
 @app.route('/video_feed')
