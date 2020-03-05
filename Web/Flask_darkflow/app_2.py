@@ -1,8 +1,8 @@
+# ajax 코드
 from flask import Flask,url_for, render_template, Response
 from darkflow.net.build import TFNet
 import cv2
 import tensorflow as tf
-import json
 
 app=Flask(__name__)
 
