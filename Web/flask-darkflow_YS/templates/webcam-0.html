@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>핸들랭(Handlang) 3월 첫째 주 🗓</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+    <!--    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">-->
+    <!--    나눔 스퀘어-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+    <style>
+      body {
+        font-family: 'NanumSquare', sans-serif !important;;
+      }
+    </style>
+
+    <style>
+        /* Split the screen in half */
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        /* Control the left side */
+        .left {
+            left: 0;
+            background-color: white;
+        }
+
+        /* Control the right side */
+        .right {
+            right: 0;
+            background-color: lightgray;
+        }
+
+        /* If you want the content centered horizontally and vertically */
+        .centered {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 10%;
+            text-align: center;
+
+        }
+
+        /* Style the image inside the centered container, if needed */
+        .centered img {
+            width: 100%;
+            border-radius: 3%;
+        }
+
+
+    </style>
+
+</head>
+
+<body onkeypress="return keyPress(event)">
+
+
+<div class="split left">
+    <div class="centered">
+        <h1>🖥 Video Streaming 🖥</h1>
+        <h2></h2>
+        <img style="margin-top: 10%" id="video" src="{{ url_for('video_feed') }}">
+    </div>
+</div>
+
+<div class="split right">
+    <div class="centered">
+        <div id="predict">
+            <h1>🤔 현재 predict label 🤔</h1>
+            <h2>예측을 시작하려면 Enter키↩️ 를 눌러주세요.</h2>
+            <div id="predict-in"
+                 style="margin-top: 50px; width: 100%; height: 200px; position: relative;  line-height: 1.4em; border:1px dashed steelblue; padding:100px 10px 10px 0px; font-size:500%;">
+                Not Started.
+                <br>
+            </div>
+        </div>
+
+        <!--        스택 : 필요성 의문 -->
+        <!--        <div id="final">-->
+        <!--            <h2>최종</h2>-->
+        <!--            <div id="final-in"-->
+        <!--                 style="width: 400px; position: relative;  line-height: 1.4em; border:1px dashed darkgreen; padding:10px;">-->
+        <!--                안녕하세요. 최종 칸입니다.-->
+        <!--                // {{'저장된 것들'}}-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+    </div>
+</div>
+
+</body>
+</html>
