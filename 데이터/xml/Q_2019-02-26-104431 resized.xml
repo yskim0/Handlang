@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>resized</folder>
+	<filename>Q_2019-02-26-104431 resized.jpg</filename>
+	<path>/Users/yeonsookim/Desktop/code/testCaptures/resized/Q_2019-02-26-104431 resized.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>416</width>
+		<height>416</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>q</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>44</ymin>
+			<xmax>230</xmax>
+			<ymax>339</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>resized</folder>
+	<filename>O_2019-02-26-103955 resized.jpg</filename>
+	<path>/Users/yeonsookim/Desktop/code/testCaptures/resized/O_2019-02-26-103955 resized.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>416</width>
+		<height>416</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>o</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>136</xmin>
+			<ymin>130</ymin>
+			<xmax>261</xmax>
+			<ymax>343</ymax>
+		</bndbox>
+	</object>
+</annotation>
