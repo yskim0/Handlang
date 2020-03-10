@@ -1,8 +1,8 @@
-# ajax 코드
 from flask import Flask,url_for, render_template, Response
 from darkflow.net.build import TFNet
 import cv2
 import tensorflow as tf
+import json
 
 app=Flask(__name__)
 
@@ -88,9 +88,14 @@ def video_feed():
     camera = cv2.VideoCapture(0)
     return Response(gen(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+
+@app.route('/practice')
+def practice():
+    return render_template('practice.html')
+    
 @app.route('/')
-def webcam():
-    return render_template('webcam_2.html')
+def index():
+    return render_template('index.html')
 
 if __name__=="__main__":
     app.run(host='0.0.0.0', port=5000,debug=True)
