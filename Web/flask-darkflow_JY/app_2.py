@@ -89,6 +89,10 @@ def video_feed():
     return Response(gen(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
+@app.route('/asl_practice')
+def asl_practice():
+    return render_template('asl_practice.html')
+
 @app.route('/practice')
 def practice():
     return render_template('practice.html')
