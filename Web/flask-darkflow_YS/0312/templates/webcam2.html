@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>핸들랭(Handlang) 3월 첫째 주 🗓</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+
+            fetch('predict').then(function (response) {
+                response.text().then(function (text) {
+                    document.querySelector('article').innerHTML = text;
+                })
+            })
+        });
+    </script>
+
+    <style>
+        /* Split the screen in half */
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        /* Control the left side */
+        .left {
+            left: 0;
+            background-color: white;
+        }
+
+        /* Control the right side */
+        .right {
+            right: 0;
+            background-color: lightgray;
+        }
+
+        /* If you want the content centered horizontally and vertically */
+        .centered {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            right: 10%;
+            text-align: center;
+        }
+
+        /* Style the image inside the centered container, if needed */
+        .centered img {
+            width: 100%;
+            border-radius: 3%;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+<script>
+    //function
+
+
+</script>
+
+<div class="split left">
+    <div class="centered">
+        <h1>🖥 Video Streaming 🖥</h1>
+        <img id="video" src="{{ url_for('video_feed') }}">
+        <p>Some text.</p>
+    </div>
+</div>
+
+<div id="header"></div>
+<div class="split right">
+    <div class="centered">
+        <h2> 현재 predict label </h2>
+        <article></article>
+    </div>
+</div>
+
+<!--
+<h2> 현재 predict label </h2>
+<input type="text" id="gray" name="" size="40" value="배경색 회색으로 설정" style="background-color: #e2e2e2;">
+<div id="predict"
+     style="width: 400px; position: relative;  line-height: 1.4em; border:1px dashed royalblue; padding:10px;">
+    안녕하세요. 현재 Predict label 칸입니다. <br>
+</div>
+
+<h2>최종</h2>
+
+<div id="final"
+     style="width: 400px; position: relative;  line-height: 1.4em; border:1px dashed darkgreen; padding:10px;">
+    안녕하세요. 최종 칸입니다.
+    // {{'저장된 것들'}}
+</div>
+-->
+
+</body>
+</html>

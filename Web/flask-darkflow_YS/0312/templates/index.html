@@ -1,0 +1,121 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width">
+    <!--    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <title>핸들랭(Handlang) 수화 교육 프로젝트 🍩</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+
+    <style>
+        body {
+            font-family: 'NanumSquare', sans-serif !important;;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <style type="text/css">
+        /* 점보 트론은 홈페이지에 하나만 있으면 되니까 직접 씀 */
+        .jumbotron {
+            background-image: url("/static/images/sea.jpg");
+            background-size: cover;
+            text-shadow: black 0.1em 0.1em 0.1em;
+            color: white;
+            margin-top: 5%;
+        }
+    </style>
+
+    <!-- 네비게이션바 -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">핸들랭(Handlang)👋</a>
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
+<!--                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav mr-auto">-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="#">Link</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+<!--                       aria-haspopup="true" aria-expanded="false">-->
+<!--                        Dropdown-->
+<!--                    </a>-->
+<!--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                        <a class="dropdown-item" href="#">Action</a>-->
+<!--                        <a class="dropdown-item" href="#">Another action</a>-->
+<!--                        <div class="dropdown-divider"></div>-->
+<!--                        <a class="dropdown-item" href="#">Something else here</a>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link disabled" href="#">Disabled</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+    </nav>
+
+    <!--    점보트론-->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">프로젝트 및 팀 소개</h1>
+            <p class="text-center">안녕하세요. DSC 이화 핸들랭 팀입니다.</p>
+            <p class="text-center"><a class="btn btn-default btn-lg" href="#" role="button">프로젝트 목적 및 어쩌구 링크</a></p>
+        </div>
+    </div>
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+<!--          <div class="btn">-->
+            <a class="btn btn-primary btn-block p-6" href="/charstudy">지문자 연습</a>
+<!--          </div>-->
+        </div>
+        <div class="col-md-4">
+<!--          <div class="btn">-->
+            <a class="btn btn-primary btn-block p-6" href="/quiz">지문자 퀴즈</a>
+<!--          </div>-->
+        </div>
+        <div class="col-md-4">
+<!--          <div class="btn">-->
+            <a class="btn btn-primary btn-block p-6" href="/numstudy">숫자 연습</a>
+<!--          </div>-->
+        </div>
+      </div>
+    </div>
+      <hr>
+
+      <footer>
+        <p>&copy; 핸들랭(Handlang)</p>
+      </footer>
+
+
+<!--    <footer style="background-color: #343a40; color:#ffffff">-->
+<!--      <div class="container">-->
+<!--        <br>-->
+<!--        <div class="row">-->
+<!--          <div class="col-sm-12" style="text-align: center;">-->
+<!--            <h5>Copyright &copy; 2020</h5>-->
+<!--            <h5>핸들랭(Handlang)</h5>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </footer>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
