@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>핸들랭(Handlang) 3월 첫째 주 🗓</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+</head>
+
+<body>
+<script>
+    //function
+    
+
+</script>
+<h1>🖥 Video Streaming 🖥</h1>
+
+<div class="video">
+    <img width="50%" height="70%" id="video" src="{{ url_for('video_feed') }}">
+</div>
+
+<h2> 현재 predict label </h2>
+<input type="text" id="gray" name="" size="40" value="배경색 회색으로 설정" style="background-color: #e2e2e2;">
+<div id="predict"
+     style="width: 400px; position: relative;  line-height: 1.4em; border:1px dashed royalblue; padding:10px;">
+    안녕하세요. 현재 Predict label 칸입니다. <br>
+</div>
+
+<h2>최종</h2>
+
+<div id="final"
+     style="width: 400px; position: relative;  line-height: 1.4em; border:1px dashed darkgreen; padding:10px;">
+    안녕하세요. 최종 칸입니다.
+    // {{'저장된 것들'}}
+</div>
+
+
+</body>
+</html>

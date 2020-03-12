@@ -1,0 +1,88 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width">
+    <!--    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <title>핸들랭(Handlang) 수화 교육 프로젝트 🍩</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+
+    <style>
+        body {
+            font-family: 'NanumSquare', sans-serif !important;;
+        }
+    </style>
+</head>
+
+<body onkeypress="return keyPress(event)">
+    <!-- 네비게이션바 -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">핸들랭(Handlang)👋</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/charstudy">지문자 연습</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">지문자 퀴즈</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/numstudy">숫자 연습</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--    grid-->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-6">
+          <img style="margin-top: 10%" src="/static/images/A_2019-02-26-100450%20resized.jpg">
+        </div>
+        <div class="col-sm-6">
+            <img style="margin-top: 10%" id="video" src="{{ url_for('video_feed') }}" width="100%">
+            <div id="predict" style="text-align: center;">
+            <br>🤔 현재 predict label 🤔<br>
+            예측을 시작하려면 Enter키↩️ 를 눌러주세요.
+            <div id="predict-in"
+                 style="margin-top: 10px; line-height: 1.4em; border:1px dashed steelblue; font-size: 500%; text-align: center;">
+                Not Started.
+                <br>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+<!--            a-z 라벨 링크-->
+        </div>
+        </div>
+        <div class="col-sm-6">
+<!--          ok 싸인 10개-->
+        </div>
+      </div>
+
+    </div>
+<!--다음 알파벳으-->로
+      <hr>
+
+      <footer>
+        <p>&copy; 핸들랭(Handlang)</p>
+      </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
