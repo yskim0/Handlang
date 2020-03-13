@@ -1,7 +1,35 @@
 {% extends "layout.html" %}
 {% block content %}
+<div class="practice-page row justify-content-center">
+    <div class="right col">
+        <div class="question">
+            <div id="question-id">
+                <!-- 연습 할 알파벳이 들어갈 위치 -->
+            </div>
+            <div id="question-img">
+                <!-- 연습 할 이미지가 들어갈 위치 -->
+                <img src="{{ url_for('static', filename='image/A.PNG') }}">
+
+            </div>
+
+            <div id="question-list">
+                <button type="button" class="btn btn-info" id="A" onclick="question();">A</button>
+                <button type="button" class="btn btn-info" id="B" onclick="question();">B</button>
+                <button type="button" class="btn btn-info" id="C">C</button>
+                <button type="button" class="btn btn-info" id="D">D</button>
 
 
-<!-- <img id="bg" src="{{ url_for('video_feed') }}" alt="webcam"> -->
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="left col">
+<img id="bg" src="{{ url_for('video_feed') }}" alt="webcam">
+
+    </div>
+</div>
+
 
 {% endblock %}

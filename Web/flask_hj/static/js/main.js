@@ -1,20 +1,6 @@
-function regist(){
-    $.ajax({
-      url: '/getlabel',
-      method: 'GET'
-    }).done(function(r){
-      // console.log(r);
-      $('#label').text(r)
-      console.log("ajax-success")
-    }).fail(function(){
-      console.log("ajax fail")
-    });
-
-}
-
-function erase(){
+function question(){
   $.ajax({
-    url: '/eraselabel',
+    url: '/question',
     method: 'GET'
   }).done(function(r){
     // console.log(r);
@@ -26,20 +12,7 @@ function erase(){
 
 }
 
-
-// 키보드 엔터키 눌렀을 때 새로운 label 호출
-function keyPress(e) {
-if (e.keyCode == 13) {
-  regist();
-  return false;
-}
-}
-
-//backspace : result 한글자 지움
-function keyDown(e) {
-if(e.keyCode == 8){
-  erase();
-  return false;
-}
-
-}
+// 순서 1. button을 누른다.
+// 2. button 의 아이디(알파벳)가 ajax를 통해 서버로 보내지고 이걸 저장한다.
+// 3. html의 question이 해당 알파벳으로 바꾼다. & 이미지도 해당 알파벳으로 바뀐다.
+// 4. 맞음/틀림을 판단할때 해당 알파벳으로 판단한다.
