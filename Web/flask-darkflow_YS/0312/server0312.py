@@ -6,11 +6,11 @@ import tensorflow as tf
 
 app = Flask(__name__, static_url_path='/static')
 
-# options = {"model": "./cfg/handlang-small.cfg",
-#            "metaLoad": "./darkflow/built_graph/handlang-small.meta",
-#            "pbLoad": './darkflow/built_graph/handlang-small.pb', "threshold": 0.4}
+options = {"model": "./cfg/handlang-small.cfg",
+           "metaLoad": "./darkflow/built_graph/handlang-small.meta",
+           "pbLoad": './darkflow/built_graph/handlang-small.pb', "threshold": 0.4}
 
-options = {"model": "./cfg/yolo.cfg", "load": "./bin/yolov2.weights", "threshold": 0.4}
+# options = {"model": "./cfg/yolo.cfg", "load": "./bin/yolov2.weights", "threshold": 0.4}
 
 tfnet = TFNet(options)
 
@@ -82,6 +82,10 @@ def quiz():
 def numstudy():
     return render_template('numstudy.html')
 
+
+@app.route('/selectChar')
+def selectChar():
+    return render_template('selectChar.html')
 
 @app.route('/return_label')
 def return_label():
