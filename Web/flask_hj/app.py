@@ -77,7 +77,9 @@ def video_feed():
 
 @app.route('/practice')
 def webcam():
-    return render_template('webcam.html')
+    return render_template('practice.html')
+
+
 
 @app.route('/')
 def home():
