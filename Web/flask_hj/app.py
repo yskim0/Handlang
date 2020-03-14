@@ -1,8 +1,9 @@
 #real code
-from flask import Flask,url_for, render_template, Response
+from flask import Flask,url_for, render_template, Response, request
 from darkflow.net.build import TFNet
 import cv2
 import tensorflow as tf
+
 
 
 app=Flask(__name__)
@@ -16,6 +17,12 @@ label1=""
 
 #최종 출력 결과 저장
 final_result=""
+
+#<지문자 연습> 문제 리스트
+question_list={"A","B","C","D"}
+
+#<지문자 연습> 현재 연습 중인 문제
+question="A"
 
 def gen(camera):
     if not camera.isOpened():
@@ -55,19 +62,27 @@ def gen(camera):
 
 
 #for ajax
+@app.route('/question', methods=['GET', 'POST'])
+def question():
+    global question
+    print(request.data)
+    return request.data
+
+
+
 @app.route('/getlabel')
 def getLabel():
     global label1
     global final_result
     final_result+=label1
-    return final_result
+    # return final_result
+    return label1
 
-
-@app.route('/eraselabel')
-def eraseLabel():
-    global final_result
-    final_result=final_result[:-1]
-    return final_result
+# @app.route('/eraselabel')
+# def eraseLabel():
+#     global final_result
+#     final_result=final_result[:-1]
+#     return final_result
 
 #video streaming
 @app.route('/video_feed')
