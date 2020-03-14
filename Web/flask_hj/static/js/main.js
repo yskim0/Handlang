@@ -31,8 +31,8 @@ function regist(){
 
 function keyPress(e) {
     if (e.keyCode == 13) {
-        regist();
-        setInterval( regist() , 3000);
+        // regist();
+        setInterval(regist , 1000);
         return false;
     }
 }
