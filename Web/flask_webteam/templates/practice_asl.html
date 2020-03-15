@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="row align-items-center">
+	{% for alphabet in alphabet_list %}
+	<div class="card m-2 text-center" style="width: 15rem;">
+	  <img src="../static/img/asl_{{ alphabet }}.png" class="card-img-top" alt="...">
+	  <div class="card-body">
+	    <h3 class="card-title">{{ alphabet.upper() }}</h3>
+	    <a href="{{ url_for('practice', element=alphabet) }}" class="btn btn-primary text-center">연습하러 가기</a>
+	  </div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
