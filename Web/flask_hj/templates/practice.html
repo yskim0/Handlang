@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="practice-page row justify-content-center" >
+    <div class="right col">
+        <div class="question">
+            <div id="question-id">
+                <!-- 연습 할 알파벳이 들어갈 위치 -->
+            </div>
+            <div id="question-img">
+                <!-- 연습 할 이미지가 들어갈 위치 -->
+                <img src="{{ url_for('static', filename='image/A.PNG') }}">
+
+            </div>
+
+            <div class=" mt-70">
+                <div class="row question-list justify-content-center">
+                    <button type="button" class="alphabet btn btn-info" id="A" >A</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="B" onclick="question();">B</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="C" onclick="question();">C</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="D" onclick="question();">D</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="E" onclick="question();">E</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="F" onclick="question();">F</button>
+                </div>
+                <div class="row question-list justify-content-center mt-10">
+                    <button type="button" class="alphabet btn btn-info ml-10"  id="G" >G</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="H" onclick="question();">H</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="I" onclick="question();">I</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="J" onclick="question();">J</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="K" onclick="question();">K</button>
+                    <button type="button" class="alphabet btn btn-info ml-10" id="L" onclick="question();">L</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="left col">
+        <div class="practice-result mt-10">
+            <img id="bg" src="{{ url_for('video_feed') }}" alt="webcam">
+
+            <div class="predict-label border mt-10" id="label"></div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
