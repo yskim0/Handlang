@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <title>핸들랭(Handlang) 수화 교육 프로젝트 🍩</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+    <style>
+        body {
+            font-family: 'NanumSquare', sans-serif !important;;
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <style type="text/css">
+        /* 점보 트론은 홈페이지에 하나만 있으면 되니까 직접 씀 */
+        .jumbotron {
+            /*background-image: url("/static/images/sea.jpg");*/
+            background-size: cover;
+            text-shadow: black 0.1em 0.1em 0.1em;
+            color: white;
+            margin-top: 5%;
+        }
+    </style>
+
+    <!-- 네비게이션바 -->
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ url_for('index') }}">핸들랭(Handlang)👋</a>
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active text-light" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{{url_for('practice_asl')}}">지문자연습</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light disabled" href="#">숫자연습</a> <!-- 일단 작동안하게 -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">퀴즈</a>
+            </li>
+        </ul>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+    
+    <footer>
+        <p style="text-align: center;">&copy; 핸들랭(Handlang)</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

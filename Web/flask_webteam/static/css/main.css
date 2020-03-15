@@ -1,0 +1,21 @@
+  body  {
+    font-size: 20px;
+  }
+
+  button {
+    background: #2ecc71;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    font-size: 1.0em;
+    font-weight: bold;
+    margin: 1em auto;
+    padding: 0.5em 1.2em;
+  }
+
+  button::before,
+  button::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
