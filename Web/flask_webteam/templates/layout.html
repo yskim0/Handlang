@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 
+    <!-- GET http://0.0.0.0:5000/favicon.ico 404 (NOT FOUND) 에러 해결 코드 -->
+    <link rel="shortcut icon" href="#">
+
     <style>
         body {
             font-family: 'NanumSquare', sans-serif !important;;
@@ -24,11 +27,12 @@
     <style type="text/css">
         /* 점보 트론은 홈페이지에 하나만 있으면 되니까 직접 씀 */
         .jumbotron {
-            /*background-image: url("/static/images/sea.jpg");*/
+            background-image: url("/static/img/jumbtron-bg.jpg");
             background-size: cover;
             text-shadow: black 0.1em 0.1em 0.1em;
             color: white;
             margin-top: 5%;
+            margin-bottom: 5%;
         }
     </style>
 
@@ -56,12 +60,12 @@
     {% block content %}
 
     {% endblock %}
-    
+
     <footer>
         <p style="text-align: center;">&copy; 핸들랭(Handlang)</p>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../static/js/jquery-3.4.1.js"></script>
     <script src="../static/js/main.js"></script>
 </body>
 </html>
