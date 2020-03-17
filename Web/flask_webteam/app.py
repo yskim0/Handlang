@@ -20,7 +20,7 @@ def get_alphabet_list():
     return alphabet_list
 
 
-def alphabet_list_idx():
+def alphabet_list_idx(element):
     next_topic = ""
     previous_topic = ""
 
@@ -139,7 +139,7 @@ def practice():
     alphabet = element.upper()
     img = "../static/img/asl_"+element+".png"
 
-    next_topic, previous_topic = alphabet_list_idx()
+    next_topic, previous_topic = alphabet_list_idx(element)
 
     return render_template('practice.html', img=img, alphabet=alphabet, previous_topic = previous_topic, next_topic=next_topic)
     
