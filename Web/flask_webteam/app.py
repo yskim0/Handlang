@@ -143,8 +143,8 @@ def practice():
 
     return render_template('practice.html', img=img, alphabet=alphabet, previous_topic=previous_topic,
                            next_topic=next_topic)
-
-
+  
+  
 @app.route('/')
 def index():
     return render_template('index.html')
