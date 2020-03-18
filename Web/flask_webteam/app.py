@@ -14,13 +14,13 @@ tfnet = TFNet(options)
 predict_label = ''
 
 
-def get_alphabet_list():
+def get_alphabet_list(element):
     alphabet_list = ['person', 'teddybear', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     
     return alphabet_list
 
 
-def alphabet_list_idx():
+def alphabet_list_idx(element):
     next_topic = ""
     previous_topic = ""
 
@@ -138,11 +138,10 @@ def practice():
     element = request.args.get('element')
     alphabet = element.upper()
     img = "../static/img/asl_"+element+".png"
-    return element
 
-    # next_topic, previous_topic = alphabet_list_idx()
+    next_topic, previous_topic = alphabet_list_idx(element)
 
-    # return render_template('practice.html', img=img, alphabet=alphabet, previous_topic = previous_topic, next_topic=next_topic)
+    return render_template('practice.html', img=img, alphabet=alphabet, previous_topic = previous_topic, next_topic=next_topic)
     
 
 @app.route('/')

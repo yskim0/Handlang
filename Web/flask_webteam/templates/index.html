@@ -16,13 +16,20 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-            <a class="btn btn-primary btn-block p-6" href="{{url_for('practice_asl')}}">지문자 연습</a>
+            <a class="btn btn-primary btn-block p-6" href="{{url_for('practice_asl')}}" style="background-color: #2E4359; border-color: #2E4359" >
+                <br><img src="/static/img/icon-1.png" width="100px" height="100px">
+                <br><br>지문자 연습</a>
         </div>
         <div class="col-md-4">
-            <a class="btn btn-primary btn-block p-6" disabled href="#">숫자 연습</a>
+            <a class="btn btn-primary btn-block p-6" disabled href="#" style="background-color: #003127; border-color: #003127" >
+                <br><img src="/static/img/icon-num.png" width="100px" height="100px">
+                <br><br>숫자 연습
+            </a>
         </div>
         <div class="col-md-4">
-            <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz')}}">지문자 퀴즈</a>
+            <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz')}}" style="background-color: #003127; border-color: #003127" >
+                <br><img src="/static/img/icon-3.png" width="100px" height="100px">
+                <br><br>지문자 퀴즈</a>
         </div>
       </div>
     </div>
