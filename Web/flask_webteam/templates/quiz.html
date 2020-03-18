@@ -1,33 +1,38 @@
-
-
 {% extends "layout.html" %}
 {% block content %}
 
 
-<div id="quiz_post" >
+<div id="quiz_post" style="height: 85vh;" >
 
-    <div class="container">
+    <div class="container" style="height: 100%">
         <form id="quizform" action="/quiz" method="post">
             {% for idx, key in enumerate(question_list) %}
             {% if idx==0 %}
             <div id={{idx}}>
 
             {% else %}
-            <div id={{idx}} style="display:none;">
+            <div id={{idx}} style="display:none;" >
              
             {% endif %}
-            <div class="progress mt-50 mb-30">
-                {% set percentage=100//total_q*(idx+1) %}
-                <div class="progress-bar" role="progressbar" style="width: {{percentage}}%" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-11">
+                    <div class="progress ">
+                        {% set percentage=100//total_q*(idx+1) %}
+                        <div class="progress-bar" role="progressbar" style="width: {{percentage}}%" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="col-1">{{idx+1}}/{{total_q}}
+                </div>
+            </div>
+
                 <div class="quiz " id="{{key}}">What is the correct sign for "{{key}}"?</div>
                 <input type="hidden"  name="{{'question'+str(idx)}}" value="{{key}}">
 
-                <div class="mt-50">
+                <div class="d-flex justify-content-between ">
                     {% for j in range(4) %}
                     <label>
                         <input type="radio" name="{{'answer'+str(idx)}}" value='{{question_list[key][j]}}'>
-                        <img class="eximg" src="{{img_list[idx][j]}}">
+                        <img class="eximg" src="{{img_list[idx][j]}}" alt="{{question_list[key][j]}}">
                       </label>
     
                     {% endfor %}
@@ -41,13 +46,28 @@
             </div>
 
             {% endfor %}
-             <button class="btn btn-primary" id="submit" type="submit" style="display:none;" >submit</button>
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <div>
+                        <button type="button" class="btn btn-primary" id="before" style="display:none; ">before</button> 
+
+                    </div>
+
+                </div>
+                <div class="col  d-flex justify-content-end">
+                    <div>
+                        <button class="btn btn-primary" id="submit" type="submit" style="display:none;" >submit</button>
+                        <button type="button" class="btn btn-primary " id="next"> next</button>
+                    </div>
+                </div>
+
+            </div>
+
 
         </form>
+    
 
 
-            <button class="btn btn-primary" id="before" style="display:none; ">before</button> 
-            <button class="btn btn-primary" id="next">next</button>
         </div>
   
     </div>
