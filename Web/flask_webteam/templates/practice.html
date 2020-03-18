@@ -1,84 +1,89 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<!--    grid-->
+    <!--    grid-->
     <div class="container">
 
-      <div class="row">
+        <div class="row">
 
-        <div class="col-sm-6">
-            <!--            img Label-->
-            <img style="width:90%; height:auto; margin-top: 10%; " src="{{ img }}">
-            <p id="topic" style=" width:100%; height: 10%; font-size: 400%; text-align: center;"> {{ alphabet }} </p>
-            <!--          ASL image-->
-            <br><br><br>
-        </div>
+            <div class="col-sm-6">
+                <!--            img Label-->
+                <img style="width:90%; height:auto; margin-top: 10%;" src="{{ img }}">
+                <p id="topic"
+                   style=" width:100%; height: 10%; font-size: 400%; text-align: center;"> {{ alphabet }} </p>
+                <!--          ASL image-->
+                <br><br><br>
+            </div>
 
-          <!--          webcam -->
-        <div class="col-sm-6">
-            <img style="margin-top: 10%; width:100%; height:60%" id="video" src="{{ url_for('video_feed') }}">
-            <div id="predict" style="text-align: center; ">
-                <br>🤔 현재 predict label 🤔<br>
-                예측을 시작하려면 Enter키↩️ 를 눌러주세요.
-                <div id="predict-in"
-                     style="margin-top: 10px; line-height: 1.4em; border:1px dashed steelblue; font-size: 250%; text-align: center;">
-                    Not Started.
+            <!--          webcam -->
+            <div class="col-sm-6">
+                <img style="margin-top: 10%; width:100%; height:60%" id="video" src="{{ url_for('video_feed') }}">
+                <div id="predict" style="text-align: center; ">
+                    <br>🤔 현재 predict label 🤔<br>
+                    예측을 시작하려면 Enter 키 ↩️ 를 눌러주세요.
+                    <div id="predict-in"
+                         style="margin-top: 10px; line-height: 1.4em; border:1px dashed steelblue; font-size: 200%; text-align: center;">
+                        Not Started.
+                    </div>
                 </div>
+                <p id="predict_status" class="float-md-right m-2 bg-light">
+                    ⚠️ 예측중이 아님 ⚠️
+                </p>
             </div>
         </div>
-      </div>
 
-          <!--          경계선-->
+        <!--          경계선-->
         <hr style="border: 0; height: 3px; background: #ccc;">
 
-      <div class="row">
-        <div class="col-sm-6">
-            <!--            알파벳 선택하기 버튼-->
-            <div class="btn btn-primary btn-block p-3" href="{{ url_for('practice_asl') }}"> 지문자 선택하러 가기</div>
-        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <!--            알파벳 선택하기 버튼-->
+                <a id="btn_practice_asl" class="btn btn-primary btn-block p-3" href="{{ url_for('practice_asl') }}"> 지문자 선택하러 가기</a>
+            </div>
 
-        <div class="col-sm-6">
+            <div class="col-sm-6">
 
-            <!--          ok 싸인 by 지영언니-->
+                <!--          ok 싸인 by 지영언니-->
 
-            <table class="table table-lg table-bordered table-warning text-center">
-                <thead>
+                <table class="table table-lg table-bordered table-warning text-center">
+                    <thead>
                     <tr>
-                        <td id="check_table_1">1</td>
-                        <td id="check_table_2">2</td>
-                        <td id="check_table_3">3</td>
-                        <td id="check_table_4">4</td>
+                        <td><img id="check_table_1" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        <td><img id="check_table_2" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        <td><img id="check_table_3" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        <td><img id="check_table_4" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
                     </tr>
-                </thead>
-                <thead>
+                    </thead>
+                    <thead>
                     <tr>
-                        <td id="check_table_5">5</td>
-                        <td id="check_table_6">6</td>
-                        <td id="check_table_7">7</td>
-                        <td id="check_table_8">8</td>
+                        <td><img id="check_table_5" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        <td><img id="check_table_6" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        <td><img id="check_table_7" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        <td><img id="check_table_8" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
                     </tr>
-                </thead>
-            </table>
-        
+                    </thead>
+                </table>
+
+            </div>
+
         </div>
 
-      </div>
+        <div class="row">
+            <div class="col-sm-6">
+                {% if previous_topic|length %}
+                    <a id="btn_previous" class="btn btn-success btn-block p-6"
+                       href="{{ url_for('practice', element=previous_topic) }}">이전</a>
+                {% endif %}
+            </div>
 
-      <div class="row">
-        <div class="col-sm-6">
-            {% if previous_topic|length %}
-                <a class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=previous_topic) }}">이전</a>
-            {% endif %}
+            <div class="col-sm-6">
+                <a id="btn_next" class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=next_topic) }}">다음</a>
+            </div>
+
         </div>
-
-        <div class="col-sm-6">
-            <a class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=next_topic) }}">다음</a>
-        </div>
-
-      </div>
 
     </div>
     <!--다음 알파벳으로-->
 
-      <hr>
+    <hr>
 {% endblock %}

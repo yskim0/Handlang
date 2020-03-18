@@ -1,3 +1,4 @@
+
 from flask import Flask,url_for, render_template, Response, request, jsonify, redirect
 from darkflow.net.build import TFNet
 import cv2
@@ -5,19 +6,19 @@ import tensorflow as tf
 import json
 import random
 
-app=Flask(__name__)
+app = Flask(__name__)
 
 options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": 0.4}
 
 tfnet = TFNet(options)
 
-#실시간으로 detection된 label
+# 실시간으로 detect 된 label
 predict_label = ''
 
-
 def get_alphabet_list():
-    alphabet_list = ['person', 'teddybear', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    
+    alphabet_list = ['person', 'teddybear', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+                     'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
     return alphabet_list
 
 
@@ -27,8 +28,9 @@ def alphabet_list_idx(element):
 
     alphabet_list = get_alphabet_list()
 
-    list_idx_end = len(alphabet_list) - 1 #마지막 인덱스
+    list_idx_end = len(alphabet_list) - 1  # 마지막 인덱스
     idx_now = alphabet_list.index(element)
+
     if idx_now == list_idx_end:
         next_topic = alphabet_list[0]
     else:
@@ -57,14 +59,14 @@ def gen(camera):
                     results = tfnet.return_predict(img)
 
                     for result in results:
-                        tl= (result['topleft']['x'],result['topleft']['y'])
-                        br =(result['bottomright']['x'],result['bottomright']['y'])
+                        tl = (result['topleft']['x'], result['topleft']['y'])
+                        br = (result['bottomright']['x'], result['bottomright']['y'])
                         label = result['label']
                         confidence = result['confidence']
 
-                        cv2.rectangle(img,tl,br,(0,255,0),3)
-                        cv2.putText(img,label,br,cv2.FONT_HERSHEY_COMPLEX, 1,(0,0,0),2)
-                        
+                        cv2.rectangle(img, tl, br, (0, 255, 0), 3)
+                        cv2.putText(img, label, br, cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), 2)
+
                         global predict_label
                         predict_label = label
 
@@ -74,10 +76,11 @@ def gen(camera):
                     yield (b'--frame\r\n'
                            b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
                 except:
-                  print("An exception occurred")
+                    print("An exception occurred")
 
             else:
-                print("Status of camera.read()\n",success,"\n=======================")
+                print("Status of camera.read()\n", success, "\n=======================")
+
 
 
 
@@ -131,37 +134,36 @@ def is_valid_quiz(answer):
 #for ajax
 @app.route('/return_label', methods=['POST', 'GET'])
 def return_label():
-    global predict_label, result
+    global predict_label
 
     value = request.form.get("target", False)
 
-    predict_label = " "+predict_label.upper()+" " # ajax 에서 값 받아올때 공백이 앞뒤로 붙는데 python strip() 함수가 안먹어서 일단 임시방편으로
+    predict_label = " " + predict_label.upper() + " "  # ajax 에서 값 받아올때 공백이 앞뒤로 붙는데 python strip() 함수가 안먹어서 일단 임시방편으로
 
     if predict_label == '':
-        result = {
+        predict_result = {
             'status': 0,
-            'info' : 'not detected',
-            'label' : ''
+            'info': 'not detected',
+            'label': ''
         }
     elif predict_label != value:
-        result = {
+        predict_result = {
             'status': 0,
-            'info' : '틀렸습니다😭',
-            'label' : predict_label
+            'info': '틀렸습니다😭',
+            'label': predict_label
         }
         print("틀림!")
     else:
-        result = {
+        predict_result = {
             'status': 1,
-            'info' : '맞았습니다!',
-            'label' : predict_label
+            'info': '맞았습니다!',
+            'label': predict_label
         }
 
-    # result의 status 값이 1이면 참 -> main.js 에서 correct 값 증가
+    # result 의 status 값이 1이면 참 -> main.js 에서 correct 값 증가
 
-    jsondata=json.dumps(result) # json 형태로 바꿔줘야 에러 안남
-    return jsondata
-
+    json_data = json.dumps(predict_result)  # json 형태로 바꿔줘야 에러 안남
+    return json_data
 
 
 
@@ -226,7 +228,7 @@ def practice_asl():
     return render_template('practice_asl.html', alphabet_list=alphabet_list)
 
 
-#video streaming
+# video streaming
 @app.route('/video_feed')
 def video_feed():
     camera = cv2.VideoCapture(0)
@@ -237,16 +239,18 @@ def video_feed():
 def practice():
     element = request.args.get('element')
     alphabet = element.upper()
-    img = "../static/img/asl_"+element+".png"
+    img = "../static/img/asl_" + element + ".png"
 
     next_topic, previous_topic = alphabet_list_idx(element)
 
-    return render_template('practice.html', img=img, alphabet=alphabet, previous_topic = previous_topic, next_topic=next_topic)
-    
-
+    return render_template('practice.html', img=img, alphabet=alphabet, previous_topic=previous_topic,
+                           next_topic=next_topic)
+  
+  
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 
 if __name__=="__main__":
