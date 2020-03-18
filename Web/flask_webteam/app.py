@@ -138,10 +138,11 @@ def practice():
     element = request.args.get('element')
     alphabet = element.upper()
     img = "../static/img/asl_"+element+".png"
+    return element
 
-    next_topic, previous_topic = alphabet_list_idx()
+    # next_topic, previous_topic = alphabet_list_idx()
 
-    return render_template('practice.html', img=img, alphabet=alphabet, previous_topic = previous_topic, next_topic=next_topic)
+    # return render_template('practice.html', img=img, alphabet=alphabet, previous_topic = previous_topic, next_topic=next_topic)
     
 
 @app.route('/')
@@ -150,4 +151,6 @@ def index():
 
 
 if __name__=="__main__":
+
     app.run(host='0.0.0.0', port=5000,debug=True)
+    
