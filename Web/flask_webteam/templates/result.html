@@ -1,0 +1,40 @@
+<!-- quiz result -->
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container " style="min-width: 100%; display: inline-block;text-align: center; ">
+    <div>
+        <img style="width: 500px; height: 500px" src="{{img_path}}" alt="img">
+        </div>
+        
+        <div>
+            <h2>            {{correct_num}}/{{total_q}}
+            </h2>
+        
+        </div>
+        
+        <div>
+            {% if incorrect_questions!=[] %} 
+            <!-- 틀린 문제 : {{incorrect_questions}} -->
+            틀린 문제 :
+            {% for idx in incorrect_questions %}
+            <a href="/practice?element={{idx}}">{{idx}}</a> &nbsp;
+
+
+            {% endfor %}
+
+
+
+            {% endif %}
+        </div>
+        
+        <a href="/practice_asl">연습하러 가기</a>
+        <br>
+
+        <a href="/quiz">다시 풀기</a>
+</div>
+
+
+
+{% endblock %}
