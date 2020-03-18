@@ -1,0 +1,71 @@
+
+
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div id="quiz_post" >
+
+    <div class="container">
+        <form id="quizform" action="/quiz" method="post">
+            {% for idx, key in enumerate(question_list) %}
+            {% if idx==0 %}
+            <div id={{idx}}>
+
+            {% else %}
+            <div id={{idx}} style="display:none;">
+             
+            {% endif %}
+            <div class="progress mt-50 mb-30">
+                {% set percentage=100//total_q*(idx+1) %}
+                <div class="progress-bar" role="progressbar" style="width: {{percentage}}%" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+                <div class="quiz " id="{{key}}">What is the correct sign for "{{key}}"?</div>
+                <input type="hidden"  name="{{'question'+str(idx)}}" value="{{key}}">
+
+                <div class="mt-50">
+                    {% for j in range(4) %}
+                    <label>
+                        <input type="radio" name="{{'answer'+str(idx)}}" value='{{question_list[key][j]}}'>
+                        <img class="eximg" src="{{img_list[idx][j]}}">
+                      </label>
+    
+                    {% endfor %}
+
+                </div>
+
+
+                
+                <input type="radio" class="hiddenRadioButton" name="{{'answer'+str(idx)}}" style="display:none;" value='-1' checked>
+
+            </div>
+
+            {% endfor %}
+             <button class="btn btn-primary" id="submit" type="submit" style="display:none;" >submit</button>
+
+        </form>
+
+
+            <button class="btn btn-primary" id="before" style="display:none; ">before</button> 
+            <button class="btn btn-primary" id="next">next</button>
+        </div>
+  
+    </div>
+    </div>
+    
+
+    <!-- 뒤로가기 누를 때 reload -->
+    <script>
+        window.addEventListener( "pageshow", function ( event ) {
+      var historyTraversal = event.persisted || 
+                             ( typeof window.performance != "undefined" && 
+                                  window.performance.navigation.type === 2 );
+      if ( historyTraversal ) {
+        // Handle page restore.
+        window.location.reload();
+      }
+    });
+    </script>
+    
+
+{% endblock %}
