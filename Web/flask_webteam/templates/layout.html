@@ -28,7 +28,8 @@
     <style type="text/css">
         /* 점보 트론은 홈페이지에 하나만 있으면 되니까 직접 씀 */
         .jumbotron {
-            background-image: url("/static/img/jumbtron-bg.jpg");
+            /* background-image: url("/static/img/jumbtron-bg.jpg"); */
+            background-color: #707D7C;
             background-size: cover;
             text-shadow: black 0.1em 0.1em 0.1em;
             color: white;
@@ -53,7 +54,7 @@
                 <a class="nav-link text-light disabled" href="#">숫자연습</a> <!-- 일단 작동안하게 -->
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="#">퀴즈</a>
+                <a class="nav-link text-light" href="{{url_for('quiz')}}">퀴즈</a>
             </li>
         </ul>
     </nav>
