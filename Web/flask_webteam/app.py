@@ -141,8 +141,7 @@ def practice():
 
     next_topic, previous_topic = alphabet_list_idx(element)
 
-    return render_template('practice.html', img=img, alphabet=alphabet, previous_topic=previous_topic,
-                           next_topic=next_topic)
+    return render_template('practice.html', img=img, alphabet=alphabet, previous_topic=previous_topic,next_topic=next_topic)
 
 
 @app.route('/')
