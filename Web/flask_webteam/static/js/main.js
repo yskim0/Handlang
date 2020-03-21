@@ -60,3 +60,42 @@ function check_correct()	{
 	}
 	else $("#check_table_"+total_correct).text("✅");
 }
+
+
+var total_q=10;
+var q_num=0;
+
+$(document).ready(function(){
+	q_num=0;
+	 
+	$("#next").click(function(){
+	  $("#before").show();
+  
+	  $("#"+q_num).hide();
+	  q_num+=1;
+	  if(q_num==total_q-1){
+		$('#next').hide();
+		$('#submit').show();
+	  }
+	  $("#"+q_num).show();
+	  
+	});
+  
+  
+	$("#before").click(function(){
+	  $("#submit").hide();
+	  $("#next").show();
+	  $("#"+q_num).hide();
+	  q_num=q_num-1;
+	  if(q_num==0){
+		$('#before').hide();
+	  }
+	  $("#"+q_num).show()
+	  
+  
+  
+  
+	});
+  
+  });
+  
