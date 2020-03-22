@@ -1,7 +1,7 @@
 ## Handlang-contour image+original image로 training
 
 - 투빅스의 [DeepKSL (YOLO를 이용한 한국 수화 번역)](http://www.datamarket.kr/xe/44513)에서 model을 training 시킬때 사용한 방법처럼 우리도 hand contour img를 함께 트레이닝 시켜본다면?
-- ![DeepKSL_ 최종-10.jpg](\img\투빅스.JPG)
+- ![DeepKSL_ 최종-10.jpg](img\투빅스.JPG)
 
 현재 우리의 모델
 
