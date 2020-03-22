@@ -1,11 +1,11 @@
 ## Handlang-contour image+original image로 training
 
 - 투빅스의 [DeepKSL (YOLO를 이용한 한국 수화 번역)](http://www.datamarket.kr/xe/44513)에서 model을 training 시킬때 사용한 방법처럼 우리도 hand contour img를 함께 트레이닝 시켜본다면?
-- ![DeepKSL_ 최종-10.jpg](C:\Users\user\Desktop\new_2020study\Handlang\img\투빅스.JPG)
+- ![DeepKSL_ 최종-10.jpg](\img\투빅스.JPG)
 
 현재 우리의 모델
 
-![image-20200322135139793](C:\Users\user\Desktop\new_2020study\Handlang\img\model.jpg)
+![image-20200322135139793](img\model.jpg)
 
 
 
@@ -30,9 +30,9 @@
 
 - 위 과정 중 우리의 이미지로 흑백처리만 하고 contour 추출했을 때
 
-  <img src="C:\Users\user\Desktop\new_2020study\Handlang\img\contoured img_1.png" alt="image-20200322140157039" style="zoom: 80%;" /> 
+  <img src="img\contoured img_1.png" alt="image-20200322140157039" style="zoom: 80%;" /> 
 
-​       <img src="C:\Users\user\Desktop\new_2020study\Handlang\img\contoured img_2.png" alt="image-20200322140209553" style="zoom:25%;" /> 
+​       <img src="img\contoured img_2.png" alt="image-20200322140209553" style="zoom:25%;" /> 
 
 
 
