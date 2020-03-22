@@ -1,4 +1,3 @@
-
 from flask import Flask,url_for, render_template, Response, request, jsonify, redirect
 from darkflow.net.build import TFNet
 import cv2
@@ -109,14 +108,14 @@ def make_random_quiz():
         answer= alphabet_list[random.randint(0,len(alphabet_list)-1)]
         if is_valid_quiz(answer):
             break
-    examples.append(answer) 
+    examples.append(answer)
     while(len(examples)!=4):
         randomIndex=random.randint(0,len(alphabet_list)-1)
         if(alphabet_list[randomIndex] not in examples):
             examples.append(alphabet_list[randomIndex])
 
     random.shuffle(examples)
-    img=[]            
+    img=[]
     for i in examples:
         img.append('../static/img/asl_'+i+".png")
 
@@ -185,14 +184,14 @@ def quiz():
 
 
     if request.method=='POST':
-        for i in range(total_q): 
+        for i in range(total_q):
             question="question"+str(i)
             answer="answer"+str(i)
             q=request.form[question]
             a=request.form[answer]
             user_answers[q]=a
 
-        return redirect('/quiz/result') 
+        return redirect('/quiz/result')
 
 
 
