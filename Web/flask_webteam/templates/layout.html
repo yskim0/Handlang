@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
-    <title>핸들랭(Handlang) 수화 교육 프로젝트 🍩</title>
+    <title>{{_('handlang_title')}}🍩</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 
@@ -41,30 +41,37 @@
     <!-- 네비게이션바 -->
 
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('index') }}">핸들랭(Handlang)👋</a>
-
+        <a class="navbar-brand" href="{{ url_for('index') }}">{{_('handlang_title')}}👋</a>
+      
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link active text-light" href="{{ url_for('index') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="{{url_for('practice_asl')}}">지문자연습</a>
+                <a class="nav-link text-light" href="{{url_for('practice_asl')}}">{{_('nav_aslPractice')}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light disabled" href="#">숫자연습</a> <!-- 일단 작동안하게 -->
+                <a class="nav-link text-light disabled" href="#">{{_('nav_numberPractice')}}</a> <!-- 일단 작동안하게 -->
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="{{url_for('quiz')}}">퀴즈</a>
+                <a class="nav-link text-light" href="{{url_for('quiz')}}">{{_('nav_quiz')}}</a>
             </li>
         </ul>
     </nav>
-
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="language" id="en" autocomplete="off" checked> English
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="language" id="ko" autocomplete="off"> 한국어
+        </label>
+      </div>
     {% block content %}
 
     {% endblock %}
 
     <footer>
-        <p style="text-align: center;">&copy; 핸들랭(Handlang)</p>
+        <p style="text-align: center;">&copy; {{_('handlang_title')}}</p>
     </footer>
 
     <script src="../static/js/jquery-3.4.1.js"></script>

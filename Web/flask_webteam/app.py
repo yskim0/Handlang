@@ -1,15 +1,24 @@
-from flask import Flask,url_for, render_template, Response, request, jsonify, redirect
+from flask import Flask,url_for, render_template, Response, request, jsonify, redirect,g
 from darkflow.net.build import TFNet
 import cv2
 import tensorflow as tf
 import json
 import random
-
+from flask_babel import Babel
 app = Flask(__name__)
+babel = Babel(app)
 
 options = {"model": "cfg/yolo.cfg", "load": "bin/yolo.weights", "threshold": 0.4}
 
 tfnet = TFNet(options)
+
+@app.before_request
+def before_request():
+    g.total_q=10
+    print("매 HTTP 요청이 처리되기 전에 실행된다.")
+
+
+
 
 # 실시간으로 detect 된 label
 predict_label = ''
@@ -82,31 +91,23 @@ def gen(camera):
 
 
 
-
-
-
-user_answers={}
-question_list={}
-total_q=10    #main.js에 있는 total_q도 같이 바꾸기
-img_list=[]
-
-
 def make_quiz():
-    global question_list
-    global img_list
+    question_list={}
+    img_list=[]
 
-    for i in range(total_q):
-        question , examples, img= make_random_quiz()
+    for i in range(g.total_q):
+        question , examples, img= make_random_quiz(question_list)
         question_list[question]=examples
         img_list.append(img)
+    return question_list, img_list
 
 
-def make_random_quiz():
+def make_random_quiz(question_list):
     alphabet_list=get_alphabet_list()
     examples=[]  #보기
     while(True):
         answer= alphabet_list[random.randint(0,len(alphabet_list)-1)]
-        if is_valid_quiz(answer):
+        if is_valid_quiz(answer,question_list):
             break
     examples.append(answer)
     while(len(examples)!=4):
@@ -122,12 +123,16 @@ def make_random_quiz():
     return answer, examples,img
 
 #이전에 낸 문제인지 확인
-def is_valid_quiz(answer):
-    global question_list
+def is_valid_quiz(answer,question_list):
     if answer in question_list:
         return False
     else:
         return True
+
+
+@babel.localeselector
+def get_locale():
+    return 'en'
 
 
 #for ajax
@@ -168,36 +173,36 @@ def return_label():
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
-    global question_list
-    global user_answers
-    global img_list
+  
 
     if request.method=='GET':
-        question_list={}
-        img_list=[]
+       
+        question_list, img_list=make_quiz()
 
-        user_answers={}
-        make_quiz()
-
-        return render_template('quiz.html', str=str, enumerate=enumerate, question_list=question_list, img_list=img_list, total_q=total_q)
+        return render_template('quiz.html', str=str, enumerate=enumerate, question_list=question_list, img_list=img_list, total_q=g.total_q)
      
 
 
     if request.method=='POST':
-        for i in range(total_q):
+        user_answers={}
+
+        for i in range(g.total_q):
             question="question"+str(i)
             answer="answer"+str(i)
             q=request.form[question]
             a=request.form[answer]
             user_answers[q]=a
+            print(user_answers)
+        user_answers=json.dumps(user_answers)
 
-        return redirect('/quiz/result')
+        return redirect(url_for('.quiz_result',user_answers=user_answers))
 
 
 
 #퀴즈 결과
 @app.route('/quiz/result')
 def quiz_result():
+    user_answers=json.loads(request.args['user_answers'])
     items=user_answers.items()
     correct_num=0
     incorrect_questions=[]
@@ -206,17 +211,13 @@ def quiz_result():
             correct_num+=1
         else:
             incorrect_questions.append(q)
-    if correct_num==total_q :
+    if correct_num==g.total_q :
         img_path="../static/img/score_100.png"
-    elif correct_num >= (total_q//2):
+    elif correct_num >= (g.total_q//2):
         img_path="../static/img/score_50.png"
     else :
         img_path="../static/img/score_0.png"
-
-
-
-    return render_template('result.html',correct_num=correct_num,incorrect_questions=incorrect_questions,total_q=total_q,img_path=img_path)
-
+    return render_template('result.html',correct_num=correct_num,incorrect_questions=incorrect_questions,total_q=g.total_q,img_path=img_path)
 
 
 

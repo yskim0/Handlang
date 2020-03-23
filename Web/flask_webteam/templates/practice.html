@@ -19,15 +19,15 @@
             <div class="col-sm-6">
                 <img style="margin-top: 10%; width:100%; height:60%" id="video" src="{{ url_for('video_feed') }}">
                 <div id="predict" style="text-align: center; ">
-                    <br>🤔 현재 predict label 🤔<br>
-                    예측을 시작하려면 Enter 키 ↩️ 를 눌러주세요.
+                    <br>🤔 {{_('practice_notice1')}}🤔<br>
+                    {{_('practice_notice2')}}
                     <div id="predict-in"
                          style="margin-top: 10px; line-height: 1.4em; border:1px dashed steelblue; font-size: 200%; text-align: center;">
                         Not Started.
                     </div>
                 </div>
                 <p id="predict_status" class="float-md-right m-2 bg-light">
-                    ⚠️ 예측중이 아님 ⚠️
+                    ⚠️ {{_('predict_status')}} ⚠️
                 </p>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <!--            알파벳 선택하기 버튼-->
-                <a id="btn_practice_asl" class="btn btn-primary btn-block p-3" href="{{ url_for('practice_asl') }}"> 지문자 선택하러 가기</a>
+                <a id="btn_practice_asl" class="btn btn-primary btn-block p-3" href="{{ url_for('practice_asl') }}"> {{_('go_practiceAsl')}}</a>
             </div>
 
             <div class="col-sm-6">
@@ -72,12 +72,12 @@
             <div class="col-sm-6">
                 {% if previous_topic|length %}
                     <a id="btn_previous" class="btn btn-success btn-block p-6"
-                       href="{{ url_for('practice', element=previous_topic) }}">이전</a>
+                       href="{{ url_for('practice', element=previous_topic) }}">←</a>
                 {% endif %}
             </div>
 
             <div class="col-sm-6">
-                <a id="btn_next" class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=next_topic) }}">다음</a>
+                <a id="btn_next" class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=next_topic) }}">→</a>
             </div>
 
         </div>
