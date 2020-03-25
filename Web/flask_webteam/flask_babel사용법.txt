@@ -1,0 +1,12 @@
+1. pip install flask-babel  
+
+2. .py에서는 gettext 메소드를 사용하여 번역될 텍스트 감싸기. gettext('msgid')
+
+3.  .html 에서는 {{ _(' ') }} 사이에 놓기. {{ _('msgid') }}
+
+4. pybabel extract -F babel.cfg -o messages.pot .
+
+5. pybabel update -i messages.pot -d translations
+=> /translation/messages.po 에서 msgstr 번역하기
+
+6. pybabel compile -d translations

@@ -3,9 +3,9 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="container " style="min-width: 100%; display: inline-block;text-align: center; ">
+<div class="container " style="min-width: 100%; display: inline-block;text-align: center; height: 85vh;">
     <div>
-        <img style="width: 500px; height: 500px" src="{{img_path}}" alt="img">
+        <img style="margin-top:20px; width: 500px; height: 500px" src="{{img_path}}" alt="img">
         </div>
         
         <div>
@@ -17,7 +17,7 @@
         <div>
             {% if incorrect_questions!=[] %} 
             <!-- 틀린 문제 : {{incorrect_questions}} -->
-            틀린 문제 :
+            {{_('result_incorrect_list')}} :
             {% for idx in incorrect_questions %}
             <a href="/practice?element={{idx}}">{{idx}}</a> &nbsp;
 
@@ -29,10 +29,10 @@
             {% endif %}
         </div>
         
-        <a href="/practice_asl">연습하러 가기</a>
+        <a href="/practice_asl">{{_('go_practice')}}</a>
         <br>
 
-        <a href="/quiz">다시 풀기</a>
+        <a href="/quiz">{{_('go_quiz')}}</a>
 </div>
 
 

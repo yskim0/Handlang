@@ -8,7 +8,7 @@
 	  <img src="../static/img/asl_{{ alphabet }}.png" class="card-img-top" alt="...">
 	  <div class="card-body">
 	    <h3 class="card-title">{{ alphabet.upper() }}</h3>
-	    <a href="{{ url_for('practice', element=alphabet) }}" class="btn btn-primary text-center">연습하러 가기</a>
+	    <a href="{{ url_for('practice', element=alphabet) }}" class="btn btn-primary text-center">{{_('go_practice')}}</a>
 	  </div>
 	</div>
 	{% endfor %}

@@ -1,0 +1,104 @@
+# English translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-03-25 08:07+0900\n"
+"PO-Revision-Date: 2020-03-23 14:52+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app.py:185
+msgid "predict_incorrect"
+msgstr "You're wrong 😭"
+
+#: app.py:192
+msgid "predict_correct"
+msgstr "That's correct!"
+
+#: templates/index.html:8
+msgid "headline"
+msgstr "American Sign Language Alphabet Education Project"
+
+#: templates/index.html:9
+msgid "headline2"
+msgstr "DSC EWHA"
+
+#: templates/index.html:10
+msgid "aboutUs"
+msgstr "About Us"
+
+#: templates/index.html:21
+msgid "asl_practice"
+msgstr "ASL practice"
+
+#: templates/index.html:26
+msgid "number_practice"
+msgstr "Number practice"
+
+#: templates/index.html:32
+msgid "asl_quiz"
+msgstr "Quiz"
+
+#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:73
+msgid "handlang_title"
+msgstr "Handlang"
+
+#: templates/layout.html:51
+msgid "nav_aslPractice"
+msgstr "ASL practice"
+
+#: templates/layout.html:54
+msgid "nav_numberPractice"
+msgstr "Number practice"
+
+#: templates/layout.html:57
+msgid "nav_quiz"
+msgstr "Quiz"
+
+#: templates/practice.html:22
+msgid "practice_notice1"
+msgstr "predict label"
+
+#: templates/practice.html:23
+msgid "practice_notice2"
+msgstr "Press Enter ↩️ to start"
+
+#: templates/practice.html:26
+msgid "practice_status_not_started"
+msgstr "Not Started."
+
+#: templates/practice.html:30
+msgid "predict_status_not_started_2"
+msgstr "Not Started."
+
+#: templates/practice.html:41
+msgid "go_practiceAsl"
+msgstr "Go to select alphabet"
+
+#: templates/practice_asl.html:11 templates/result.html:32
+msgid "go_practice"
+msgstr "Go to practice"
+
+#: templates/quiz.html:59
+msgid "submit_quiz"
+msgstr "Submit"
+
+#: templates/result.html:20
+msgid "result_incorrect_list"
+msgstr "Wrong answers"
+
+#: templates/result.html:35
+msgid "go_quiz"
+msgstr "Quiz"
+

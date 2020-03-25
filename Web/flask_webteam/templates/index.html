@@ -5,9 +5,9 @@
     <!-- 프로젝트 소개 container -->
     <div class="container">
         <div class="jumbotron">
-            <h1 class="text-center">프로젝트 및 팀 소개</h1>
-            <p class="text-center">안녕하세요. DSC 이화 핸들랭 팀입니다.</p>
-            <p class="text-center"><a class="btn btn-default btn-lg" href="#" role="button">프로젝트 목적 및 어쩌구 링크</a></p>
+            <h1 class="text-center">{{_('headline')}}</h1>
+            <p class="text-center">{{_('headline2')}}</p>
+            <p class="text-center"><a class="btn btn-default btn-lg" href="#" role="button">{{_('aboutUs')}}</a></p>
         </div>
     </div>
 
@@ -18,18 +18,18 @@
         <div class="col-md-4">
             <a class="btn btn-primary btn-block p-6" href="{{url_for('practice_asl')}}" style="background-color: #003127; border-color: #003127" >
                 <br><img src="/static/img/icon-1.png" width="100px" height="100px">
-                <br><br>지문자 연습</a>
+                <br><br>{{_('asl_practice')}}</a>
         </div>
         <div class="col-md-4">
             <a class="btn btn-primary btn-block p-6" disabled href="#" style="background-color: #003127; border-color: #003127" >
                 <br><img src="/static/img/icon-num.png" width="100px" height="100px">
-                <br><br>숫자 연습
+                <br><br>{{_('number_practice')}}
             </a>
         </div>
         <div class="col-md-4">
             <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz')}}" style="background-color: #003127; border-color: #003127" >
                 <br><img src="/static/img/icon-3.png" width="100px" height="100px">
-                <br><br>지문자 퀴즈</a>
+                <br><br>{{_('asl_quiz')}}</a>
         </div>
       </div>
     </div>
