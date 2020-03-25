@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-23 14:51+0900\n"
+"POT-Creation-Date: 2020-03-25 08:07+0900\n"
 "PO-Revision-Date: 2020-03-23 14:51+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko\n"
@@ -18,75 +18,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
+#: app.py:185
+msgid "predict_incorrect"
+msgstr "틀렸습니다😭"
+
+#: app.py:192
+msgid "predict_correct"
+msgstr "맞았습니다!"
+
 #: templates/index.html:8
 msgid "headline"
-msgstr ""
+msgstr "프로젝트 및 팀 소개"
 
 #: templates/index.html:9
 msgid "headline2"
-msgstr ""
+msgstr "안녕하세요. DSC 이화 핸들랭 팀입니다."
 
 #: templates/index.html:10
 msgid "aboutUs"
-msgstr ""
+msgstr "About Us"
 
 #: templates/index.html:21
 msgid "asl_practice"
-msgstr ""
+msgstr "지문자 연습"
 
 #: templates/index.html:26
 msgid "number_practice"
-msgstr ""
+msgstr "숫자 연습"
 
 #: templates/index.html:32
 msgid "asl_quiz"
-msgstr ""
+msgstr "지문자 퀴즈"
 
-#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:74
+#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:73
 msgid "handlang_title"
-msgstr ""
+msgstr "핸들랭(Handlang)"
 
 #: templates/layout.html:51
 msgid "nav_aslPractice"
-msgstr ""
+msgstr "지문자연습"
 
 #: templates/layout.html:54
 msgid "nav_numberPractice"
-msgstr ""
+msgstr "숫자연습"
 
 #: templates/layout.html:57
 msgid "nav_quiz"
-msgstr ""
+msgstr "퀴즈"
 
 #: templates/practice.html:22
 msgid "practice_notice1"
-msgstr ""
+msgstr "현재 predict label"
 
 #: templates/practice.html:23
 msgid "practice_notice2"
-msgstr ""
+msgstr "예측을 시작하려면 Enter 키 ↩️ 를 눌러주세요."
+
+#: templates/practice.html:26
+msgid "practice_status_not_started"
+msgstr "Not Started."
 
 #: templates/practice.html:30
-msgid "predict_status"
-msgstr ""
+msgid "predict_status_not_started_2"
+msgstr "예측중이 아님"
 
 #: templates/practice.html:41
 msgid "go_practiceAsl"
-msgstr ""
+msgstr "지문자 선택하러 가기"
 
 #: templates/practice_asl.html:11 templates/result.html:32
 msgid "go_practice"
-msgstr ""
+msgstr "연습하러 가기"
 
 #: templates/quiz.html:59
 msgid "submit_quiz"
-msgstr ""
+msgstr "제출하기"
 
 #: templates/result.html:20
 msgid "result_incorrect_list"
-msgstr ""
+msgstr "틀린 문제"
 
 #: templates/result.html:35
 msgid "go_quiz"
-msgstr ""
+msgstr "다시 풀기"
+
 

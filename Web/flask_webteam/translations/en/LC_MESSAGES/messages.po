@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-23 14:51+0900\n"
+"POT-Creation-Date: 2020-03-25 08:07+0900\n"
 "PO-Revision-Date: 2020-03-23 14:52+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,75 +18,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
+#: app.py:185
+msgid "predict_incorrect"
+msgstr "You're wrong 😭"
+
+#: app.py:192
+msgid "predict_correct"
+msgstr "That's correct!"
+
 #: templates/index.html:8
 msgid "headline"
-msgstr ""
+msgstr "American Sign Language Alphabet Education Project"
 
 #: templates/index.html:9
 msgid "headline2"
-msgstr ""
+msgstr "DSC EWHA"
 
 #: templates/index.html:10
 msgid "aboutUs"
-msgstr ""
+msgstr "About Us"
 
 #: templates/index.html:21
 msgid "asl_practice"
-msgstr ""
+msgstr "ASL practice"
 
 #: templates/index.html:26
 msgid "number_practice"
-msgstr ""
+msgstr "Number practice"
 
 #: templates/index.html:32
 msgid "asl_quiz"
-msgstr ""
+msgstr "Quiz"
 
-#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:74
+#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:73
 msgid "handlang_title"
-msgstr ""
+msgstr "Handlang"
 
 #: templates/layout.html:51
 msgid "nav_aslPractice"
-msgstr ""
+msgstr "ASL practice"
 
 #: templates/layout.html:54
 msgid "nav_numberPractice"
-msgstr ""
+msgstr "Number practice"
 
 #: templates/layout.html:57
 msgid "nav_quiz"
-msgstr ""
+msgstr "Quiz"
 
 #: templates/practice.html:22
 msgid "practice_notice1"
-msgstr ""
+msgstr "predict label"
 
 #: templates/practice.html:23
 msgid "practice_notice2"
-msgstr ""
+msgstr "Press Enter ↩️ to start"
+
+#: templates/practice.html:26
+msgid "practice_status_not_started"
+msgstr "Not Started."
 
 #: templates/practice.html:30
-msgid "predict_status"
-msgstr ""
+msgid "predict_status_not_started_2"
+msgstr "Not Started."
 
 #: templates/practice.html:41
 msgid "go_practiceAsl"
-msgstr ""
+msgstr "Go to select alphabet"
 
 #: templates/practice_asl.html:11 templates/result.html:32
 msgid "go_practice"
-msgstr ""
+msgstr "Go to practice"
 
 #: templates/quiz.html:59
 msgid "submit_quiz"
-msgstr ""
+msgstr "Submit"
 
 #: templates/result.html:20
 msgid "result_incorrect_list"
-msgstr ""
+msgstr "Wrong answers"
 
 #: templates/result.html:35
 msgid "go_quiz"
-msgstr ""
+msgstr "Quiz"
 

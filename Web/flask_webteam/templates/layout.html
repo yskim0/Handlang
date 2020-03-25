@@ -56,16 +56,15 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="{{url_for('quiz')}}">{{_('nav_quiz')}}</a>
             </li>
+            <li class="nav-item">
+                <a class="text-light" href="{{ url_for('english', link=link) }}">en</a>
+                <a class="text-light" href="{{ url_for('korean', link=link) }}">ko</a>
+            </li>
+            
         </ul>
     </nav>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <input type="radio" name="language" id="en" autocomplete="off" checked> English
-        </label>
-        <label class="btn btn-secondary">
-          <input type="radio" name="language" id="ko" autocomplete="off"> 한국어
-        </label>
-      </div>
+
+      
     {% block content %}
 
     {% endblock %}

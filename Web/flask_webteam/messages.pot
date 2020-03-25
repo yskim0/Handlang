@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-23 14:54+0900\n"
+"POT-Creation-Date: 2020-03-25 08:07+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
+
+#: app.py:185
+msgid "predict_incorrect"
+msgstr ""
+
+#: app.py:192
+msgid "predict_correct"
+msgstr ""
 
 #: templates/index.html:8
 msgid "headline"
@@ -41,7 +49,7 @@ msgstr ""
 msgid "asl_quiz"
 msgstr ""
 
-#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:74
+#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:73
 msgid "handlang_title"
 msgstr ""
 
@@ -65,8 +73,12 @@ msgstr ""
 msgid "practice_notice2"
 msgstr ""
 
+#: templates/practice.html:26
+msgid "practice_status_not_started"
+msgstr ""
+
 #: templates/practice.html:30
-msgid "predict_status"
+msgid "predict_status_not_started_2"
 msgstr ""
 
 #: templates/practice.html:41
