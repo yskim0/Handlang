@@ -68,12 +68,12 @@
             <div class="col-sm-6">
                 {% if previous_topic|length %}
                     <a id="btn_previous" class="btn btn-success btn-block p-6"
-                       href="{{ url_for('practice', element=previous_topic) }}">←</a>
+                       href="{{ url_for('practice', element=previous_topic) }}">{{_('previous')}}</a>
                 {% endif %}
             </div>
 
             <div class="col-sm-6">
-                <a id="btn_next" class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=next_topic) }}">→</a>
+                <a id="btn_next" class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=next_topic) }}">{{_('next')}}</a>
             </div>
 
         </div>
