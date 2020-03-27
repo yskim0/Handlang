@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-25 08:07+0900\n"
+"POT-Creation-Date: 2020-03-26 00:53+0900\n"
 "PO-Revision-Date: 2020-03-23 14:52+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app.py:185
+#: app.py:163
 msgid "predict_incorrect"
 msgstr "You're wrong 😭"
 
-#: app.py:192
+#: app.py:170
 msgid "predict_correct"
 msgstr "That's correct!"
 
@@ -50,43 +50,51 @@ msgstr "Number practice"
 msgid "asl_quiz"
 msgstr "Quiz"
 
-#: templates/layout.html:9 templates/layout.html:44 templates/layout.html:73
+#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:77
 msgid "handlang_title"
 msgstr "Handlang"
 
-#: templates/layout.html:51
+#: templates/layout.html:52
 msgid "nav_aslPractice"
 msgstr "ASL practice"
 
-#: templates/layout.html:54
+#: templates/layout.html:55
 msgid "nav_numberPractice"
 msgstr "Number practice"
 
-#: templates/layout.html:57
+#: templates/layout.html:58
 msgid "nav_quiz"
 msgstr "Quiz"
 
-#: templates/practice.html:22
+#: templates/practice.html:19
 msgid "practice_notice1"
 msgstr "predict label"
 
-#: templates/practice.html:23
+#: templates/practice.html:20
 msgid "practice_notice2"
 msgstr "Press Enter ↩️ to start"
 
-#: templates/practice.html:26
+#: templates/practice.html:23
 msgid "practice_status_not_started"
 msgstr "Not Started."
 
-#: templates/practice.html:30
+#: templates/practice.html:27
 msgid "predict_status_not_started_2"
 msgstr "Not Started."
 
-#: templates/practice.html:41
+#: templates/practice.html:37
 msgid "go_practiceAsl"
 msgstr "Go to select alphabet"
 
-#: templates/practice_asl.html:11 templates/result.html:32
+#: templates/practice.html:71
+msgid "previous"
+msgstr "Previous"
+
+#: templates/practice.html:76
+msgid "next"
+msgstr "Next"
+
+#: templates/practice_asl.html:10 templates/result.html:27
 msgid "go_practice"
 msgstr "Go to practice"
 
@@ -94,11 +102,11 @@ msgstr "Go to practice"
 msgid "submit_quiz"
 msgstr "Submit"
 
-#: templates/result.html:20
+#: templates/result.html:18
 msgid "result_incorrect_list"
 msgstr "Wrong answers"
 
-#: templates/result.html:35
+#: templates/result.html:30
 msgid "go_quiz"
 msgstr "Quiz"
 

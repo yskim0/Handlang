@@ -38,39 +38,43 @@
         }
     </style>
 
-    <!-- 네비게이션바 -->
+    <div style="min-height: calc(100vh - 30px);">
+            <!-- 네비게이션바 -->
 
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('index') }}">{{_('handlang_title')}}👋</a>
-      
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active text-light" href="{{ url_for('index') }}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="{{url_for('practice_asl')}}">{{_('nav_aslPractice')}}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light disabled" href="#">{{_('nav_numberPractice')}}</a> <!-- 일단 작동안하게 -->
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="{{url_for('quiz')}}">{{_('nav_quiz')}}</a>
-            </li>
-            <li class="nav-item">
-                <a class="text-light" href="{{ url_for('english', link=link) }}">en</a>
-                <a class="text-light" href="{{ url_for('korean', link=link) }}">ko</a>
-            </li>
-            
-        </ul>
-    </nav>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ url_for('index') }}">{{_('handlang_title')}}👋</a>
+          
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{url_for('practice_asl')}}">{{_('nav_aslPractice')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light disabled" href="#">{{_('nav_numberPractice')}}</a> <!-- 일단 작동안하게 -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{{url_for('quiz')}}">{{_('nav_quiz')}}</a>
+                </li>
+                <li class="nav-item d-flex align-items-center text-secondary">
+                    <a  class="text-secondary" href="{{ url_for('english', link=link) }}" style="margin-right:3px;">English </a>|
+                    <a class="text-secondary" href="{{ url_for('korean', link=link) }}" style="margin-left:3px;"> 한국어</a>
+                </li>
+                
+            </ul>
+        </nav>
+    
+          
+        {% block content %}
+    
+        {% endblock %}
+    </div>
 
-      
-    {% block content %}
+    
 
-    {% endblock %}
-
-    <footer>
-        <p style="text-align: center;">&copy; {{_('handlang_title')}}</p>
+    <footer >
+        <p class="border-top" style="text-align: center; height: 30px; margin: 0;">&copy; {{_('handlang_title')}}</p>
     </footer>
 
     <script src="../static/js/jquery-3.4.1.js"></script>

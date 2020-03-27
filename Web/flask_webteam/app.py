@@ -234,7 +234,7 @@ def quiz_result():
         if(q==a):
             correct_num+=1
         else:
-            incorrect_questions.append(q)
+            incorrect_questions.append(q.upper())
     if correct_num==g.total_q :
         img_path="../static/img/score_100.png"
     elif correct_num >= (g.total_q//2):
