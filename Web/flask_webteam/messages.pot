@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-26 00:53+0900\n"
+"POT-Creation-Date: 2020-03-29 18:56+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,98 @@ msgstr ""
 
 #: app.py:170
 msgid "predict_correct"
+msgstr ""
+
+#: templates/aboutUs.html:7
+msgid "project_select_background"
+msgstr ""
+
+#: templates/aboutUs.html:11
+msgid "about_project"
+msgstr ""
+
+#: templates/aboutUs.html:20
+msgid "asl"
+msgstr ""
+
+#: templates/aboutUs.html:24
+msgid "about_asl"
+msgstr ""
+
+#: templates/aboutUs.html:31
+msgid "main_service)"
+msgstr ""
+
+#: templates/aboutUs.html:35
+msgid "ms_practice_asl"
+msgstr ""
+
+#: templates/aboutUs.html:38
+msgid "ms_practice_title"
+msgstr ""
+
+#: templates/aboutUs.html:39
+msgid "ms_practice_info"
+msgstr ""
+
+#: templates/aboutUs.html:41
+msgid "ms_btn_practice_asl"
+msgstr ""
+
+#: templates/aboutUs.html:42
+msgid "ms_btn_practice_digit"
+msgstr ""
+
+#: templates/aboutUs.html:49
+msgid "ms_quiz"
+msgstr ""
+
+#: templates/aboutUs.html:52
+msgid "ms_quiz_title"
+msgstr ""
+
+#: templates/aboutUs.html:53
+msgid "ms_quiz_info"
+msgstr ""
+
+#: templates/aboutUs.html:55
+msgid "ms_btn_quiz"
+msgstr ""
+
+#: templates/aboutUs.html:64
+msgid "about_team_member"
+msgstr ""
+
+#: templates/aboutUs.html:74
+msgid "kys"
+msgstr ""
+
+#: templates/aboutUs.html:75
+msgid "kys_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:86
+msgid "shj"
+msgstr ""
+
+#: templates/aboutUs.html:87
+msgid "shj_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:98
+msgid "ssh"
+msgstr ""
+
+#: templates/aboutUs.html:99
+msgid "ssh_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:110
+msgid "sjy"
+msgstr ""
+
+#: templates/aboutUs.html:111
+msgid "sjy_introduction"
 msgstr ""
 
 #: templates/index.html:8
