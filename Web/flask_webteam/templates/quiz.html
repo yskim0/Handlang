@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- question -->
-                <div class="quiz " id="{{key}}" style="margin-top:60px; margin-bottom:50px; font-weight: 600; font-size:25px">What is the correct sign for "{{key.upper()}}"?</div>
+                <div class="quiz " id="{{key}}" style="margin-top:60px; margin-bottom:50px; font-weight: 600; font-size:25px">{{_('question')}} "{{key.upper()}}" {{_('question_2')}}</div>
                 <input type="hidden"  name="{{'question'+str(idx)}}" value="{{key}}">
 
                 <!-- examples -->

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-03-29 18:56+0900\n"
+"POT-Creation-Date: 2020-04-10 21:40+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app.py:163
+#: app.py:178
 msgid "predict_incorrect"
 msgstr ""
 
-#: app.py:170
+#: app.py:187
 msgid "predict_correct"
 msgstr ""
 
@@ -187,6 +187,14 @@ msgstr ""
 
 #: templates/practice_asl.html:10 templates/result.html:27
 msgid "go_practice"
+msgstr ""
+
+#: templates/quiz.html:29
+msgid "question"
+msgstr ""
+
+#: templates/quiz.html:29
+msgid "question_2"
 msgstr ""
 
 #: templates/quiz.html:59

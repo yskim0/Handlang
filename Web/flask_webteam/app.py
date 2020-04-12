@@ -35,18 +35,25 @@ predict_label = PredictLabel('')
 
 @app.before_request
 def before_request():
+    print("hello im before_request")
     g.total_q = 10
-
+#before_request -> localeselector -> get
 
 @babel.localeselector
 def get_locale():
+    print("hello im get_locale")
     try:
         language = session['language']
     except KeyError:
         language = None
     if language is not None:
         return language
+    
+    session['language']=request.accept_languages.best_match(['en', 'ko'])
+
     return request.accept_languages.best_match(['en', 'ko'])
+
+
 
 
 def get_alphabet_list():
@@ -165,20 +172,25 @@ def return_label():
         predict_result = {
             'status': 0,
             'info': 'not detected',
-            'label': ''
+            'label': '',
+            'lang_code': session['language']
         }
     elif label != value:
         predict_result = {
             'status': 0,
             'info': gettext('predict_incorrect'),
-            'label': label
+            'label': label,
+            'lang_code': session['language']
+
         }
         print("틀림!")
     else:
         predict_result = {
             'status': 1,
             'info': gettext('predict_correct'),
-            'label': label
+            'label': label,
+            'lang_code': session['language']
+
         }
 
     # result 의 status 값이 1이면 참 -> main.js 에서 correct 값 증가
