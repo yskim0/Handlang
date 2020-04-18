@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Project Handlang</title>
+    <script src="../static/js/jquery-3.4.1.js"></script>
+    <script src="../static/js/main.js"></script>
+    <link rel="stylesheet" href="../static/css/main.css" type="text/css"></link>
+  </head>
+
+  <body>
+
+  <h1>Flask-darkflow-web-streaming</h1>
+
+  <img id="bg" src="{{ url_for('video_feed') }}" alt = "webcam">
+  <br>
+  <button type="button" id="add"> add </button>
+  <button type="button" id="erase">erase</button>
+
+  <h3> 👉 Predict Result </h3>
+	<div id="label"></div>
+
+  </body>
+</html>

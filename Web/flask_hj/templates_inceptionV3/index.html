@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<section id="intro">
+		<!-- https://getbootstrap.com/docs/4.4/components/jumbotron/  중 Fluid jumbotron-->
+		<div class="jumbotron jumbotron-fluid bg-white">
+			<div class="container">
+				<h1 class="display-5">수화번역 프로젝트 핸들랭 </h3>
+				<p class="lead">YOLO 알고리즘을 이용한(Darkflow) Flask ML Web <br> team Handlang from Developer Students Club Ewha</p>
+			</div>
+		</div>
+	</section>
+	
+	<section id="service">
+		<!-- https://getbootstrap.com/docs/4.4/components/card/ 중 Header and footer -->
+
+		<div class="card-deck mb-3 text-center"> <!-- 3개 card 를 row로 놓기 위해 card-deck 속성 사용 -->
+			<div class="col-sm d-flex"> 
+				<div class="card flex-fill" style="width: 18rem;">
+					<div class="card-header">
+						알파벳 Aa, Bb, Cc ...
+					</div>
+					<div class="card-body">
+						<img src="./static/img/asl_img.jpg" class="card-img-top" />
+					</div>
+					<div class="card-footer">
+						<a href="{{url_for('asl_practice')}}" class="btn btn-primary" id="btn_digit">바로가기</a>
+					</div>
+				</div>
+
+				<div class="card flex-fill" style="width: 18rem;">
+					<div class="card-header">
+						숫자 1, 2, 3 ...
+					</div>
+					<div class="card-body">
+						<img src="./static/img/digit_img.png"class="card-img-top"/>
+					</div>
+					<div class="card-footer">
+						<a href="#" class="btn btn-primary disabled" id="btn_digit">바로가기</a>
+					</div>
+				</div>
+
+				<div class="card flex-fill" style="width: 18rem;">
+					<div class="card-header">
+						퀴즈!
+					</div>
+					<div class="card-body">
+						<img src="./static/img/quiz_img.jpg"class="card-img-top"/>
+					</div>
+					<div class="card-footer">
+						<a href="#" class="btn btn-primary" id="btn_digit">바로가기</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock%}
