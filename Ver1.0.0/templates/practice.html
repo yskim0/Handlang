@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <!--    grid-->
+    <div class="container" style="margin-bottom: 30px;">
+        <div class="row">
+            <div class="col-sm-6">
+                <!--            img Label-->
+                <img style="width:90%; height:auto; margin-top: 10%;" src="{{ img }}">
+                <p id="topic"
+                   style=" width:100%; height: 10%; font-size: 200%; text-align: center;"> {{ alphabet }} </p>
+                <!--          ASL image-->
+                <!-- <div class="col-sm-6"> -->
+
+                    <!--          ok 싸인 by 지영언니-->
+                    <table class="table table-lg table-bordered table-warning text-center">
+                        <thead>
+                        <tr>
+                            <td><img style="min-width: 50px" id="check_table_1" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_2" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_3" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_4" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        </tr>
+                        </thead>
+                        <thead>
+                        <tr>
+                            <td><img style="min-width: 50px" id="check_table_5" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_6" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_7" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_8" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        </tr>
+                        </thead>
+                    </table>
+                <!-- </div> -->
+                <br><br><br>
+            </div>
+            <!--          webcam -->
+            <div class="col-sm-6">
+                <img style="margin-top: 10%; width:100%; height:60%" id="video" src="{{ url_for('video_feed') }}">
+                <div id="predict" style="text-align: center; ">
+                    <br>🤔 {{_('practice_notice1')}}🤔<br>
+                    {{_('practice_notice2')}}
+                    <div id="predict-in"
+                         style="margin-top: 10px; line-height: 1.4em; border:1px dashed steelblue; font-size: 200%; text-align: center;">
+                         {{_('practice_status_not_started')}}
+                    </div>
+                </div>
+                <p id="predict_status" class="float-md-right m-2 bg-light">
+                    ⚠️ {{_('predict_status_not_started_2')}} ⚠️
+                </p>
+            </div>
+        </div>
+        <!--          경계선-->
+        <hr style="border: 0; height: 3px; background: #ccc;">
+
+        
+<br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                {% if previous_topic|length %}
+                    <a id="btn_previous" class="btn btn-success btn-block p-6"
+                       href="{{ url_for('practice', element=previous_topic) }}">{{_('previous')}}</a>
+                {% endif %}
+            </div>
+            <div class="col-sm-4">
+                <a id="btn_practice_asl" class="btn btn-primary btn-block p-6" href="{{ url_for('practice_asl') }}"> {{_('go_practiceAsl')}}</a>
+
+            </div>
+
+            <div class="col-sm-4">
+                <a id="btn_next" class="btn btn-success btn-block p-6" href="{{ url_for('practice', element=next_topic) }}">{{_('next')}}</a>
+            </div>
+
+        </div>
+
+    </div>
+    <!--다음 알파벳으로-->
+
+{% endblock %}
