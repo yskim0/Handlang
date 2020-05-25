@@ -1,0 +1,93 @@
+Found 1862 images belonging to 10 classes.
+Found 200 images belonging to 10 classes.
+2020-05-25 14:23:34.689856: I tensorflow/core/platform/cpu_feature_guard.cc:142]                                                                                        Your CPU supports instructions that this TensorFlow binary was not compiled to                                                                                        use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-05-25 14:23:34.716682: I tensorflow/core/platform/profile_utils/cpu_utils.c                                                                                       c:94] CPU Frequency: 2198670000 Hz
+2020-05-25 14:23:34.718251: I tensorflow/compiler/xla/service/service.cc:168] XL                                                                                       A service 0x5616cf4feb50 initialized for platform Host (this does not guarantee                                                                                        that XLA will be used). Devices:
+2020-05-25 14:23:34.718305: I tensorflow/compiler/xla/service/service.cc:176]                                                                                          StreamExecutor device (0): Host, Default Version
+2020-05-25 14:23:34.718496: I tensorflow/core/common_runtime/process_util.cc:147                                                                                       ] Creating new thread pool with default inter op setting: 2. Tune using inter_op                                                                                       _parallelism_threads for best performance.
+Traceback (most recent call last):
+  File "train.py", line 63, in <module>
+    handlang_model.add(BatchNormalization()) ###################################                                                                                       ####
+NameError: name 'BatchNormalization' is not defined
+(dnn2) handlang@gpu:~/suhyun$ python train.py
+Using TensorFlow backend.
+Found 1862 images belonging to 10 classes.
+Found 200 images belonging to 10 classes.
+2020-05-25 14:26:41.366485: I tensorflow/core/platform/cpu_feature_guard.cc:142]                                                                                        Your CPU supports instructions that this TensorFlow binary was not compiled to                                                                                        use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-05-25 14:26:41.396673: I tensorflow/core/platform/profile_utils/cpu_utils.c                                                                                       c:94] CPU Frequency: 2198670000 Hz
+2020-05-25 14:26:41.398553: I tensorflow/compiler/xla/service/service.cc:168] XL                                                                                       A service 0x55681fb64a30 initialized for platform Host (this does not guarantee                                                                                        that XLA will be used). Devices:
+2020-05-25 14:26:41.398665: I tensorflow/compiler/xla/service/service.cc:176]                                                                                          StreamExecutor device (0): Host, Default Version
+2020-05-25 14:26:41.398897: I tensorflow/core/common_runtime/process_util.cc:147                                                                                       ] Creating new thread pool with default inter op setting: 2. Tune using inter_op                                                                                       _parallelism_threads for best performance.
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_1 (Conv2D)            (None, 61, 61, 64)        3136
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 29, 29, 64)        65600
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 29, 29, 64)        0
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 26, 26, 128)       131200
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 12, 12, 128)       262272
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 12, 12, 128)       0
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 9, 9, 256)         524544
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 3, 3, 256)         1048832
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 3, 3, 256)         1024
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 2304)              0
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 2304)              0
+_________________________________________________________________
+dense_1 (Dense)              (None, 512)               1180160
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                5130
+=================================================================
+Total params: 3,221,898
+Trainable params: 3,221,386
+Non-trainable params: 512
+_________________________________________________________________
+Epoch 1/10
+30/30 [==============================] - 22s 717ms/step - loss: 1.7512 - accuracy: 0.4329 - val_loss: 36.8714 - val_accuracy: 0.1500                                   741
+Epoch 00001: val_loss improved from inf to 36.87136, saving model to models/su_batchnomal.h5
+Epoch 2/10
+30/30 [==============================] - 19s 647ms/step - loss: 0.9057 - accuracy: 0.7229 - val_loss: 10.0146 - val_accuracy: 0.2050
+
+Epoch 00002: val_loss improved from 36.87136 to 10.01464, saving model to models/su_batchnomal.h5
+Epoch 3/10
+30/30 [==============================] - 19s 644ms/step - loss: 0.6347 - accuracy: 0.7932 - val_loss: 3.1696 - val_accuracy: 0.3500
+
+Epoch 00003: val_loss improved from 10.01464 to 3.16963, saving model to models/su_batchnomal.h5
+Epoch 4/10
+30/30 [==============================] - 19s 631ms/step - loss: 0.5190 - accuracy: 0.8362 - val_loss: 2.6014 - val_accuracy: 0.4350
+
+Epoch 00004: val_loss improved from 3.16963 to 2.60142, saving model to models/su_batchnomal.h5
+Epoch 5/10
+30/30 [==============================] - 19s 633ms/step - loss: 0.4411 - accuracy: 0.8491 - val_loss: 3.8047 - val_accuracy: 0.4450
+
+Epoch 00005: val_loss did not improve from 2.60142
+Epoch 6/10
+30/30 [==============================] - 19s 633ms/step - loss: 0.3825 - accuracy: 0.8716 - val_loss: 3.7655 - val_accuracy: 0.4400
+
+Epoch 00006: val_loss did not improve from 2.60142
+Epoch 7/10
+30/30 [==============================] - 19s 645ms/step - loss: 0.3138 - accuracy: 0.8958 - val_loss: 1.8115 - val_accuracy: 0.4050
+
+Epoch 00007: val_loss improved from 2.60142 to 1.81154, saving model to models/su_batchnomal.h5
+Epoch 8/10
+30/30 [==============================] - 19s 637ms/step - loss: 0.2884 - accuracy: 0.9060 - val_loss: 1.4386 - val_accuracy: 0.4550
+
+Epoch 00008: val_loss improved from 1.81154 to 1.43858, saving model to models/su_batchnomal.h5
+Epoch 9/10
+30/30 [==============================] - 19s 646ms/step - loss: 0.2463 - accuracy: 0.9205 - val_loss: 2.9058 - val_accuracy: 0.4250
+
+Epoch 00009: val_loss did not improve from 1.43858
+Epoch 10/10
+30/30 [==============================] - 19s 647ms/step - loss: 0.2153 - accuracy: 0.9334 - val_loss: 1.0113 - val_accuracy: 0.5200
+
+Epoch 00010: val_loss improved from 1.43858 to 1.01129, saving model to models/su_batchnomal.h5

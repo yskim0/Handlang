@@ -1,0 +1,80 @@
+Using TensorFlow backend.
+Found 1862 images belonging to 10 classes.
+Found 200 images belonging to 10 classes.
+2020-05-19 15:55:20.307030: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-05-19 15:55:20.336693: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2198670000 Hz
+2020-05-19 15:55:20.338155: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x557e3504dc00 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-19 15:55:20.338200: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-19 15:55:20.338361: I tensorflow/core/common_runtime/process_util.cc:147] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_1 (Conv2D)            (None, 61, 61, 64)        3136
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 29, 29, 64)        65600
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 29, 29, 64)        0
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 26, 26, 128)       131200
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 12, 12, 128)       262272
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 12, 12, 128)       0
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 9, 9, 256)         524544
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 3, 3, 256)         1048832
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 2304)              0
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 2304)              0
+_________________________________________________________________
+dense_1 (Dense)              (None, 512)               1180160
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                5130
+=================================================================
+Total params: 3,220,874
+Trainable params: 3,220,874
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+30/30 [==============================] - 21s 684ms/step - loss: 2.2964 - accuracy: 0.1074 - val_loss: 2.5648 - val_accuracy: 0.1950
+
+Epoch 00001: val_loss improved from inf to 2.56479, saving model to models/handlang_model.h5
+Epoch 2/10
+30/30 [==============================] - 19s 624ms/step - loss: 1.4574 - accuracy: 0.4930 - val_loss: 0.8788 - val_accuracy: 0.4100
+
+Epoch 00002: val_loss improved from 2.56479 to 0.87879, saving model to models/handlang_model.h5
+Epoch 3/10
+30/30 [==============================] - 19s 642ms/step - loss: 0.8300 - accuracy: 0.7202 - val_loss: 2.6051 - val_accuracy: 0.4050
+
+Epoch 00003: val_loss did not improve from 0.87879
+Epoch 4/10
+30/30 [==============================] - 19s 635ms/step - loss: 0.6260 - accuracy: 0.7900 - val_loss: 2.2548 - val_accuracy: 0.3500
+
+Epoch 00004: val_loss did not improve from 0.87879
+Epoch 5/10
+30/30 [==============================] - 19s 646ms/step - loss: 0.4546 - accuracy: 0.8561 - val_loss: 1.5068 - val_accuracy: 0.5400
+
+Epoch 00005: val_loss did not improve from 0.87879
+Epoch 6/10
+30/30 [==============================] - 19s 638ms/step - loss: 0.3269 - accuracy: 0.8974 - val_loss: 0.6819 - val_accuracy: 0.5150
+
+Epoch 00006: val_loss improved from 0.87879 to 0.68194, saving model to models/handlang_model.h5
+Epoch 7/10
+30/30 [==============================] - 19s 645ms/step - loss: 0.2734 - accuracy: 0.9049 - val_loss: 1.1810 - val_accuracy: 0.4800
+
+Epoch 00007: val_loss did not improve from 0.68194
+Epoch 8/10
+30/30 [==============================] - 19s 631ms/step - loss: 0.1962 - accuracy: 0.9420 - val_loss: 0.8470 - val_accuracy: 0.5550
+
+Epoch 00008: val_loss did not improve from 0.68194
+Epoch 9/10
+30/30 [==============================] - 19s 627ms/step - loss: 0.1941 - accuracy: 0.9377 - val_loss: 1.3996 - val_accuracy: 0.6600
+
+Epoch 00009: val_loss did not improve from 0.68194
+Epoch 10/10
+30/30 [==============================] - 19s 626ms/step - loss: 0.1641 - accuracy: 0.9436 - val_loss: 0.4894 - val_accuracy: 0.6550
+
+Epoch 00010: val_loss improved from 0.68194 to 0.48936, saving model to models/su_handlang_model.h5

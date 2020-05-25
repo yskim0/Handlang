@@ -1,0 +1,82 @@
+Using TensorFlow backend.
+Found 1862 images belonging to 10 classes.
+Found 200 images belonging to 10 classes.
+2020-05-25 14:38:21.084048: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2020-05-25 14:38:21.112685: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2198670000 Hz
+2020-05-25 14:38:21.114441: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55fc0b511d80 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-05-25 14:38:21.114490: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-05-25 14:38:21.114680: I tensorflow/core/common_runtime/process_util.cc:147] Creating new thread pool with default inter op setting: 2. Tune using inter_op_parallelism_threads for best performance.
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_1 (Conv2D)            (None, 61, 61, 64)        3136
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 29, 29, 64)        65600
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 29, 29, 64)        0
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 26, 26, 128)       131200
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 12, 12, 128)       262272
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 12, 12, 128)       0
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 9, 9, 256)         524544
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 3, 3, 256)         1048832
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 2304)              0
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 2304)              0
+_________________________________________________________________
+dense_1 (Dense)              (None, 1024)              2360320
+_________________________________________________________________
+dense_2 (Dense)              (None, 512)               524800
+_________________________________________________________________
+dense_3 (Dense)              (None, 10)                5130
+=================================================================
+Total params: 4,925,834
+Trainable params: 4,925,834
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+30/30 [==============================] - 21s 716ms/step - loss: 2.3590 - accuracy: 0.0875 - val_loss: 2.3011 - val_accuracy: 0.1000
+
+Epoch 00001: val_loss improved from inf to 2.30106, saving model to models/su_dense.h5
+Epoch 2/10
+30/30 [==============================] - 20s 659ms/step - loss: 2.3029 - accuracy: 0.0913 - val_loss: 2.3042 - val_accuracy: 0.1000
+
+Epoch 00002: val_loss did not improve from 2.30106
+Epoch 3/10
+30/30 [==============================] - 20s 654ms/step - loss: 2.2890 - accuracy: 0.1020 - val_loss: 2.2700 - val_accuracy: 0.2000
+
+Epoch 00003: val_loss improved from 2.30106 to 2.26998, saving model to models/su_dense.h5
+Epoch 4/10
+30/30 [==============================] - 19s 646ms/step - loss: 1.7397 - accuracy: 0.4189 - val_loss: 1.7977 - val_accuracy: 0.4000
+
+Epoch 00004: val_loss improved from 2.26998 to 1.79767, saving model to models/su_dense.h5
+Epoch 5/10
+30/30 [==============================] - 20s 655ms/step - loss: 1.0420 - accuracy: 0.6472 - val_loss: 1.6008 - val_accuracy: 0.5400
+
+Epoch 00005: val_loss improved from 1.79767 to 1.60076, saving model to models/su_dense.h5
+Epoch 6/10
+30/30 [==============================] - 20s 653ms/step - loss: 0.7291 - accuracy: 0.7578 - val_loss: 1.1245 - val_accuracy: 0.6100
+
+Epoch 00006: val_loss improved from 1.60076 to 1.12452, saving model to models/su_dense.h5
+Epoch 7/10
+30/30 [==============================] - 19s 646ms/step - loss: 0.5351 - accuracy: 0.8351 - val_loss: 1.5350 - val_accuracy: 0.5500
+
+Epoch 00007: val_loss did not improve from 1.12452
+Epoch 8/10
+30/30 [==============================] - 20s 652ms/step - loss: 0.3967 - accuracy: 0.8738 - val_loss: 0.8917 - val_accuracy: 0.6000
+
+Epoch 00008: val_loss improved from 1.12452 to 0.89173, saving model to models/su_dense.h5
+Epoch 9/10
+30/30 [==============================] - 20s 663ms/step - loss: 0.2692 - accuracy: 0.9092 - val_loss: 1.2209 - val_accuracy: 0.6750
+
+Epoch 00009: val_loss did not improve from 0.89173
+Epoch 10/10
+30/30 [==============================] - 19s 644ms/step - loss: 0.2189 - accuracy: 0.9205 - val_loss: 0.7633 - val_accuracy: 0.6700
+
+Epoch 00010: val_loss improved from 0.89173 to 0.76325, saving model to models/su_dense.h5
