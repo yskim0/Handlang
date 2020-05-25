@@ -1,0 +1,37 @@
+<!-- quiz result -->
+
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container " style=" text-align: center;">
+    <div>
+        <img style="margin-top:20px; width: 500px; height: 500px" src="{{img_path}}" alt="img">
+    </div>
+        
+    <div style="font-weight: 500; font-size:40px;">
+        {{correct_num}} / {{total_q}}      
+    </div>
+        
+    <div style="margin-top: 50px; font-weight: 400; font-size:30px;">
+        {% if incorrect_questions!=[] %} 
+            <!-- 틀린 문제 : {{incorrect_questions}} -->
+            <span class="border-bottom" style="margin-right:50px;">{{_('result_incorrect_list')}} </span>                
+            {% for idx in incorrect_questions %}
+                <a href="/practice?element={{idx.lower()}}">{{idx}}</a> &nbsp;
+            {% endfor %}
+
+        {% endif %}
+    </div>
+    <div class="row" style="margin-top: 100px;">
+        <div class="col">
+            <a href="/practice_asl" class="btn btn-primary btn-lg btn-block"> {{_('go_practice')}}  </a>
+        </div>
+        <div class="col">
+            <a href="/quiz" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a>
+        </div>
+    </div>       
+</div>
+
+
+
+{% endblock %}
