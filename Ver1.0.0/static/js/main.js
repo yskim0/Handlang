@@ -1,27 +1,52 @@
 var timer;
 var alphabet = $("#topic").text();
+var number =  $("#topic").text();
 var correct = 0;
 var total_correct = 0;
+
+var windowLoc = $(location).attr('pathname');
+
+
 $(document).ready(function()  {
 	// 라벨 측정 시작
 	$(document).keypress(function(event){  // keyup 이벤트 처리 enter, backspace
 		var keycode = (event.keyCode ? event.keyCode : event.which);
 		if(keycode === 13) {
 			console.log('엔터!');
+
 			timer = setInterval(function(){
-				ajax_prediction(function(lang_code){
-					if(lang_code=="en"){
-						$("#predict_status").text("🔆 Predicting... 🔆");
+				if($('body').hasClass('practiceASL')) {
+					console.log(windowLoc)
 
-					}
-					else if(lang_code=="ko"){
-						$("#predict_status").text("🔆 예측중... 🔆");
+					ajax_prediction(function (lang_code) {
+						if (lang_code == "en") {
+							$("#predict_status").text("🔆 Predicting... 🔆");
 
-					}
-					
-				});
-				console.log(lang_code);
+						} else if (lang_code == "ko") {
+							$("#predict_status").text("🔆 예측중... 🔆");
+
+						}
+
+					});
+					console.log(lang_code);
+				}
+				else if($('body').hasClass('practiceNUM')){
+
+					ajax_prediction2(function (lang_code) {
+						if (lang_code == "en") {
+							$("#predict_status").text("🔆 Predicting... 🔆");
+
+						} else if (lang_code == "ko") {
+							$("#predict_status").text("🔆 예측중... 🔆");
+
+						}
+
+					});
+					console.log(lang_code);
+				}
+
 			}, 1000);
+
 			// setInterval(ajax_prediction(), 1000);
 		}
 
@@ -34,7 +59,7 @@ function en(){
 	console.log('en!');
     $.ajax({
       url: '/en',
-      type: 'get', 
+      type: 'get',
       data: {
 		"lang_code": "en"
 	},
@@ -49,7 +74,7 @@ function ko(){
 	console.log('ko!');
     $.ajax({
       url: '/ko',
-      type: 'get', 
+      type: 'get',
       data: {
 		"lang_code": "ko"
 	},
@@ -64,7 +89,7 @@ function ajax_prediction(save_langcode){
 	console.log('ajax!');
     $.ajax({
       url: '/return_label',
-      type: 'POST', 
+      type: 'POST',
       data: {
       	target: alphabet
       },
@@ -84,8 +109,8 @@ function ajax_prediction(save_langcode){
       			correct = 0;
       		}
 		}
- 
-	  
+
+
 	},
       error: function(xtr, status, error){
       	console.log(xtr+":"+status+":"+error);
@@ -94,9 +119,46 @@ function ajax_prediction(save_langcode){
 
 }
 
+// YS
+// num
+function ajax_prediction2(save_langcode){
+	console.log('ajax!');
+    $.ajax({
+      url: '/return_label2',
+      type: 'POST',
+      data: {
+      	target: number
+      },
+      dataType: 'JSON',
+      success: function(result){
+		save_langcode(result.lang_code);
+      	console.log(result);
+		  $("#predict-in").text(result.info + result.label);
+      	if(result.status === 0) {
+      		correct = 0;
+      	}
+      	else	{
+      		correct++;
+      		console.log("플러스");
+      		if(correct === 3)	{
+      			check_correct(result.lang_code);
+      			correct = 0;
+      		}
+		}
+
+
+	},
+      error: function(xtr, status, error){
+      	console.log(xtr+":"+status+":"+error);
+      }
+    });
+
+}
+// YS
+
 function check_correct(lang_code)	{
 	total_correct++;
-	
+
 	if (total_correct === 8)	{
 		$("#check_table_"+total_correct).attr("src", "../static/img/smile.png");
 		clearInterval(timer);
@@ -166,7 +228,7 @@ $(document).ready(function(){
 		$('#submit').show();
 	  }
 	  $("#"+q_num).show();
-	  
+
 	});
 
 
@@ -179,7 +241,7 @@ $(document).ready(function(){
 		$('#before').hide();
 	  }
 	  $("#"+q_num).show()
-	  
+
 
 
 

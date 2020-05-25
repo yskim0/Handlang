@@ -16,6 +16,7 @@ babel = Babel(app)
 app.config['lang_code'] = ['en', 'ko']
 
 model = load_model('model/handlang_model_4.h5')
+model2 = load_model('model/su_adamax.h5')
 print("Loaded model from disk")
 
 
@@ -53,6 +54,10 @@ def get_label(idx):
             "del", "nothing", "space"]
     return label[idx]
 
+def get_label2(idx):
+    label = ["0","1","2","3","4","5","6","7","8","9",
+            "del", "nothing", "space"]
+    return label[idx]
 
 # ** 전역변수 대신 클래스 객체 사용
 class PredictLabel(object):
@@ -78,11 +83,12 @@ class Target_idx(object):
 target_idx = Target_idx(0)
 predict_label = PredictLabel('')
 
+# YS ==> number SL
+target_idx2 = Target_idx(0)
 
 @app.before_request
 def before_request():
     g.total_q = 10
-
 
 @babel.localeselector
 def get_locale():
@@ -92,6 +98,8 @@ def get_locale():
         language = None
     if language is not None:
         return language
+    session['language']=request.accept_languages.best_match(['en', 'ko'])
+
     return request.accept_languages.best_match(['en', 'ko'])
 
 
@@ -101,6 +109,11 @@ def get_alphabet_list():
 
     return alphabet_list
 
+# YS
+def get_number_list():
+    number_list = ['0','1','2','3','4','5','6','7','8','9']
+    return number_list
+# YS
 
 def alphabet_list_idx(element):
     next_topic = ""
@@ -121,6 +134,24 @@ def alphabet_list_idx(element):
 
     return next_topic, previous_topic
 
+def number_list_idx(element):
+    next_topic = ""
+    previous_topic = ""
+
+    number_list = get_number_list()
+
+    list_idx_end = len(number_list) - 1  # 마지막 인덱스
+    idx_now = number_list.index(element)
+
+    if idx_now == list_idx_end:
+        next_topic = number_list[0]
+    else:
+        next_topic = number_list[idx_now + 1]
+
+    if idx_now != 0:
+        previous_topic = number_list[idx_now - 1]
+
+    return next_topic, previous_topic
 
 def gen(camera):
     if not camera.isOpened():
@@ -162,6 +193,59 @@ def gen(camera):
                 ret, jpeg = cv2.imencode('.jpg', crop_img)
                 frame = jpeg.tobytes()
 
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+            except:
+                print("An exception occurred")
+
+        else:
+            print("Status of camera.read()\n", success, "\n=======================")
+
+# YS =====> for number SL
+def gen2(camera):
+    if not camera.isOpened():
+        raise RuntimeError("Could not start camera")
+
+    model2 = load_model('model/su_adamax.h5')
+
+    while True:
+        success, img = camera.read()
+        # print(success, img)
+
+        if success:
+            try:
+
+                cv2.rectangle(img, (250, 250), (600, 600), (000, 51, 51), 2)
+
+                crop_img = img[250:600, 250:600]
+                crop_img_path = crop_img_origin_path.get_path_name() + '/crop_img2.jpg'
+                cv2.imwrite(crop_img_path, crop_img)
+                # print("===============")
+                # print(crop_img)
+                # result = model_predict()
+                image = load_img(crop_img_path, target_size=(64, 64))
+                image = img_to_array(image)
+                image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
+                # print("===============")
+                prediction = model2.predict(image)
+                # print("===============")
+                target_idx_for_predict = target_idx2.get_idx()
+                # print("===============")
+                print("타겟예측: ", prediction[0][target_idx_for_predict])
+                # print("===============")
+                if np.argmax(prediction[0]) == 1:
+                    result = get_label2(np.argmax(prediction[0]))
+
+                elif prediction[0][target_idx_for_predict] > 0:
+                    result = get_label2(target_idx_for_predict)
+                else:
+                    result = ''
+                # print("===============")
+                predict_label.set_label(result)
+                # print("===============")
+                ret, jpeg = cv2.imencode('.jpg', crop_img)
+                frame = jpeg.tobytes()
+                # print("===============")
                 yield (b'--frame\r\n'
                        b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
             except:
@@ -233,6 +317,51 @@ def return_label():
             'label': '',
             'lang_code': session['language']
         
+        }
+    elif label != value:
+        predict_result = {
+            'status': 0,
+            'info': gettext('predict_incorrect'),
+            'label': label,
+            'lang_code': session['language']
+
+        }
+        print("틀림!")
+    else:
+        predict_result = {
+            'status': 1,
+            'info': gettext('predict_correct'),
+            'label': label,
+            'lang_code': session['language']
+        }
+
+    # result 의 status 값이 1이면 참 -> main.js 에서 correct 값 증가
+
+    json_data = json.dumps(predict_result)  # json 형태로 바꿔줘야 에러 안남
+    return json_data
+
+
+# YS
+@app.route('/return_label2', methods=['POST', 'GET'])
+def return_label2():
+    value = request.form.get("target", False)
+    # 띄어쓰기 조심!@!
+    label_list = [" 0 ", " 1 "," 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 ", " del ", " nothing ", " space "]
+    tem = label_list.index(value)
+    print(tem)
+    idx = target_idx2.set_idx(tem)
+    print(idx)
+    label = " " + predict_label.get_label() + " "
+
+    # ajax 에서 값 받아올때 공백이 앞뒤로 붙는데 python strip() 함수가 안먹어서...
+
+    if label == '':
+        predict_result = {
+            'status': 0,
+            'info': 'not detected',
+            'label': '',
+            'lang_code': session['language']
+
         }
     elif label != value:
         predict_result = {
@@ -331,12 +460,24 @@ def practice_asl():
     alphabet_list = get_alphabet_list()
     return render_template('practice_asl.html', alphabet_list=alphabet_list, link=request.full_path)
 
+# YS
+@app.route('/practice_num')
+def practice_num():
+    number_list = get_number_list()
+    return render_template('practice_num.html', number_list=number_list, link=request.full_path)
+# YS
 
 # video streaming
 @app.route('/video_feed')
 def video_feed():
     camera = cv2.VideoCapture(0)
     return Response(gen(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+# YS video streaming
+@app.route('/video_feed2')
+def video_feed2():
+    camera = cv2.VideoCapture(0)
+    return Response(gen2(camera), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 @app.route('/practice', methods=['GET', 'POST'])
@@ -350,6 +491,16 @@ def practice():
     return render_template('practice.html', img=img, alphabet=alphabet, previous_topic=previous_topic,
                            next_topic=next_topic, link=request.full_path)
 
+@app.route('/practice2', methods=['GET', 'POST'])
+def practice2():
+    element = request.args.get('element')
+    number = element
+    img = "../static/img/asl_" + element + ".png"
+
+    next_topic, previous_topic = number_list_idx(element)
+
+    return render_template('practice2.html', img=img, number=number, previous_topic=previous_topic,
+                           next_topic=next_topic, link=request.full_path)
 
 @app.route('/')
 def index():
