@@ -20,18 +20,29 @@
                 <br><br>{{_('asl_practice')}}</a>
         </div>
         <div class="col-md-6">
-            <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz',group='alphabet')}}" style="background-color: #003127; border-color: #003127" >
-                <br><img src="/static/img/icon-3.png" width="100px" height="100px">
-                <br><br>{{_('asl_quiz')}}</a>
+          <a class="btn btn-primary btn-block p-6" href="{{url_for('practice_num')}}" style="background-color: #003127; border-color: #003127" >
+              <br><img src="/static/img/icon-1.png" width="100px" height="100px">
+              <br><br>{{_('num_practice')}}</a>
 
-        </div>
+      </div>
 
-          <div class="col-md-6">
-            <a class="btn btn-primary btn-block p-6" href="{{url_for('practice_num')}}" style="background-color: #003127; border-color: #003127" >
-                <br><img src="/static/img/icon-1.png" width="100px" height="100px">
-                <br><br>숫자 연습</a>
+      </div>
+<br>      
+      <div class="row">
 
-        </div>
+
+      <div class="col-md-6">
+        <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz',group='alphabet')}}" style="background-color: #003127; border-color: #003127" >
+            <br><img src="/static/img/icon-3.png" width="100px" height="100px">
+            <br><br>{{_('asl_quiz')}}</a>
+
+    </div>
+      <div class="col-md-6">
+        <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz',group='number')}}" style="background-color: #003127; border-color: #003127" >
+            <br><img src="/static/img/icon-3.png" width="100px" height="100px">
+            <br><br>{{_('num_quiz')}}</a>
+
+    </div>
       </div>
     </div>
 

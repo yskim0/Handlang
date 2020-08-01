@@ -45,19 +45,54 @@ except OSError as e:
 # make directory
 origin_path = crop_img_origin_path.get_path_name() + '/crop_img.jpg'
 cv2.imwrite(origin_path, default_img)
+
+
+class Models:
+    def __init__(self,label,letter_list):
+        self.__label=label
+        self.__letter_list=letter_list
     
-# h5 모델 
-def get_label(idx):
-    label = ["A", "B", "C", "D", "E", "F", "G",
-            "H", "I", "K", "L", "M", "N", "O", "P", "Q",
+    def get_label(self,idx):
+        # label = ["A", "B", "C", "D", "E", "F", "G",
+        #     "H", "I", "K", "L", "M", "N", "O", "P", "Q",
+        #     "R", "S", "T", "U", "V", "W", "X", "Y",
+        #     "del", "nothing", "space"]
+        return self.__label[idx]
+    def get_letter_list(self):
+        # alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm', 'n', 'o',
+        #              'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y']
+        return self.__letter_list
+    def letter_list_idx(self,element):
+        next_topic = ""
+        previous_topic = ""
+        letter_list=self.__letter_list
+        list_idx_end = len(letter_list) - 1  # 마지막 인덱스
+        idx_now = letter_list.index(element)
+        if idx_now == list_idx_end:
+            next_topic = letter_list[0]
+        else:
+            next_topic = letter_list[idx_now + 1]
+        if idx_now != 0:
+            previous_topic = letter_list[idx_now - 1]
+        return next_topic, previous_topic
+alphabet_label=["A", "B", "C", "D", "E", "F", "G",
+             "H", "I", "K", "L", "M", "N", "O", "P", "Q",
             "R", "S", "T", "U", "V", "W", "X", "Y",
             "del", "nothing", "space"]
-    return label[idx]
+alphabet_list=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm', 'n', 'o',
+                      'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y']
 
-def get_label2(idx):
-    label = ["0","1","2","3","4","5","6","7","8","9",
-            "del", "nothing", "space"]
-    return label[idx]
+number_label = ["0","1","2","3","4","5","6","7","8","9","del", "nothing", "space"]
+number_list = ['0','1','2','3','4','5','6','7','8','9']
+alphabet_model=Models(alphabet_label,alphabet_list)
+number_model= Models(number_label, number_list) 
+def get_model(language):
+    if language=="alphabet":
+        return alphabet_model
+    if language=="number":
+        return number_model
+    
+
 
 # ** 전역변수 대신 클래스 객체 사용
 class PredictLabel(object):
@@ -86,10 +121,10 @@ predict_label = PredictLabel('')
 # YS ==> number SL
 target_idx2 = Target_idx(0)
 
-@app.before_request
-def before_request():
-    g.total_q = 10
-
+# @app.before_request
+# def before_request():
+#     g.total_q = 5
+total_q = 5
 @babel.localeselector
 def get_locale():
     try:
@@ -102,56 +137,6 @@ def get_locale():
 
     return request.accept_languages.best_match(['en', 'ko'])
 
-
-def get_alphabet_list():
-    alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k', 'l', 'm', 'n', 'o',
-                     'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y']
-
-    return alphabet_list
-
-# YS
-def get_number_list():
-    number_list = ['0','1','2','3','4','5','6','7','8','9']
-    return number_list
-# YS
-
-def alphabet_list_idx(element):
-    next_topic = ""
-    previous_topic = ""
-
-    alphabet_list = get_alphabet_list()
-
-    list_idx_end = len(alphabet_list) - 1  # 마지막 인덱스
-    idx_now = alphabet_list.index(element)
-
-    if idx_now == list_idx_end:
-        next_topic = alphabet_list[0]
-    else:
-        next_topic = alphabet_list[idx_now + 1]
-
-    if idx_now != 0:
-        previous_topic = alphabet_list[idx_now - 1]
-
-    return next_topic, previous_topic
-
-def number_list_idx(element):
-    next_topic = ""
-    previous_topic = ""
-
-    number_list = get_number_list()
-
-    list_idx_end = len(number_list) - 1  # 마지막 인덱스
-    idx_now = number_list.index(element)
-
-    if idx_now == list_idx_end:
-        next_topic = number_list[0]
-    else:
-        next_topic = number_list[idx_now + 1]
-
-    if idx_now != 0:
-        previous_topic = number_list[idx_now - 1]
-
-    return next_topic, previous_topic
 
 def gen(camera):
     if not camera.isOpened():
@@ -181,10 +166,10 @@ def gen(camera):
                 print("타겟예측: ", prediction[0][target_idx_for_predict])
 
                 if np.argmax(prediction[0]) == 1:
-                    result = get_label(np.argmax(prediction[0]))
+                    result = alphabet_model.get_label(np.argmax(prediction[0]))
 
                 elif prediction[0][target_idx_for_predict] > 0: 
-                    result = get_label(target_idx_for_predict)
+                    result = alphabet_model.get_label(target_idx_for_predict)
                 else:
                     result = ''
 
@@ -234,10 +219,10 @@ def gen2(camera):
                 print("타겟예측: ", prediction[0][target_idx_for_predict])
                 # print("===============")
                 if np.argmax(prediction[0]) == 1:
-                    result = get_label2(np.argmax(prediction[0]))
+                    result = number_model.get_label(np.argmax(prediction[0]))
 
                 elif prediction[0][target_idx_for_predict] > 0:
-                    result = get_label2(target_idx_for_predict)
+                    result = number_model.get_label(target_idx_for_predict)
                 else:
                     result = ''
                 # print("===============")
@@ -255,18 +240,18 @@ def gen2(camera):
             print("Status of camera.read()\n", success, "\n=======================")
 
 
-def make_quiz():
+def make_quiz(language_model):
     question_list = {}
     img_list = []
-    for i in range(g.total_q):
-        question, examples, img = make_random_quiz(question_list)
+    for i in range(total_q):
+        question, examples, img = make_random_quiz(question_list,language_model)
         question_list[question] = examples
         img_list.append(img)
     return question_list, img_list
 
 
-def make_random_quiz(question_list):
-    alphabet_list = get_alphabet_list()
+def make_random_quiz(question_list,language_model):
+    alphabet_list = language_model.get_letter_list()
     examples = []  # 보기
     while True:
         answer = alphabet_list[random.randint(0, len(alphabet_list) - 1)]
@@ -291,6 +276,7 @@ def is_valid_quiz(answer, question_list):
         return False
     else:
         return True
+
 
 
 # for ajax
@@ -408,16 +394,18 @@ def korean():
         return redirect('/')
 
 
-@app.route('/quiz', methods=['GET', 'POST'])
-def quiz():
+@app.route('/quiz/<group>', methods=['GET', 'POST'])
+def quiz(group):
     if request.method == 'GET':
-        question_list, img_list = make_quiz()
-        return render_template('quiz.html', str=str, enumerate=enumerate, question_list=question_list,
-                               img_list=img_list, total_q=g.total_q, link=request.full_path)
+        language_model=get_model(group)
+        question_list, img_list = make_quiz(language_model)
+        print(question_list)
+        return render_template('quiz.html',group=group, str=str, enumerate=enumerate, question_list=question_list,
+                               img_list=img_list, total_q=total_q, link=request.full_path)
 
     if request.method == 'POST':
         user_answers = {}
-        for i in range(g.total_q):
+        for i in range(total_q):
             question = "question" + str(i)
             answer = "answer" + str(i)
             q = request.form[question]
@@ -426,12 +414,12 @@ def quiz():
             print(user_answers)
         user_answers = json.dumps(user_answers)
 
-        return redirect(url_for('.quiz_result', user_answers=user_answers))
+        return redirect(url_for('quiz_result',group=group, user_answers=user_answers))
 
 
-# 퀴즈 결과
-@app.route('/quiz/result')
-def quiz_result():
+
+@app.route('/quiz/<group>/result')
+def quiz_result(group):
     try:
         user_answers = json.loads(request.args['user_answers'])
         items = user_answers.items()
@@ -445,25 +433,31 @@ def quiz_result():
             correct_num += 1
         else:
             incorrect_questions.append(q.upper())
-    if correct_num == g.total_q:
-        img_path = "../static/img/score_100.png"
-    elif correct_num >= (g.total_q // 2):
-        img_path = "../static/img/score_50.png"
+    # if correct_num == g.total_q:
+    #     img_path = "../static/img/score_100.png"
+    # elif correct_num >= (g.total_q // 2):
+    #     img_path = "../static/img/score_50.png"
+    # else:
+    #     img_path = "../static/img/score_0.png"
+    if correct_num == total_q:
+        img_path = "score_100.png"
+    elif correct_num >= (total_q // 2):
+        img_path = "score_50.png"
     else:
-        img_path = "../static/img/score_0.png"
-    return render_template('result.html', correct_num=correct_num, incorrect_questions=incorrect_questions,
-                           total_q=g.total_q, img_path=img_path, link=request.full_path)
-
+        img_path = "score_0.png"
+    print(img_path)
+    return render_template('result.html', group=group,correct_num=correct_num, incorrect_questions=incorrect_questions,
+                           total_q=total_q, img_path=img_path, link=request.full_path)
 
 @app.route('/practice_asl')
 def practice_asl():
-    alphabet_list = get_alphabet_list()
+    alphabet_list = alphabet_model.get_letter_list()
     return render_template('practice_asl.html', alphabet_list=alphabet_list, link=request.full_path)
 
 # YS
 @app.route('/practice_num')
 def practice_num():
-    number_list = get_number_list()
+    number_list = number_model.get_letter_list()
     return render_template('practice_num.html', number_list=number_list, link=request.full_path)
 # YS
 
@@ -486,7 +480,7 @@ def practice():
     alphabet = element.upper()
     img = "../static/img/asl_" + element + ".png"
 
-    next_topic, previous_topic = alphabet_list_idx(element)
+    next_topic, previous_topic = alphabet_model.letter_list_idx(element)
 
     return render_template('practice.html', img=img, alphabet=alphabet, previous_topic=previous_topic,
                            next_topic=next_topic, link=request.full_path)
@@ -497,7 +491,7 @@ def practice2():
     number = element
     img = "../static/img/asl_" + element + ".png"
 
-    next_topic, previous_topic = number_list_idx(element)
+    next_topic, previous_topic = number_model.letter_list_idx(element)
 
     return render_template('practice2.html', img=img, number=number, previous_topic=previous_topic,
                            next_topic=next_topic, link=request.full_path)

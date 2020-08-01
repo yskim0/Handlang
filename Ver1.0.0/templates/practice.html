@@ -1,67 +1,6 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <!--    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% extends 'layout.html' %}
 
-    <title>{{_('handlang_title')}}🍩</title>
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
-
-    <!-- GET http://0.0.0.0:5000/favicon.ico 404 (NOT FOUND) 에러 해결 코드 -->
-    <link rel="shortcut icon" href="#">
-
-    <style>
-        body {
-            font-family: 'NanumSquare', sans-serif !important;;
-            text-align: center;
-
-        }
-    </style>
-
-</head>
-
-<body class="practiceASL">
-
-<style type="text/css">
-    /* 점보 트론은 홈페이지에 하나만 있으면 되니까 직접 씀 */
-    .jumbotron {
-        /* background-image: url("/static/img/jumbtron-bg.jpg"); */
-        background-color: #707D7C;
-        background-size: cover;
-        text-shadow: black 0.1em 0.1em 0.1em;
-        color: white;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-</style>
-
-<div style="min-height: calc(100vh - 30px);">
-    <!-- 네비게이션바 -->
-
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('index') }}">{{_('handlang_title')}}👋</a>
-
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active text-light" href="{{ url_for('index') }}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="{{url_for('practice_asl')}}">{{_('nav_aslPractice')}}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" href="{{url_for('quiz')}}">{{_('nav_quiz')}}</a>
-            </li>
-            <li class="nav-item d-flex align-items-center text-secondary">
-                <a  class="text-secondary" href="{{ url_for('english', link=link) }}" style="margin-right:3px;">English </a>|
-                <a class="text-secondary" href="{{ url_for('korean', link=link) }}" style="margin-left:3px;"> 한국어</a>
-            </li>
-
-        </ul>
-    </nav>
-
+{% block content %}
     <!--    grid-->
     <div class="container" style="margin-bottom: 30px;">
         <div class="row">
@@ -73,25 +12,25 @@
                 <!--          ASL image-->
                 <!-- <div class="col-sm-6"> -->
 
-                <!--          ok 싸인 by 지영언니-->
-                <table class="table table-lg table-bordered table-warning text-center">
-                    <thead>
-                    <tr>
-                        <td><img style="min-width: 50px" id="check_table_1" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                        <td><img style="min-width: 50px" id="check_table_2" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                        <td><img style="min-width: 50px" id="check_table_3" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                        <td><img style="min-width: 50px" id="check_table_4" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                    </tr>
-                    </thead>
-                    <thead>
-                    <tr>
-                        <td><img style="min-width: 50px" id="check_table_5" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                        <td><img style="min-width: 50px" id="check_table_6" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                        <td><img style="min-width: 50px" id="check_table_7" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                        <td><img style="min-width: 50px" id="check_table_8" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
-                    </tr>
-                    </thead>
-                </table>
+                    <!--          ok 싸인 by 지영언니-->
+                    <table class="table table-lg table-bordered table-warning text-center">
+                        <thead>
+                        <tr>
+                            <td><img style="min-width: 50px" id="check_table_1" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_2" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_3" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_4" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        </tr>
+                        </thead>
+                        <thead>
+                        <tr>
+                            <td><img style="min-width: 50px" id="check_table_5" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_6" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_7" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                            <td><img style="min-width: 50px" id="check_table_8" src="../static/img/expressioness.png" class="w-25" alt=""/></td>
+                        </tr>
+                        </thead>
+                    </table>
                 <!-- </div> -->
                 <br><br><br>
             </div>
@@ -103,7 +42,7 @@
                     {{_('practice_notice2')}}
                     <div id="predict-in"
                          style="margin-top: 10px; line-height: 1.4em; border:1px dashed steelblue; font-size: 200%; text-align: center;">
-                        {{_('practice_status_not_started')}}
+                         {{_('practice_status_not_started')}}
                     </div>
                 </div>
                 <p id="predict_status" class="float-md-right m-2 bg-light">
@@ -114,8 +53,8 @@
         <!--          경계선-->
         <hr style="border: 0; height: 3px; background: #ccc;">
 
-
-        <br><br>
+        
+<br><br>
         <div class="row">
             <div class="col-sm-4">
                 {% if previous_topic|length %}
@@ -137,17 +76,4 @@
     </div>
     <!--다음 알파벳으로-->
 
-
-</div>
-
-
-
-<footer >
-    <p class="border-top" style="text-align: center; height: 30px; margin: 0;">&copy; {{_('handlang_title')}}</p>
-</footer>
-
-<script src="../static/js/jquery-3.4.1.js"></script>
-<script src="../static/js/main.js"></script>
-</body>
-</html>
-
+{% endblock %}

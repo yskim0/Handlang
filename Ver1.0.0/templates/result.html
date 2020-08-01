@@ -5,7 +5,11 @@
 
 <div class="container " style=" text-align: center;">
     <div>
-        <img style="margin-top:20px; width: 500px; height: 500px" src="{{img_path}}" alt="img">
+       
+        <img style="margin-top:20px; width: 500px; height: 500px" src="{{ url_for('static', filename='img/'+img_path)}}" alt="img"> 
+
+
+
     </div>
         
     <div style="font-weight: 500; font-size:40px;">
@@ -27,13 +31,9 @@
             <a href="/practice_asl" class="btn btn-primary btn-lg btn-block"> {{_('go_practice')}}  </a>
         </div>
         <div class="col">
-            {% if group=='alphabet' %}
-            <a href="/quiz/alphabet" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a>
-            {% else %}
-            <a href="/quiz/number" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a>
-
-            {% endif %}
+            <a href="{{url_for('quiz',group=group)}}" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a> 
         </div>
+        
     </div>       
 </div>
 
