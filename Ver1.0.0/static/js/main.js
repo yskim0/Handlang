@@ -216,7 +216,7 @@ $("#btn_practice_asl").click( function() {
 
 $(document).ready(function(){
 	var q_num=0;
-	var total_q=10;
+	var total_q=5;
 
 	$("#next").click(function(){
 	  $("#before").show();

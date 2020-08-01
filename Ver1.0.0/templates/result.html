@@ -27,7 +27,12 @@
             <a href="/practice_asl" class="btn btn-primary btn-lg btn-block"> {{_('go_practice')}}  </a>
         </div>
         <div class="col">
-            <a href="/quiz" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a>
+            {% if group=='alphabet' %}
+            <a href="/quiz/alphabet" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a>
+            {% else %}
+            <a href="/quiz/number" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a>
+
+            {% endif %}
         </div>
     </div>       
 </div>

@@ -5,7 +5,12 @@
 <div id="quiz_post" >
 
     <div class="container">
-        <form id="quizform" action="/quiz" method="post">
+        {%if group=='alphabet' %}
+        <form id="quizform" action="/quiz/alphabet" method="post">
+
+        {% else %}
+        <form id="quizform" action="/quiz/number" method="post">
+        {% endif %}
             {% for idx, key in enumerate(question_list) %}
                 {% if idx==0 %}
                     <div id={{idx}}>

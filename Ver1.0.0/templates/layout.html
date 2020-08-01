@@ -52,7 +52,7 @@
                     <a class="nav-link text-light" href="{{url_for('practice_asl')}}">{{_('nav_aslPractice')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{url_for('quiz')}}">{{_('nav_quiz')}}</a>
+                    <a class="nav-link text-light" href="{{url_for('quiz',group='alphabet')}}" >{{_('nav_quiz')}}</a>
                 </li>
                 <li class="nav-item d-flex align-items-center text-secondary">
                     <a  class="text-secondary" href="{{ url_for('english', link=link) }}" style="margin-right:3px;">English </a>|
