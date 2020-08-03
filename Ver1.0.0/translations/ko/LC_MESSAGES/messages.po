@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-08-02 08:18+0900\n"
+"POT-Creation-Date: 2020-08-04 05:57+0900\n"
 "PO-Revision-Date: 2020-03-23 14:51+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app3.py:310 app3.py:355
+#: app.py:315 app.py:361
 msgid "predict_incorrect"
 msgstr "틀렸습니다😭"
 
-#: app3.py:319 app3.py:364
+#: app.py:324 app.py:370
 msgid "predict_correct"
 msgstr "맞았습니다!"
 
@@ -131,40 +131,54 @@ msgid "asl_practice"
 msgstr "지문자 연습"
 
 #: templates/index.html:25
+msgid "number_practice"
+msgstr "숫자 연습"
+
+#: templates/index.html:34
 msgid "asl_quiz"
 msgstr "지문자 퀴즈"
 
-#: templates/index.html:34
-msgid "num_practice"
-msgstr "숫자 연습"
-
-#: templates/index.html:40
-msgid "num_quiz"
+#: templates/index.html:39
+msgid "number_quiz"
 msgstr "숫자 퀴즈"
 
-#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:75
-#: templates/practice2.html:9 templates/practice2.html:45
-#: templates/practice2.html:146
+#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:88
 msgid "handlang_title"
 msgstr "핸들랭(Handlang)"
 
-#: templates/layout.html:52 templates/practice2.html:52
+#: templates/layout.html:53
+msgid "alphabet"
+msgstr "알파벳 지문자"
+
+#: templates/layout.html:56
 msgid "nav_aslPractice"
-msgstr "지문자연습"
+msgstr "지문자 연습"
 
-#: templates/layout.html:56 templates/practice2.html:55
+#: templates/layout.html:57
 msgid "nav_quiz"
-msgstr "퀴즈"
+msgstr "지문자 퀴즈"
 
-#: templates/practice.html:41 templates/practice2.html:102
+#: templates/layout.html:62
+msgid "number"
+msgstr "숫자"
+
+#: templates/layout.html:65
+msgid "nav_numberPractice"
+msgstr "숫자 연습"
+
+#: templates/layout.html:66
+msgid "nav_number_quiz"
+msgstr "숫자 퀴즈"
+
+#: templates/practice.html:41
 msgid "practice_notice1"
 msgstr "현재 predict label"
 
-#: templates/practice.html:42 templates/practice2.html:103
+#: templates/practice.html:42
 msgid "practice_notice2"
 msgstr "예측을 시작하려면 Enter 키 ↩️ 를 눌러주세요."
 
-#: templates/practice.html:45 templates/practice2.html:106
+#: templates/practice.html:45
 msgid "practice_status_not_started"
 msgstr "Not Started."
 
@@ -172,28 +186,19 @@ msgstr "Not Started."
 msgid "predict_status_not_started_2"
 msgstr "예측중이 아님"
 
-#: templates/practice.html:62 templates/practice2.html:123
+#: templates/practice.html:62
 msgid "previous"
 msgstr "이전"
 
 #: templates/practice.html:66
 msgid "go_practiceAsl"
-msgstr "지문자 선택하러 가기"
+msgstr "리스트 보기"
 
-#: templates/practice.html:71 templates/practice2.html:132
+#: templates/practice.html:71
 msgid "next"
 msgstr "다음"
 
-#: templates/practice2.html:110
-msgid "predict_status_not_started"
-msgstr ""
-
-#: templates/practice2.html:127
-msgid "go_practiceNum"
-msgstr ""
-
-#: templates/practice_asl.html:12 templates/practice_num.html:11
-#: templates/result.html:31
+#: templates/practice_list.html:20 templates/result.html:30
 msgid "go_practice"
 msgstr "연습하러 가기"
 
@@ -205,7 +210,7 @@ msgstr "지문자"
 msgid "question_2"
 msgstr "를 고르시오."
 
-#: templates/quiz.html:59
+#: templates/quiz.html:60
 msgid "submit_quiz"
 msgstr "제출하기"
 
@@ -213,7 +218,7 @@ msgstr "제출하기"
 msgid "result_incorrect_list"
 msgstr "틀린 문제"
 
-#: templates/result.html:34
+#: templates/result.html:33
 msgid "go_quiz"
 msgstr "다시 풀기"
 

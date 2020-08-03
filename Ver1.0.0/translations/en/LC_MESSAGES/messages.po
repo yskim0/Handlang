@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-08-02 08:18+0900\n"
+"POT-Creation-Date: 2020-08-04 05:57+0900\n"
 "PO-Revision-Date: 2020-03-23 14:52+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app3.py:310 app3.py:355
+#: app.py:315 app.py:361
 msgid "predict_incorrect"
 msgstr "You're wrong 😭"
 
-#: app3.py:319 app3.py:364
+#: app.py:324 app.py:370
 msgid "predict_correct"
 msgstr "That's correct!"
 
@@ -131,40 +131,54 @@ msgid "asl_practice"
 msgstr "ASL practice"
 
 #: templates/index.html:25
+msgid "number_practice"
+msgstr "Number practice"
+
+#: templates/index.html:34
 msgid "asl_quiz"
 msgstr "ASL Quiz"
 
-#: templates/index.html:34
-msgid "num_practice"
-msgstr "Number practice"
-
-#: templates/index.html:40
-msgid "num_quiz"
+#: templates/index.html:39
+msgid "number_quiz"
 msgstr "Number Quiz"
 
-#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:75
-#: templates/practice2.html:9 templates/practice2.html:45
-#: templates/practice2.html:146
+#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:88
 msgid "handlang_title"
 msgstr "Handlang"
 
-#: templates/layout.html:52 templates/practice2.html:52
+#: templates/layout.html:53
+msgid "alphabet"
+msgstr "Alphabet"
+
+#: templates/layout.html:56
 msgid "nav_aslPractice"
 msgstr "ASL practice"
 
-#: templates/layout.html:56 templates/practice2.html:55
+#: templates/layout.html:57
 msgid "nav_quiz"
-msgstr "Quiz"
+msgstr "ASL Quiz"
 
-#: templates/practice.html:41 templates/practice2.html:102
+#: templates/layout.html:62
+msgid "number"
+msgstr "Number"
+
+#: templates/layout.html:65
+msgid "nav_numberPractice"
+msgstr "Number Practice"
+
+#: templates/layout.html:66
+msgid "nav_number_quiz"
+msgstr "Number Quiz"
+
+#: templates/practice.html:41
 msgid "practice_notice1"
 msgstr "predict label"
 
-#: templates/practice.html:42 templates/practice2.html:103
+#: templates/practice.html:42
 msgid "practice_notice2"
 msgstr "Press Enter ↩️ to start"
 
-#: templates/practice.html:45 templates/practice2.html:106
+#: templates/practice.html:45
 msgid "practice_status_not_started"
 msgstr "Not Started."
 
@@ -172,28 +186,19 @@ msgstr "Not Started."
 msgid "predict_status_not_started_2"
 msgstr "Not Started."
 
-#: templates/practice.html:62 templates/practice2.html:123
+#: templates/practice.html:62
 msgid "previous"
 msgstr "Previous"
 
 #: templates/practice.html:66
 msgid "go_practiceAsl"
-msgstr "Go to select alphabet"
+msgstr "list"
 
-#: templates/practice.html:71 templates/practice2.html:132
+#: templates/practice.html:71
 msgid "next"
 msgstr "Next"
 
-#: templates/practice2.html:110
-msgid "predict_status_not_started"
-msgstr ""
-
-#: templates/practice2.html:127
-msgid "go_practiceNum"
-msgstr ""
-
-#: templates/practice_asl.html:12 templates/practice_num.html:11
-#: templates/result.html:31
+#: templates/practice_list.html:20 templates/result.html:30
 msgid "go_practice"
 msgstr "Go to practice"
 
@@ -205,7 +210,7 @@ msgstr "What is the correct sign for"
 msgid "question_2"
 msgstr "?"
 
-#: templates/quiz.html:59
+#: templates/quiz.html:60
 msgid "submit_quiz"
 msgstr "Submit"
 
@@ -213,7 +218,7 @@ msgstr "Submit"
 msgid "result_incorrect_list"
 msgstr "Wrong answers"
 
-#: templates/result.html:34
+#: templates/result.html:33
 msgid "go_quiz"
 msgstr "Quiz"
 

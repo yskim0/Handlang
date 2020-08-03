@@ -1,15 +1,23 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+{% if group=='alphabet' %}
+
     <br>We exclude alphabet 'j','z' since they require movement.<br>
-    알파벳 j, z는 동작을 포함했기 때문에 제외했습니다.<br>
+	알파벳 j, z는 동작을 포함했기 때문에 제외했습니다.<br>
+{% endif %}	
 <div class="row align-items-center" style="margin-left: 10%;">
 	{% for alphabet in alphabet_list %}
 	<div class="card m-2 text-center" style="width: 15rem;">
 	  <img src="../static/img/asl_{{ alphabet }}.png" class="card-img-top" alt="...">
 	  <div class="card-body">
-	    <h3 class="card-title">{{ alphabet.upper() }}</h3>
-	    <a href="{{ url_for('practice', element=alphabet) }}" class="btn btn-primary text-center">{{_('go_practice')}}</a>
+		  {% if group=='alphabet' %}
+		<h3 class="card-title">{{ alphabet.upper() }}</h3>
+		{% else %}
+		<h3 class="card-title">{{ alphabet }}</h3>
+		{% endif %}
+
+	    <a href="{{ url_for('practice',group=group ,element=alphabet) }}" class="btn btn-primary text-center">{{_('go_practice')}}</a>
 	  </div>
 	</div>
 	{% endfor %}

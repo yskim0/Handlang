@@ -21,14 +21,13 @@
             <!-- 틀린 문제 : {{incorrect_questions}} -->
             <span class="border-bottom" style="margin-right:50px;">{{_('result_incorrect_list')}} </span>                
             {% for idx in incorrect_questions %}
-                <a href="/practice?element={{idx.lower()}}">{{idx}}</a> &nbsp;
+                <a href="{{url_for('practice',element=idx.lower(),group=group)}}">{{idx}}</a> &nbsp;
             {% endfor %}
-
         {% endif %}
     </div>
     <div class="row" style="margin-top: 100px;">
         <div class="col">
-            <a href="/practice_asl" class="btn btn-primary btn-lg btn-block"> {{_('go_practice')}}  </a>
+            <a href="{{url_for('practice_list',group=group)}}" class="btn btn-primary btn-lg btn-block"> {{_('go_practice')}}  </a>
         </div>
         <div class="col">
             <a href="{{url_for('quiz',group=group)}}" class="btn btn-primary btn-lg btn-block">{{_('go_quiz')}}</a> 

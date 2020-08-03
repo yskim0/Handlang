@@ -40,7 +40,8 @@
 
     <div style="min-height: calc(100vh - 30px);">
             <!-- 네비게이션바 -->
-
+         
+  
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="{{ url_for('index') }}">{{_('handlang_title')}}👋</a>
           
@@ -49,12 +50,21 @@
                     <a class="nav-link active text-light" href="{{ url_for('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{url_for('practice_asl')}}">{{_('nav_aslPractice')}}</a>
+                    <a class="nav-link active text-light" href="{{url_for('practice_list', group='alphabet')}}">{{_('nav_aslPractice')}}</a>
                 </li>
-                
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="{{url_for('quiz',group='alphabet')}}" >{{_('nav_quiz')}}</a>
+                    <a class="nav-link active text-light" href="{{url_for('quiz', group='alphabet')}}">{{_('nav_quiz')}}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{url_for('practice_list', group='number')}}">{{_('nav_numberPractice')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{url_for('quiz',group='number')}}">{{_('nav_number_quiz')}}</a>
+                </li>
+             
+    
+
+               
                 <li class="nav-item d-flex align-items-center text-secondary">
                     <a  class="text-secondary" href="{{ url_for('english', link=link) }}" style="margin-right:3px;">English </a>|
                     <a class="text-secondary" href="{{ url_for('korean', link=link) }}" style="margin-left:3px;"> 한국어</a>
@@ -77,5 +87,8 @@
 
     <script src="../static/js/jquery-3.4.1.js"></script>
     <script src="../static/js/main.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
 </body>
 </html>
