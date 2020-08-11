@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <!-- 프로젝트 소개 container -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">{{_('headline')}}</h1>
+            <p class="text-center">{{_('headline2')}}</p>
+        </div>
+    </div>
+
+
+    <!-- 페이지 버튼들 container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-block p-6" href="{{url_for('practice_list', group='alphabet')}}" style="background-color: #003127; border-color: #003127" >
+                <br><img src="/static/img/icon-1.png" width="100px" height="100px">
+                <br><br>{{_('asl_practice')}}</a>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-block p-6" href="{{url_for('practice_list', group='number')}}" style="background-color: #003127; border-color: #003127" >
+                <br><img src="/static/img/icon-1.png" width="100px" height="100px">
+                <br><br>{{_('number_practice')}}</a>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz',group='alphabet')}}" style="background-color: #003127; border-color: #003127" >
+                <br><img src="/static/img/icon-3.png" width="100px" height="100px">
+                <br><br>{{_('asl_quiz')}}</a>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-block p-6" href="{{url_for('quiz',group='number')}}" style="background-color: #003127; border-color: #003127" >
+                <br><img src="/static/img/icon-3.png" width="100px" height="100px">
+                <br><br>{{_('number_quiz')}}</a>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

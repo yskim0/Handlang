@@ -1,0 +1,233 @@
+# English translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-08-04 05:57+0900\n"
+"PO-Revision-Date: 2020-03-23 14:52+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app.py:315 app.py:361
+msgid "predict_incorrect"
+msgstr "You're wrong 😭"
+
+#: app.py:324 app.py:370
+msgid "predict_correct"
+msgstr "That's correct!"
+
+#: templates/aboutUs.html:7
+msgid "project_select_background"
+msgstr "Project Selection Background"
+
+#: templates/aboutUs.html:11
+msgid "about_project"
+msgstr "blah blah blah"
+
+#: templates/aboutUs.html:20
+msgid "asl"
+msgstr "What is ASL?"
+
+#: templates/aboutUs.html:24
+msgid "about_asl"
+msgstr "blah blah blah"
+
+#: templates/aboutUs.html:31
+msgid "main_service)"
+msgstr "Main Service"
+
+#: templates/aboutUs.html:35
+msgid "ms_practice_asl"
+msgstr "Practice ASL"
+
+#: templates/aboutUs.html:38
+msgid "ms_practice_title"
+msgstr "blah blah blah"
+
+#: templates/aboutUs.html:39
+msgid "ms_practice_info"
+msgstr ""
+
+#: templates/aboutUs.html:41
+msgid "ms_btn_practice_asl"
+msgstr "GO Practice ASL"
+
+#: templates/aboutUs.html:42
+msgid "ms_btn_practice_digit"
+msgstr "GO Practice Digit"
+
+#: templates/aboutUs.html:49
+msgid "ms_quiz"
+msgstr "Quiz"
+
+#: templates/aboutUs.html:52
+msgid "ms_quiz_title"
+msgstr "blah blah blah"
+
+#: templates/aboutUs.html:53
+msgid "ms_quiz_info"
+msgstr ""
+
+#: templates/aboutUs.html:55
+msgid "ms_btn_quiz"
+msgstr "GO QUIZ"
+
+#: templates/aboutUs.html:64
+msgid "about_team_member"
+msgstr "TEAM HANDLANG"
+
+#: templates/aboutUs.html:74
+msgid "kys"
+msgstr "KIM YEONSOO"
+
+#: templates/aboutUs.html:75
+msgid "kys_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:86
+msgid "shj"
+msgstr "SEO HYUNJU"
+
+#: templates/aboutUs.html:87
+msgid "shj_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:98
+msgid "ssh"
+msgstr "SON SUHYUN"
+
+#: templates/aboutUs.html:99
+msgid "ssh_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:110
+msgid "sjy"
+msgstr "SHIN JIYOUNG"
+
+#: templates/aboutUs.html:111
+msgid "sjy_introduction"
+msgstr ""
+
+#: templates/index.html:8
+msgid "headline"
+msgstr "American Sign Language Alphabet Education Project"
+
+#: templates/index.html:9
+msgid "headline2"
+msgstr "DSC EWHA"
+
+#: templates/index.html:20
+msgid "asl_practice"
+msgstr "ASL practice"
+
+#: templates/index.html:25
+msgid "number_practice"
+msgstr "Number practice"
+
+#: templates/index.html:34
+msgid "asl_quiz"
+msgstr "ASL Quiz"
+
+#: templates/index.html:39
+msgid "number_quiz"
+msgstr "Number Quiz"
+
+#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:88
+msgid "handlang_title"
+msgstr "Handlang"
+
+#: templates/layout.html:53
+msgid "alphabet"
+msgstr "Alphabet"
+
+#: templates/layout.html:56
+msgid "nav_aslPractice"
+msgstr "ASL practice"
+
+#: templates/layout.html:57
+msgid "nav_quiz"
+msgstr "ASL Quiz"
+
+#: templates/layout.html:62
+msgid "number"
+msgstr "Number"
+
+#: templates/layout.html:65
+msgid "nav_numberPractice"
+msgstr "Number Practice"
+
+#: templates/layout.html:66
+msgid "nav_number_quiz"
+msgstr "Number Quiz"
+
+#: templates/practice.html:41
+msgid "practice_notice1"
+msgstr "predict label"
+
+#: templates/practice.html:42
+msgid "practice_notice2"
+msgstr "Press Enter ↩️ to start"
+
+#: templates/practice.html:45
+msgid "practice_status_not_started"
+msgstr "Not Started."
+
+#: templates/practice.html:49
+msgid "predict_status_not_started_2"
+msgstr "Not Started."
+
+#: templates/practice.html:62
+msgid "previous"
+msgstr "Previous"
+
+#: templates/practice.html:66
+msgid "go_practiceAsl"
+msgstr "list"
+
+#: templates/practice.html:71
+msgid "next"
+msgstr "Next"
+
+#: templates/practice_list.html:20 templates/result.html:30
+msgid "go_practice"
+msgstr "Go to practice"
+
+#: templates/quiz.html:30
+msgid "question"
+msgstr "What is the correct sign for"
+
+#: templates/quiz.html:30
+msgid "question_2"
+msgstr "?"
+
+#: templates/quiz.html:60
+msgid "submit_quiz"
+msgstr "Submit"
+
+#: templates/result.html:22
+msgid "result_incorrect_list"
+msgstr "Wrong answers"
+
+#: templates/result.html:33
+msgid "go_quiz"
+msgstr "Quiz"
+
+#~ msgid "aboutUs"
+#~ msgstr "About Us"
+
+#~ msgid "number_practice"
+#~ msgstr "Number practice"
+
+#~ msgid "nav_numberPractice"
+#~ msgstr "Number practice"
+

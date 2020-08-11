@@ -1,0 +1,223 @@
+# Translations template for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-08-04 05:57+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app.py:315 app.py:361
+msgid "predict_incorrect"
+msgstr ""
+
+#: app.py:324 app.py:370
+msgid "predict_correct"
+msgstr ""
+
+#: templates/aboutUs.html:7
+msgid "project_select_background"
+msgstr ""
+
+#: templates/aboutUs.html:11
+msgid "about_project"
+msgstr ""
+
+#: templates/aboutUs.html:20
+msgid "asl"
+msgstr ""
+
+#: templates/aboutUs.html:24
+msgid "about_asl"
+msgstr ""
+
+#: templates/aboutUs.html:31
+msgid "main_service)"
+msgstr ""
+
+#: templates/aboutUs.html:35
+msgid "ms_practice_asl"
+msgstr ""
+
+#: templates/aboutUs.html:38
+msgid "ms_practice_title"
+msgstr ""
+
+#: templates/aboutUs.html:39
+msgid "ms_practice_info"
+msgstr ""
+
+#: templates/aboutUs.html:41
+msgid "ms_btn_practice_asl"
+msgstr ""
+
+#: templates/aboutUs.html:42
+msgid "ms_btn_practice_digit"
+msgstr ""
+
+#: templates/aboutUs.html:49
+msgid "ms_quiz"
+msgstr ""
+
+#: templates/aboutUs.html:52
+msgid "ms_quiz_title"
+msgstr ""
+
+#: templates/aboutUs.html:53
+msgid "ms_quiz_info"
+msgstr ""
+
+#: templates/aboutUs.html:55
+msgid "ms_btn_quiz"
+msgstr ""
+
+#: templates/aboutUs.html:64
+msgid "about_team_member"
+msgstr ""
+
+#: templates/aboutUs.html:74
+msgid "kys"
+msgstr ""
+
+#: templates/aboutUs.html:75
+msgid "kys_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:86
+msgid "shj"
+msgstr ""
+
+#: templates/aboutUs.html:87
+msgid "shj_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:98
+msgid "ssh"
+msgstr ""
+
+#: templates/aboutUs.html:99
+msgid "ssh_introduction"
+msgstr ""
+
+#: templates/aboutUs.html:110
+msgid "sjy"
+msgstr ""
+
+#: templates/aboutUs.html:111
+msgid "sjy_introduction"
+msgstr ""
+
+#: templates/index.html:8
+msgid "headline"
+msgstr ""
+
+#: templates/index.html:9
+msgid "headline2"
+msgstr ""
+
+#: templates/index.html:20
+msgid "asl_practice"
+msgstr ""
+
+#: templates/index.html:25
+msgid "number_practice"
+msgstr ""
+
+#: templates/index.html:34
+msgid "asl_quiz"
+msgstr ""
+
+#: templates/index.html:39
+msgid "number_quiz"
+msgstr ""
+
+#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:88
+msgid "handlang_title"
+msgstr ""
+
+#: templates/layout.html:53
+msgid "alphabet"
+msgstr ""
+
+#: templates/layout.html:56
+msgid "nav_aslPractice"
+msgstr ""
+
+#: templates/layout.html:57
+msgid "nav_quiz"
+msgstr ""
+
+#: templates/layout.html:62
+msgid "number"
+msgstr ""
+
+#: templates/layout.html:65
+msgid "nav_numberPractice"
+msgstr ""
+
+#: templates/layout.html:66
+msgid "nav_number_quiz"
+msgstr ""
+
+#: templates/practice.html:41
+msgid "practice_notice1"
+msgstr ""
+
+#: templates/practice.html:42
+msgid "practice_notice2"
+msgstr ""
+
+#: templates/practice.html:45
+msgid "practice_status_not_started"
+msgstr ""
+
+#: templates/practice.html:49
+msgid "predict_status_not_started_2"
+msgstr ""
+
+#: templates/practice.html:62
+msgid "previous"
+msgstr ""
+
+#: templates/practice.html:66
+msgid "go_practiceAsl"
+msgstr ""
+
+#: templates/practice.html:71
+msgid "next"
+msgstr ""
+
+#: templates/practice_list.html:20 templates/result.html:30
+msgid "go_practice"
+msgstr ""
+
+#: templates/quiz.html:30
+msgid "question"
+msgstr ""
+
+#: templates/quiz.html:30
+msgid "question_2"
+msgstr ""
+
+#: templates/quiz.html:60
+msgid "submit_quiz"
+msgstr ""
+
+#: templates/result.html:22
+msgid "result_incorrect_list"
+msgstr ""
+
+#: templates/result.html:33
+msgid "go_quiz"
+msgstr ""
+

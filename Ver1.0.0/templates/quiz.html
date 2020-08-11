@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="quiz_post" >
+
+    <div class="container">
+        <form id="quizform" action="/quiz/{{group}}" method="post">
+            {% for idx, key in enumerate(question_list) %}
+                {% if idx==0 %}
+                    <div id={{idx}}>
+                {% else %}
+                     <div id={{idx}} style="display:none;" > 
+                    <!-- <div id={{idx}} > -->
+
+                {% endif %}
+
+              <!--  progress bar -->
+                <div class="row" style="margin-top: 30px;">
+                    <div class="col-11">
+                         <div class="progress ">
+                            {% set percentage=100//total_q*(idx+1) %}
+                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}%" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="col-1">{{idx+1}}/{{total_q}}
+                    </div>
+                </div>
+
+                <!-- question -->
+                <div class="quiz" style="margin-top:60px; margin-bottom:70px; font-weight: 600; font-size:25px"> {{_('question')}} "{{key.upper()}}" {{_('question_2')}}</div>                
+                <input type="hidden"  name="{{'question'+str(idx)}}" value="{{key}}">
+
+                <!-- examples -->
+                <div class="d-flex justify-content-between ">
+                    {% for j in range(4) %}
+                        <label>
+                            <input type="radio" name="{{'answer'+str(idx)}}" value='{{question_list[key][j]}}'>
+                            <img class="eximg" src="{{img_list[idx][j]}}" alt="{{question_list[key][j]}}">
+                        </label>
+                    {% endfor %}
+                </div>
+
+                <input type="radio" class="hiddenRadioButton" name="{{'answer'+str(idx)}}" style="display:none;" value='-1' checked>
+
+                </div>
+            {% endfor %}
+
+
+
+            <!-- buttons -->
+            <div class="row" style="margin-top: 100px;">
+                <div class="col d-flex justify-content-start">
+                    <div>
+                        <button type="button" class="btn btn-primary" id="before" style="display:none; ">←</button> 
+                    </div>
+                </div>
+
+                <div class="col  d-flex justify-content-end">
+                    <div>
+                        <button class="btn btn-primary" id="submit" type="submit" style="display:none;" >{{_('submit_quiz')}}</button>
+                        <button type="button" class="btn btn-primary " id="next">→</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+    
+
+    <!-- 뒤로가기 누를 때 reload -->
+<script>
+
+
+
+
+    window.addEventListener( "pageshow", function ( event ) {
+    var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+    if ( historyTraversal ) {
+        // Handle page restore.
+        window.location.reload();
+      }
+    });
+</script>
+    
+
+{% endblock %}

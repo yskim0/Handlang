@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron bg-success">
+        <h1 class="text-center">{{_('project_select_background')}}</h1>
+    </div>
+    <div class="card text-left">
+		<div class="card-body">
+			<h5> {{_('about_project')}}</h5>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container">
+    <div class="jumbotron bg-primary">
+        <h1 class="text-center">{{_('asl')}}</h1>
+    </div>
+    <div class="card text-left">
+		<div class="card-body">
+			<h5>{{_('about_asl')}}</h5>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="jumbotron bg-danger">
+        <h1 class="text-center">{{_('main_service)')}}</h1>
+    </div>
+	<div class="card text-left">
+		<div class="card-header">
+			{{_('ms_practice_asl')}}
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">{{_('ms_practice_title')}}</h5>
+			<p class="card-text">{{_('ms_practice_info')}}</p>
+			<div class="float-right mr-2">
+				<a href="#" class="btn btn-outline-dark">{{_('ms_btn_practice_asl')}}</a>
+				<a href="#" class="btn btn-outline-dark">{{_('ms_btn_practice_digit')}}</a>
+			</div>
+
+		</div>
+	</div>
+	<div class="card text-left mt-4">
+		<div class="card-header">
+			{{_('ms_quiz')}}
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">{{_('ms_quiz_title')}}</h5>
+			<p class="card-text">{{_('ms_quiz_info')}}</p>
+			<div class="float-right mr-2">
+				<a href="#" class="btn btn-outline-dark">{{_('ms_btn_quiz')}}</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="jumbotron bg-warning">
+        <h1 class="text-center">{{_('about_team_member')}}</h1>
+    </div>
+</div>
+
+<div class="container">
+	<div class="row row-cols-1 row-cols-md-2">
+		<div class="col mb-4">
+			<div class="card text-left">
+				<img src="../static/img/smile.png" class="m-auto mh-20" alt="...">
+				<div class="card-body">
+					<h5 class="card-title font-weight-bold">{{_('kys')}}</h5>
+					<p class="card-text">{{_('kys_introduction')}}</p>
+				</div>
+				<div class="card-footer">
+					<small class="text-muted"><a href="#" class="btn btn-outline-dark float-right">>> GITHUB</a></small>
+				</div>
+			</div>
+		</div>
+		<div class="col mb-4">
+			<div class="card text-left">
+				<img src="../static/img/smile.png" class="m-auto mh-20" alt="...">
+				<div class="card-body">
+					<h5 class="card-title font-weight-bold">{{_('shj')}}</h5>
+					<p class="card-text">{{_('shj_introduction')}}</p>
+				</div>
+				<div class="card-footer">
+					<small class="text-muted"><a href="#" class="btn btn-outline-dark float-right">>> GITHUB</a></small>
+				</div>
+			</div>
+		</div>
+		<div class="col mb-4">
+			<div class="card text-left">
+				<img src="../static/img/smile.png" class="m-auto mh-20" alt="...">
+				<div class="card-body">
+					<h5 class="card-title font-weight-bold">{{_('ssh')}}</h5>
+					<p class="card-text">{{_('ssh_introduction')}}</p>
+				</div>
+				<div class="card-footer">
+					<small class="text-muted"><a href="#" class="btn btn-outline-dark float-right">>> GITHUB</a></small>
+				</div>
+			</div>
+		</div>
+		<div class="col mb-4">
+			<div class="card text-left">
+				<img src="../static/img/smile.png" class="m-auto mh-20" alt="...">
+				<div class="card-body">
+					<h5 class="card-title font-weight-bold">{{_('sjy')}}</h5>
+					<p class="card-text">{{_('sjy_introduction')}}/p>
+				</div>
+				<div class="card-footer">
+					<small class="text-muted"><a href="#" class="btn btn-outline-dark float-right">>> GITHUB</a></small>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

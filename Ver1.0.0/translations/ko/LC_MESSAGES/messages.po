@@ -1,0 +1,233 @@
+# Korean translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-08-04 05:57+0900\n"
+"PO-Revision-Date: 2020-03-23 14:51+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app.py:315 app.py:361
+msgid "predict_incorrect"
+msgstr "틀렸습니다😭"
+
+#: app.py:324 app.py:370
+msgid "predict_correct"
+msgstr "맞았습니다!"
+
+#: templates/aboutUs.html:7
+msgid "project_select_background"
+msgstr "프로젝트 선정 배경"
+
+#: templates/aboutUs.html:11
+msgid "about_project"
+msgstr "프로젝트 소개 어쩌구 저쩌구"
+
+#: templates/aboutUs.html:20
+msgid "asl"
+msgstr "지문자란?"
+
+#: templates/aboutUs.html:24
+msgid "about_asl"
+msgstr "지문자에 대한 설명.. 왜 필요한지?"
+
+#: templates/aboutUs.html:31
+msgid "main_service)"
+msgstr "주요 서비스"
+
+#: templates/aboutUs.html:35
+msgid "ms_practice_asl"
+msgstr "지문자 연습"
+
+#: templates/aboutUs.html:38
+msgid "ms_practice_title"
+msgstr "알파벳 및 숫자 연습"
+
+#: templates/aboutUs.html:39
+msgid "ms_practice_info"
+msgstr "어떤식으로 사용하는지 간략하게 설명"
+
+#: templates/aboutUs.html:41
+msgid "ms_btn_practice_asl"
+msgstr "알파벳 연습 바로가기"
+
+#: templates/aboutUs.html:42
+msgid "ms_btn_practice_digit"
+msgstr "숫자 연습 바로가기"
+
+#: templates/aboutUs.html:49
+msgid "ms_quiz"
+msgstr "퀴즈"
+
+#: templates/aboutUs.html:52
+msgid "ms_quiz_title"
+msgstr "지문자 퀴즈"
+
+#: templates/aboutUs.html:53
+msgid "ms_quiz_info"
+msgstr "퀴즈가 어떤식으로 진행되는지 간략하게 설명"
+
+#: templates/aboutUs.html:55
+msgid "ms_btn_quiz"
+msgstr "퀴즈 바로가기"
+
+#: templates/aboutUs.html:64
+msgid "about_team_member"
+msgstr "팀원 소개"
+
+#: templates/aboutUs.html:74
+msgid "kys"
+msgstr "김연수"
+
+#: templates/aboutUs.html:75
+msgid "kys_introduction"
+msgstr "연수의 자기소개"
+
+#: templates/aboutUs.html:86
+msgid "shj"
+msgstr "서현주"
+
+#: templates/aboutUs.html:87
+msgid "shj_introduction"
+msgstr "현주 자기소개"
+
+#: templates/aboutUs.html:98
+msgid "ssh"
+msgstr "손수현"
+
+#: templates/aboutUs.html:99
+msgid "ssh_introduction"
+msgstr "수현이 자기소개"
+
+#: templates/aboutUs.html:110
+msgid "sjy"
+msgstr "신지영"
+
+#: templates/aboutUs.html:111
+msgid "sjy_introduction"
+msgstr "지영 자기소개"
+
+#: templates/index.html:8
+msgid "headline"
+msgstr "프로젝트 및 팀 소개"
+
+#: templates/index.html:9
+msgid "headline2"
+msgstr "안녕하세요. DSC 이화 핸들랭 팀입니다."
+
+#: templates/index.html:20
+msgid "asl_practice"
+msgstr "지문자 연습"
+
+#: templates/index.html:25
+msgid "number_practice"
+msgstr "숫자 연습"
+
+#: templates/index.html:34
+msgid "asl_quiz"
+msgstr "지문자 퀴즈"
+
+#: templates/index.html:39
+msgid "number_quiz"
+msgstr "숫자 퀴즈"
+
+#: templates/layout.html:9 templates/layout.html:45 templates/layout.html:88
+msgid "handlang_title"
+msgstr "핸들랭(Handlang)"
+
+#: templates/layout.html:53
+msgid "alphabet"
+msgstr "알파벳 지문자"
+
+#: templates/layout.html:56
+msgid "nav_aslPractice"
+msgstr "지문자 연습"
+
+#: templates/layout.html:57
+msgid "nav_quiz"
+msgstr "지문자 퀴즈"
+
+#: templates/layout.html:62
+msgid "number"
+msgstr "숫자"
+
+#: templates/layout.html:65
+msgid "nav_numberPractice"
+msgstr "숫자 연습"
+
+#: templates/layout.html:66
+msgid "nav_number_quiz"
+msgstr "숫자 퀴즈"
+
+#: templates/practice.html:41
+msgid "practice_notice1"
+msgstr "현재 predict label"
+
+#: templates/practice.html:42
+msgid "practice_notice2"
+msgstr "예측을 시작하려면 Enter 키 ↩️ 를 눌러주세요."
+
+#: templates/practice.html:45
+msgid "practice_status_not_started"
+msgstr "Not Started."
+
+#: templates/practice.html:49
+msgid "predict_status_not_started_2"
+msgstr "예측중이 아님"
+
+#: templates/practice.html:62
+msgid "previous"
+msgstr "이전"
+
+#: templates/practice.html:66
+msgid "go_practiceAsl"
+msgstr "리스트 보기"
+
+#: templates/practice.html:71
+msgid "next"
+msgstr "다음"
+
+#: templates/practice_list.html:20 templates/result.html:30
+msgid "go_practice"
+msgstr "연습하러 가기"
+
+#: templates/quiz.html:30
+msgid "question"
+msgstr "지문자"
+
+#: templates/quiz.html:30
+msgid "question_2"
+msgstr "를 고르시오."
+
+#: templates/quiz.html:60
+msgid "submit_quiz"
+msgstr "제출하기"
+
+#: templates/result.html:22
+msgid "result_incorrect_list"
+msgstr "틀린 문제"
+
+#: templates/result.html:33
+msgid "go_quiz"
+msgstr "다시 풀기"
+
+#~ msgid "aboutUs"
+#~ msgstr "프로젝트 및 팀 소개"
+
+#~ msgid "number_practice"
+#~ msgstr "숫자 연습"
+
+#~ msgid "nav_numberPractice"
+#~ msgstr "숫자연습"
+
