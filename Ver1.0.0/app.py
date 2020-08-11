@@ -8,15 +8,21 @@ import random
 from flask_babel import Babel, gettext
 from datetime import datetime
 import os
-
+import tensorflow as tf
+from tensorflow.python.keras.backend import set_session
 app = Flask(__name__)
 babel = Babel(app)
 
 
 app.config['lang_code'] = ['en', 'ko']
 
-model = load_model('model/handlang_model_4.h5')
-model2 = load_model('model/su_adamax.h5')
+sess = tf.Session()
+graph = tf.get_default_graph()
+
+
+set_session(sess)
+alphamodel = load_model('model/handlang_model_4.h5')
+numbmodel = load_model('model/su_adamax.h5')
 
 print("Loaded model from disk")
 
@@ -130,7 +136,7 @@ def get_locale():
     try:
         language = session['language']
     except KeyError:
-        language = None
+        language = "ko"
     if language is not None:
         return language
     return request.accept_languages.best_match(['en', 'ko'])
@@ -145,12 +151,14 @@ def get_alphabet_list():
 
 
 def gen(camera,group):
+    global alphamodel
+    global numbmodel
     if not camera.isOpened():
         raise RuntimeError("Could not start camera")
     if(group=='alphabet'):
-        model = load_model('model/handlang_model_4.h5')
+        model=alphamodel
     else:
-        model = load_model('model/su_adamax.h5')
+        model = numbmodel
 
     while True:
         success, img = camera.read()
@@ -167,8 +175,11 @@ def gen(camera,group):
                 image = load_img(crop_img_path, target_size=(64,64))
                 image = img_to_array(image)
                 image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
-
-                prediction = model.predict(image)
+                global sess
+                global graph
+                with graph.as_default():
+                    set_session(sess)
+                    prediction = model.predict(image)
 
                 target_idx_for_predict = target_idx.get_idx()
                 print("타겟예측: ", prediction[0][target_idx_for_predict])
@@ -232,56 +243,6 @@ def is_valid_quiz(answer, question_list):
     else:
         return True
 
-# for ajax
-# @app.route('/<group>/return_label', methods=['POST', 'GET'])
-# def return_label(group):
-#     value = request.form.get("target", False)
-#     # 띄어쓰기 조심!@!
-#     if(group=='alphabet'):
-#         label_list = [" A ", " B ", " C ", " D ", " E ", " F ", " G ",
-#             " H ", " I ", " J ", " K ", " L ", " M ", " N ", " O ", " P ", " Q ", 
-#             " R ", " S ", " T ", " U ", " V ", " W ", " X ", " Y ", " Z ", 
-#             " del ", " nothing ", " space "]
-#     else:
-#         label_list = [" 0 ", " 1 "," 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 ", " del ", " nothing ", " space "]
-
-#     tem = label_list.index(value)
-#     print(tem)
-#     idx = target_idx.set_idx(tem)
-#     print(idx)
-#     label = " " + predict_label.get_label() + " "
-
-#     # ajax 에서 값 받아올때 공백이 앞뒤로 붙는데 python strip() 함수가 안먹어서...
-
-#     if label == '':
-#         predict_result = {
-#             'status': 0,
-#             'info': 'not detected',
-#             'label': '',
-#             'lang_code': session['language']
-        
-#         }
-#     elif label != value:
-#         predict_result = {
-#             'status': 0,
-#             'info': gettext('predict_incorrect'),
-#             'label': label,
-#             'lang_code': session['language']
-
-#         }
-#         print("틀림!")
-#     else:
-#         predict_result = {
-#             'status': 1,
-#             'info': gettext('predict_correct'),
-#             'label': label,
-#             'lang_code': session['language']
-#         }
-
-#     # result 의 status 값이 1이면 참 -> main.js 에서 correct 값 증가
-
-#     json_data = json.dumps(predict_result)  # json 형태로 바꿔줘야 에러 안남
-#     return json_data
 
 @app.route('/return_label', methods=['POST', 'GET'])
 def return_label():
@@ -300,6 +261,7 @@ def return_label():
     label = " " + predict_label.get_label() + " "
 
     # ajax 에서 값 받아올때 공백이 앞뒤로 붙는데 python strip() 함수가 안먹어서...
+
 
     if label == '':
         predict_result = {
@@ -437,12 +399,7 @@ def quiz_result(group):
             correct_num += 1
         else:
             incorrect_questions.append(q.upper())
-    # if correct_num == g.total_q:
-    #     img_path = "../static/img/score_100.png"
-    # elif correct_num >= (g.total_q // 2):
-    #     img_path = "../static/img/score_50.png"
-    # else:
-    #     img_path = "../static/img/score_0.png"
+
     if correct_num == total_q:
         img_path = "score_100.png"
     elif correct_num >= (total_q // 2):
@@ -484,10 +441,13 @@ def practice(group):
 
 @app.route('/')
 def index():
+    if session.get('language') is None:
+        session['language'] = 'ko'
     return render_template('index.html', link=request.full_path)
 
 
 if __name__ == "__main__":
     app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
+
     app.run(host='0.0.0.0', port=5000, debug=True)

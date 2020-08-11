@@ -4,32 +4,7 @@ var number = $("#topic").text();
 
 var correct = 0;
 var total_correct = 0;
-// $(document).ready(function()  {
-// 	// 라벨 측정 시작
-// 	$(document).keypress(function(event){  // keyup 이벤트 처리 enter, backspace
-// 		var keycode = (event.keyCode ? event.keyCode : event.which);
-// 		if(keycode === 13) {
-// 			console.log('엔터!');
-// 			timer = setInterval(function(){
-// 				ajax_prediction(function(lang_code){
-// 					if(lang_code=="en"){
-// 						$("#predict_status").text("🔆 Predicting... 🔆");
 
-// 					}
-// 					else if(lang_code=="ko"){
-// 						$("#predict_status").text("🔆 예측중... 🔆");
-
-// 					}
-					
-// 				});
-// 			}, 1000);
-// 			// setInterval(ajax_prediction(), 1000);
-// 		}
-
-// 	});
-
-
-// });
 $(document).ready(function()  {
 	// 라벨 측정 시작
 	$(document).keypress(function(event){  // keyup 이벤트 처리 enter, backspace
@@ -68,7 +43,6 @@ $(document).ready(function()  {
 
 			}, 1000);
 
-			// setInterval(ajax_prediction(), 1000);
 		}
 
 	});
@@ -278,37 +252,3 @@ $(document).ready(function(){
 
 });
 
-// $(document).ready(function(){
-// 	var q_num=0;
-// 	var total_q=5;
-
-// 	$("#next").click(function(){
-// 	  $("#before").show();
-
-// 	  $("#"+q_num).hide();
-// 	  q_num+=1;
-// 	  if(q_num==total_q-1){
-// 		$('#next').hide();
-// 		$('#submit').show();
-// 	  }
-// 	  $("#"+q_num).show();
-	  
-// 	});
-
-
-// 	$("#before").click(function(){
-// 	  $("#submit").hide();
-// 	  $("#next").show();
-// 	  $("#"+q_num).hide();
-// 	  q_num=q_num-1;
-// 	  if(q_num==0){
-// 		$('#before').hide();
-// 	  }
-// 	  $("#"+q_num).show()
-	  
-
-
-
-// 	});
-
-// });
