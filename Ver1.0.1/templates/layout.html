@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <title>{{_('handlang_title')}}🍩</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
+    <!-- GET http://0.0.0.0:5000/favicon.ico 404 (NOT FOUND) 에러 해결 코드 -->
+    <link rel="shortcut icon" href="#">
+
+    <style>
+        body {
+            font-family: 'NanumSquare', sans-serif !important;;
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <style type="text/css">
+        /* 점보 트론은 홈페이지에 하나만 있으면 되니까 직접 씀 */
+        .jumbotron {
+            /* background-image: url("/static/img/jumbtron-bg.jpg"); */
+            background-color: #707D7C;
+            background-size: cover;
+            text-shadow: black 0.1em 0.1em 0.1em;
+            color: white;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    </style>
+
+    <div style="min-height: calc(100vh - 30px);">
+            <!-- 네비게이션바 -->
+         
+  
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ url_for('index') }}">{{_('handlang_title')}}👋</a>
+          
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{ url_for('index') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{url_for('practice_list', group='alphabet')}}">{{_('nav_aslPractice')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{url_for('quiz', group='alphabet')}}">{{_('nav_quiz')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{url_for('practice_list', group='number')}}">{{_('nav_numberPractice')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-light" href="{{url_for('quiz',group='number')}}">{{_('nav_number_quiz')}}</a>
+                </li>
+             
+    
+
+               
+                <li class="nav-item d-flex align-items-center text-secondary">
+                    <a  class="text-secondary" href="{{ url_for('english', link=link) }}" style="margin-right:3px;">English </a>|
+                    <a class="text-secondary" href="{{ url_for('korean', link=link) }}" style="margin-left:3px;"> 한국어</a>
+                </li>
+                
+            </ul>
+        </nav>
+    
+          
+        {% block content %}
+    
+        {% endblock %}
+    </div>
+
+    
+
+    <footer >
+        <p class="border-top" style="text-align: center; height: 30px; margin: 0;">&copy; {{_('handlang_title')}}</p>
+    </footer>
+
+    <script src="../static/js/jquery-3.4.1.js"></script>
+    <script src="../static/js/main.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+</body>
+</html>
