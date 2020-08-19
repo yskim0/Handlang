@@ -128,11 +128,11 @@ msgstr "문제에서 주어지는 지문자에 해당되는 이미지를 고르�
 
 #: templates/aboutUs.html:120
 msgid "ms_btn_quiz_asl"
-msgstr ""
+msgstr "알파벳 퀴즈 바로가기"
 
 #: templates/aboutUs.html:121
 msgid "ms_btn_quiz_digit"
-msgstr ""
+msgstr "숫자 퀴즈 바로가기"
 
 #: templates/index.html:8
 msgid "headline"
