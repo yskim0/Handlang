@@ -43,7 +43,7 @@ keras
 
 1. 이 저장소를 다운로드 받는다.
 
-`git clone https://github.com/yskim0/DSC_Solution_Challenge.git`
+`git clone https://github.com/yskim0/Handlang.git`
 
 2. requirements를 설치한다.
 
@@ -51,7 +51,7 @@ keras
 
 - 첫 번째 step에서 저장했던 폴더로 이동한다.
 
-`cd GoogleSolutionChallenge_Handlang`
+`cd Handlang`
 
 - install requirements
 
@@ -70,7 +70,7 @@ Run `python app.py` or `python3 app.py`
 
 <br>
 
-## 유저 피드백 받기 전 딥러닝 모델들
+### 유저 피드백 받기 전 딥러닝 모델들
 
 유저로부터 받은 피드백은 주로 모델의 예측 정확도에 관련한 것들이었기 때문에 모델 성능 향상을 우선으로 했습니다.
 
