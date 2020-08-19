@@ -51,7 +51,7 @@ keras
 
 - 첫 번째 step에서 저장했던 폴더로 이동한다.
 
-`cd Handlang`
+`cd Handlang/Ver1.0.1`
 
 - install requirements
 
