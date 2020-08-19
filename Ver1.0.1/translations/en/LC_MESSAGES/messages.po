@@ -1,0 +1,256 @@
+# English translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-08-19 15:31+0900\n"
+"PO-Revision-Date: 2020-03-23 14:52+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: app.py:315 app.py:361
+msgid "predict_incorrect"
+msgstr "You're wrong 😭"
+
+#: app.py:324 app.py:370
+msgid "predict_correct"
+msgstr "That's correct!"
+
+#: templates/aboutUs.html:8
+msgid "about_team_member"
+msgstr "TEAM HANDLANG"
+
+#: templates/aboutUs.html:19
+msgid "kys"
+msgstr "KIM YEONSOO"
+
+#: templates/aboutUs.html:20
+msgid "kys_introduction"
+msgstr "Hello! I am Yeonsoo Kim, a senior majoring in computer engineering and business administration at Ewha Womans University. <br>I like to study AI technology, and I'm most interested in computer vision."
+
+#: templates/aboutUs.html:32
+msgid "shj"
+msgstr "SEO HYUNJU"
+
+#: templates/aboutUs.html:33
+msgid "shj_introduction"
+msgstr "Hello, I'm Hyunju Seo. I’m majoring in computer science & engineering at Ewha Womans University.<br>I like server side web programming. Also, I'm interested in machine learning."
+
+#: templates/aboutUs.html:45
+msgid "ssh"
+msgstr "SON SUHYUN"
+
+#: templates/aboutUs.html:46
+msgid "ssh_introduction"
+msgstr "Hello I’m suhyun Son. I’’ majoring in computer science engineering at Ewha womans university.<br>I am interested in NLP research and application development using computer vision."
+
+#: templates/aboutUs.html:58
+msgid "sjy"
+msgstr "SHIN JIYOUNG"
+
+#: templates/aboutUs.html:59
+msgid "sjy_introduction"
+msgstr "Hi, I'm Jiyoung Shin and majored in Business administration at Ewha Womans University. <br>I'm interested in big data analysis for financial risk management and like to challenge new things."
+
+#: templates/aboutUs.html:72
+msgid "project_select_background"
+msgstr "Project Selection Background"
+
+#: templates/aboutUs.html:76
+msgid "about_project"
+msgstr ""
+"Sign language education is very poor everywhere in the world.<br>But with"
+" technology, we can break down social barriers by providing sign language"
+" education for the deaf and those in need of sign language.<br><br>The "
+"challenge we chose is to create a sign language education that everyone "
+"can use without any restrictions on money, environment, etc.<br>This may "
+"not be as good as human education, but it will remind you of the need for"
+" improvement in sign language education.<br><br>We want to show that "
+"technology can make the world a better place.<br>We hope our project will"
+" help people become interested in sign language education and further "
+"develop our ideas.<br>"
+
+#: templates/aboutUs.html:85
+msgid "asl"
+msgstr ""
+
+#: templates/aboutUs.html:89
+msgid "about_asl"
+msgstr ""
+
+#: templates/aboutUs.html:96
+msgid "main_service)"
+msgstr "Main Service"
+
+#: templates/aboutUs.html:100
+msgid "ms_practice_asl"
+msgstr "Practice"
+
+#: templates/aboutUs.html:103
+msgid "ms_practice_title"
+msgstr "Practice ASL and Digits"
+
+#: templates/aboutUs.html:104
+msgid "ms_practice_info"
+msgstr "You can practice 10 times for each character."
+
+#: templates/aboutUs.html:106
+msgid "ms_btn_practice_asl"
+msgstr "GO Practice ASL"
+
+#: templates/aboutUs.html:107
+msgid "ms_btn_practice_digit"
+msgstr "GO Practice Digit"
+
+#: templates/aboutUs.html:114
+msgid "ms_quiz"
+msgstr "Quiz"
+
+#: templates/aboutUs.html:117
+msgid "ms_quiz_title"
+msgstr "ASL&Digit Quiz"
+
+#: templates/aboutUs.html:118
+msgid "ms_quiz_info"
+msgstr ""
+"It is a simple quiz game to choose the image that corresponds to the "
+"character given in the question."
+
+#: templates/aboutUs.html:120
+msgid "ms_btn_quiz_asl"
+msgstr ""
+
+#: templates/aboutUs.html:121
+msgid "ms_btn_quiz_digit"
+msgstr ""
+
+#: templates/index.html:8
+msgid "headline"
+msgstr "American Sign Language Alphabet Education Project"
+
+#: templates/index.html:9
+msgid "headline2"
+msgstr "DSC EWHA"
+
+#: templates/index.html:21
+msgid "asl_practice"
+msgstr "ASL practice"
+
+#: templates/index.html:26
+msgid "number_practice"
+msgstr "Number practice"
+
+#: templates/index.html:35
+msgid "asl_quiz"
+msgstr "ASL Quiz"
+
+#: templates/index.html:40
+msgid "number_quiz"
+msgstr "Number Quiz"
+
+#: templates/layout.html:9 templates/layout.html:46 templates/layout.html:85
+msgid "handlang_title"
+msgstr "Handlang"
+
+#: templates/layout.html:53
+msgid "nav_aslPractice"
+msgstr "ASL practice"
+
+#: templates/layout.html:56
+msgid "nav_quiz"
+msgstr "ASL Quiz"
+
+#: templates/layout.html:59
+msgid "nav_numberPractice"
+msgstr "Number Practice"
+
+#: templates/layout.html:62
+msgid "nav_number_quiz"
+msgstr "Number Quiz"
+
+#: templates/practice.html:41
+msgid "practice_notice1"
+msgstr "predict label"
+
+#: templates/practice.html:42
+msgid "practice_notice2"
+msgstr "Press Enter ↩️ to start"
+
+#: templates/practice.html:45
+msgid "practice_status_not_started"
+msgstr "Not Started."
+
+#: templates/practice.html:49
+msgid "predict_status_not_started_2"
+msgstr "Not Started."
+
+#: templates/practice.html:62
+msgid "previous"
+msgstr "Previous"
+
+#: templates/practice.html:66
+msgid "go_practiceAsl"
+msgstr "list"
+
+#: templates/practice.html:71
+msgid "next"
+msgstr "Next"
+
+#: templates/practice_list.html:20 templates/result.html:30
+msgid "go_practice"
+msgstr "Go to practice"
+
+#: templates/quiz.html:30
+msgid "question"
+msgstr "What is the correct sign for"
+
+#: templates/quiz.html:30
+msgid "question_2"
+msgstr "?"
+
+#: templates/quiz.html:60
+msgid "submit_quiz"
+msgstr "Submit"
+
+#: templates/result.html:22
+msgid "result_incorrect_list"
+msgstr "Wrong answers"
+
+#: templates/result.html:33
+msgid "go_quiz"
+msgstr "Quiz"
+
+#~ msgid "aboutUs"
+#~ msgstr "About Us"
+
+#~ msgid "number_practice"
+#~ msgstr "Number practice"
+
+#~ msgid "nav_numberPractice"
+#~ msgstr "Number practice"
+
+#~ msgid "ms_btn_quiz_asl"
+#~ msgstr "GO QUIZ ASL"
+
+#~ msgid "ms_btn_quiz_digit"
+#~ msgstr "GO QUIZ Digit"
+
+#~ msgid "ms_btn_quiz"
+#~ msgstr ""
+
+#~ msgid "alphabet"
+#~ msgstr "Alphabet"
+
+#~ msgid "number"
+#~ msgstr "Number"
+

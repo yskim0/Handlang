@@ -1,0 +1,256 @@
+# Korean translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-08-19 15:31+0900\n"
+"PO-Revision-Date: 2020-03-23 14:51+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.7.0\n"
+
+#: app.py:315 app.py:361
+msgid "predict_incorrect"
+msgstr "틀렸습니다😭"
+
+#: app.py:324 app.py:370
+msgid "predict_correct"
+msgstr "맞았습니다!"
+
+#: templates/aboutUs.html:8
+msgid "about_team_member"
+msgstr "팀원 소개"
+
+#: templates/aboutUs.html:19
+msgid "kys"
+msgstr "김연수"
+
+#: templates/aboutUs.html:20
+msgid "kys_introduction"
+msgstr ""
+"안녕하세요! 이화여자대학교 컴퓨터공학과 4학년 김연수입니다. <br>AI 관련 기술을 공부하는 것을 좋아하는데, 그 중 컴퓨터 비젼 분야에 관심이 가장"
+" 많습니다."
+
+#: templates/aboutUs.html:32
+msgid "shj"
+msgstr "서현주"
+
+#: templates/aboutUs.html:33
+msgid "shj_introduction"
+msgstr "안녕하세요.  이화여자대학교 컴퓨터공학과 4학년 서현주입니다. <br>웹 서버 개발을 좋아하고 머신러닝에도 관심이 있습니다."
+
+#: templates/aboutUs.html:45
+msgid "ssh"
+msgstr "손수현"
+
+#: templates/aboutUs.html:46
+msgid "ssh_introduction"
+msgstr ""
+"안녕하세요. 이화여자대학교 컴퓨터공학과 손수현입니다. <br>NLP관련 연구와 computer vision을 이용한 어플리케이션 개발에 "
+"관심이 많습니다. "
+
+#: templates/aboutUs.html:58
+msgid "sjy"
+msgstr "신지영"
+
+#: templates/aboutUs.html:59
+msgid "sjy_introduction"
+msgstr ""
+"안녕하세요 신지영입니다. <br>이화여자대학교에서 경영학을 전공했으며, 금융데이터 분석을 통한 리스크관리에 관심이 많고, 새로운 것에 "
+"도전하는걸 좋아합니다."
+
+#: templates/aboutUs.html:72
+msgid "project_select_background"
+msgstr "프로젝트 선정 배경"
+
+#: templates/aboutUs.html:76
+msgid "about_project"
+msgstr ""
+"세계 어딜가도 수화 교육은 매우 열악한 상황입니다. <br>하지만 기술을 이용한다면 청각 장애인들을 비롯하여 수화가 필요한 이들에게"
+" 수화 교육을 제공함으로써 사회적 장벽을 허물 수 있습니다.<br> <br>돈, 환경 등 어떠한 제약도 받지 않는, 모든 사람들이 "
+"사용할 수 있는 수화 교육을 만드는 것이 저희가 고른 challenge입니다. <br>이는 사람의 교육에 미치지는 못하겠지만 수화 "
+"교육 분야에서의 발전 필요성을 상기시킬 것입니다. <br> <br>저희는 기술을 통해 세상을 좋은 곳으로 바꿀 수 있다는 것을 "
+"보여주고 싶습니다. <br>저희의 프로젝트로 사람들이 수화 교육에 관심을 가지게 되어 우리 아이디어를 더 발전시킬 수 있는 계기가 "
+"되면 좋겠습니다.<br>"
+
+#: templates/aboutUs.html:85
+msgid "asl"
+msgstr ""
+
+#: templates/aboutUs.html:89
+msgid "about_asl"
+msgstr ""
+
+#: templates/aboutUs.html:96
+msgid "main_service)"
+msgstr "주요 서비스"
+
+#: templates/aboutUs.html:100
+msgid "ms_practice_asl"
+msgstr "연습"
+
+#: templates/aboutUs.html:103
+msgid "ms_practice_title"
+msgstr "알파벳 및 숫자 연습"
+
+#: templates/aboutUs.html:104
+msgid "ms_practice_info"
+msgstr "각 문자마다 10번씩 연습할 수 있습니다."
+
+#: templates/aboutUs.html:106
+msgid "ms_btn_practice_asl"
+msgstr "알파벳 연습 바로가기"
+
+#: templates/aboutUs.html:107
+msgid "ms_btn_practice_digit"
+msgstr "숫자 연습 바로가기"
+
+#: templates/aboutUs.html:114
+msgid "ms_quiz"
+msgstr "퀴즈"
+
+#: templates/aboutUs.html:117
+msgid "ms_quiz_title"
+msgstr "알파벳 및 숫자 퀴즈"
+
+#: templates/aboutUs.html:118
+msgid "ms_quiz_info"
+msgstr "문제에서 주어지는 지문자에 해당되는 이미지를 고르는 간단한 퀴즈 게임입니다."
+
+#: templates/aboutUs.html:120
+msgid "ms_btn_quiz_asl"
+msgstr ""
+
+#: templates/aboutUs.html:121
+msgid "ms_btn_quiz_digit"
+msgstr ""
+
+#: templates/index.html:8
+msgid "headline"
+msgstr "프로젝트 및 팀 소개"
+
+#: templates/index.html:9
+msgid "headline2"
+msgstr "안녕하세요. DSC 이화 핸들랭 팀입니다."
+
+#: templates/index.html:21
+msgid "asl_practice"
+msgstr "지문자 연습"
+
+#: templates/index.html:26
+msgid "number_practice"
+msgstr "숫자 연습"
+
+#: templates/index.html:35
+msgid "asl_quiz"
+msgstr "지문자 퀴즈"
+
+#: templates/index.html:40
+msgid "number_quiz"
+msgstr "숫자 퀴즈"
+
+#: templates/layout.html:9 templates/layout.html:46 templates/layout.html:85
+msgid "handlang_title"
+msgstr "핸들랭(Handlang)"
+
+#: templates/layout.html:53
+msgid "nav_aslPractice"
+msgstr "지문자 연습"
+
+#: templates/layout.html:56
+msgid "nav_quiz"
+msgstr "지문자 퀴즈"
+
+#: templates/layout.html:59
+msgid "nav_numberPractice"
+msgstr "숫자 연습"
+
+#: templates/layout.html:62
+msgid "nav_number_quiz"
+msgstr "숫자 퀴즈"
+
+#: templates/practice.html:41
+msgid "practice_notice1"
+msgstr "현재 predict label"
+
+#: templates/practice.html:42
+msgid "practice_notice2"
+msgstr "예측을 시작하려면 Enter 키 ↩️ 를 눌러주세요."
+
+#: templates/practice.html:45
+msgid "practice_status_not_started"
+msgstr "Not Started."
+
+#: templates/practice.html:49
+msgid "predict_status_not_started_2"
+msgstr "예측중이 아님"
+
+#: templates/practice.html:62
+msgid "previous"
+msgstr "이전"
+
+#: templates/practice.html:66
+msgid "go_practiceAsl"
+msgstr "리스트 보기"
+
+#: templates/practice.html:71
+msgid "next"
+msgstr "다음"
+
+#: templates/practice_list.html:20 templates/result.html:30
+msgid "go_practice"
+msgstr "연습하러 가기"
+
+#: templates/quiz.html:30
+msgid "question"
+msgstr "지문자"
+
+#: templates/quiz.html:30
+msgid "question_2"
+msgstr "를 고르시오."
+
+#: templates/quiz.html:60
+msgid "submit_quiz"
+msgstr "제출하기"
+
+#: templates/result.html:22
+msgid "result_incorrect_list"
+msgstr "틀린 문제"
+
+#: templates/result.html:33
+msgid "go_quiz"
+msgstr "다시 풀기"
+
+#~ msgid "aboutUs"
+#~ msgstr "프로젝트 및 팀 소개"
+
+#~ msgid "number_practice"
+#~ msgstr "숫자 연습"
+
+#~ msgid "nav_numberPractice"
+#~ msgstr "숫자연습"
+
+#~ msgid "ms_btn_quiz_asl"
+#~ msgstr "지문자 퀴즈 바로가기"
+
+#~ msgid "ms_btn_quiz_digit"
+#~ msgstr "숫자 퀴즈 바로가기"
+
+#~ msgid "ms_btn_quiz"
+#~ msgstr ""
+
+#~ msgid "alphabet"
+#~ msgstr "알파벳 지문자"
+
+#~ msgid "number"
+#~ msgstr "숫자"
+

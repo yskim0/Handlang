@@ -1,0 +1,9 @@
+flask
+numpy
+matplotlib
+tensorflow==1.15.2
+opencv-python-headless
+cython
+Pillow
+flask_babel
+keras
