@@ -64,7 +64,7 @@ Run `python app.py` or `python3 app.py`
 설치가 완료되었습니다.
 이제 `http://0.0.0.0:5000/` 를 가셔서 프로젝트를 즐겨 보세요!
 
-![home-page](https://user-images.githubusercontent.com/48315997/90602788-419a5980-e235-11ea-87b9-997908117048.png)
+![home-page](https://user-images.githubusercontent.com/48315997/90603856-e79a9380-e236-11ea-90fc-6653c671028a.png)
 
 
 
