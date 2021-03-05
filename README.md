@@ -7,6 +7,14 @@
 딥러닝으로 학습된 수화 인식 모델을 바탕으로 알파벳, 숫자에 해당되는 수화를 학습 및 연습 할 수 있는 웹 어플리케이션입니다.
 
 
+## Demo
+<img width="400" src="https://user-images.githubusercontent.com/48315997/110066439-c9e8e200-7db4-11eb-908e-d5c3c750f5fb.png"> <img width="400" src="https://user-images.githubusercontent.com/48315997/110066457-d53c0d80-7db4-11eb-8034-8104b8a3d703.png">
+
+Watch a short demo video!
+
+[demo video](https://youtu.be/LaTwFHh8_48)
+
+
 ## Requirements
 
 ```
