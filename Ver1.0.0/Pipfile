@@ -8,7 +8,7 @@ verify_ssl = true
 [packages]
 numpy = "*"
 matplotlib = "*"
-tensorflow = "==1.15.2"
+tensorflow = "==2.6.4"
 opencv-python-headless = "*"
 Flask = "*"
 Cython = "*"
